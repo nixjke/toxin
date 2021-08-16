@@ -1,0 +1,39 @@
+@import "../../fonts/MonstserratBold/fonts.css";
+@import "../../fonts/MontserratRegular/fonts.css";
+
+h1 {
+  font-family: "Conv_Montserrat-Bold";
+  color: #1f2041;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 29px;
+}
+
+h2 {
+  font-family: "Conv_Montserrat-Bold";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 23px;
+  color: #1f2041;
+}
+
+h3 {
+  font-family: "Conv_Montserrat-Bold";
+  color: #1f2041;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 14px;
+  text-transform: uppercase;
+}
+
+body {
+  font-family: "Conv_Montserrat-Regular";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(31, 32, 65, 0.75);
+}
