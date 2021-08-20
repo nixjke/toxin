@@ -2,10 +2,6 @@
 
 .header {
   width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
   z-index: 1000;
   background-color: #ffffff;
   &__inner {
@@ -13,6 +9,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 0 20px;
   }
 }
 
@@ -26,6 +23,7 @@
     margin: 0 10px;
     font-size: 14px;
     color: rgba(31, 32, 65, 0.5);
+    transition: all .1s;
   }
   &__link:hover {
     font-weight: bold;
@@ -39,20 +37,24 @@
 }
 
 .authorization {
-  cursor: pointer;
   margin: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 87px;
+  height: 34px;
   background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
-  padding: 6px 2px;
   border-radius: 22px;
   &__inner {
-    font-weight: bold;
-    text-transform: uppercase;
-    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
-    padding: 7px 16px;
+    cursor: pointer;
+    background: #ffffff;
     border-radius: 22px;
     color: $Purple;
-    background: #fff;
-    transition: all 0.1s;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 3px 18px;
+    transition: all .1s;
     &:hover {
       box-shadow: 0 0 8px $Purple;
       color: #ffffff;
@@ -62,20 +64,24 @@
 }
 
 .registration {
-  cursor: pointer;
   margin: 0 0 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 196px;
+  height: 34px;
   background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
-  padding: 6px 2px;
   border-radius: 22px;
   &__inner {
-    font-weight: bold;
-    text-transform: uppercase;
-    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
-    padding: 7px 16px;
+    cursor: pointer;
+    background: #ffffff;
     border-radius: 22px;
     color: $Purple;
-    background: #fff;
-    transition: all 0.1s;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 3px 19px;
+    transition: all .1s;
     &:hover {
       box-shadow: 0 0 8px $Purple;
       color: #ffffff;

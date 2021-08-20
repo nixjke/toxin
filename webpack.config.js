@@ -41,8 +41,14 @@ module.exports = {
 
   plugins: [
     new HtmlWebpackPlugin({
+      filename: "index.html",
       title: "Toxin",
       template: "./index.html"
+    }),
+    new HtmlWebpackPlugin({
+      filename: "HeadersFooters.html",
+      title: "Toxin",
+      template: "./HeadersFooters.html"
     }),
     new CleanWebpackPlugin()
   ]

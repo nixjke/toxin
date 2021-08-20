@@ -2,9 +2,16 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  height: 100%;
 }
 
-.intro {
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
   width: 100%;
   height: 100vh;
   background: url("../images/intro.png") center no-repeat;
@@ -15,10 +22,10 @@ body {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 .expand_more {
   color: rgba(31, 32, 65, 0.5);
   opacity: .5;
-  font-size: 122px;
 }

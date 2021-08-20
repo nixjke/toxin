@@ -1,17 +1,15 @@
+.widgets {
+  margin: 0 20px;
+}
+
 .copyright-bar {
   display: flex;
   height: 70px;
   align-items: center;
   justify-content: space-between;
+  margin: 0 20px;
   &__social-network img {
     cursor: pointer;
     margin: 0px 10px;
   }
-}
-
-.hr {
-  border: solid 1px rgba(31, 32, 65, 0.1);
-  margin: 0;
-  margin-left: calc(-50.5vw + 50%);
-  width: 100vw;
 }
