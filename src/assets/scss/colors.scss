@@ -1,0 +1,57 @@
+@import "./static/color.scss";
+
+.colors-type {
+  display: flex;
+  justify-content: space-between;
+}
+
+.colors {
+  margin-top: 145px;
+  &__item-color {
+    width: 70px;
+    height: 70px;
+    border-radius: 6px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    margin: 0 0 20px 0;
+  }
+
+  &__item-name {
+    font-weight: bold;
+    font-size: 19px;
+    color: #1f2041;
+    margin: 0 0 5px 0;
+  }
+
+  &__item-name-hex {
+    margin: 0 0 0 40px;
+  }
+
+  &__item-hex {
+    font-size: 19px;
+  }
+}
+.type {
+  margin-top: 145px;
+  &__inner {
+    margin: 0 0 50px 0;
+    &-name {
+      margin: 0 0 0 30px;
+    }
+  }
+  &__inner-h-name {
+    display: flex;
+    align-items: start;
+  }
+  &__inner-h1,
+  &__inner-h2,
+  &__inner-h3,
+  &__inner-body {
+    color: $DarkShade25;
+    font-style: normal;
+    font-weight: normal;
+  }
+}
