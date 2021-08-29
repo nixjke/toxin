@@ -55,6 +55,11 @@ module.exports = {
       title: "Toxin",
       template: "./colors.html",
     }),
+    new HtmlWebpackPlugin({
+      filename: "cards.html",
+      title: "Toxin",
+      template: "./cards.html",
+    }),
     new CleanWebpackPlugin()
   ]
 }
