@@ -46,9 +46,9 @@ module.exports = {
       template: "./index.html"
     }),
     new HtmlWebpackPlugin({
-      filename: "HeadersFooters.html",
+      filename: "header-footer.html",
       title: "Toxin",
-      template: "./HeadersFooters.html",
+      template: "./header-footer.html",
     }),
     new HtmlWebpackPlugin({
       filename: "colors.html",
@@ -59,6 +59,11 @@ module.exports = {
       filename: "cards.html",
       title: "Toxin",
       template: "./cards.html",
+    }),
+    new HtmlWebpackPlugin({
+      filename: "form-elements.html",
+      title: "Toxin",
+      template: "./form-elements.html",
     }),
     new CleanWebpackPlugin()
   ]
