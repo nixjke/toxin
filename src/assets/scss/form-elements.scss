@@ -1,6 +1,6 @@
 .colum-1 {
   width: 320px;
-  margin: 140px 0 0 0;
+  margin: 140px 20px;
 }
 
 .space-b {
@@ -19,6 +19,16 @@
   font-family: "Conv_Montserrat-Regular";
   font-size: 14px;
   color: rgba(31, 32, 65, 0.75);
+  &:hover {
+    border: 1px solid rgba(31, 32, 65, 0.5);
+    width: 288px;
+    padding: 12px 15px;
+    border-radius: 4px;
+    outline: none;
+    font-family: "Conv_Montserrat-Regular";
+    font-size: 14px;
+    color: rgba(31, 32, 65, 0.75);
+  }
   &-active {
     border: 1px solid rgba(31, 32, 65, 0.5);
     width: 288px;
@@ -32,8 +42,8 @@
 }
 
 .button {
-  width: 320px;
-  padding: 9px 15px;
+  width: 288px;
+  padding: 12px 15px;
   border-radius: 4px;
   outline: none;
   font-family: "Conv_Montserrat-Regular";
@@ -45,4 +55,77 @@
 
 .form-element {
   margin: 0 0 20px 0;
+}
+
+.dropdown-hidden {
+  min-width: 318px;
+  min-height: 157px;
+  border: 1px solid rgba(31, 32, 65, 0.5);
+  border-radius: 0px 0px 4px 4px;
+  &__item {
+    display: flex;
+    align-content: space-between;
+  }
+}
+
+.adults, .children, .babies {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.adults {
+  margin: 13px 7px 0 15px;
+
+  &-control {
+    display: flex;
+    align-items: center;
+  }
+  &-counter {
+    margin: 0 12px;
+  }
+}
+.children {
+  margin: 13px 7px 0 15px;
+
+  &-control {
+    display: flex;
+    align-items: center;
+  }
+  &-counter {
+    margin: 0 12px;
+  }
+}
+.babies {
+  margin: 13px 7px 0 15px;
+
+  &-control {
+    display: flex;
+    align-items: center;
+  }
+  &-counter {
+    margin: 0 12px;
+  }
+}
+
+.minus, .plus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 18px;
+  height: 30px;
+  width: 30px;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+}
+
+.apply-clear {
+  display: flex;
+  font-weight: bold;
+  justify-content: space-between;
+  text-transform: uppercase;
+  color: #BC9CFF;
+  cursor: pointer;
+  margin: 10px 7px 13px 13px;
 }
