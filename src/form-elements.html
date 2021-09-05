@@ -11,55 +11,79 @@
 <body>
 
   <div class="container">
-    <div class="colum-1">
+    <div class="colum">
 
-      <div class="form-element">
-        <div class="space-b">
-          <h3>Text Field</h3> <span>DEFAULT</span>
+      <div class="colum__inner">
+        <div class="form-element">
+          <div class="space-b mg-b-5">
+            <h3>Text Field</h3> <span>DEFAULT</span>
+          </div>
+          <input class="input" type="text" placeholder="Email">
         </div>
-        <input class="input" type="text" placeholder="Email">
-      </div>
-
-      <div class="form-element">
-        <div class="space-b">
-          <h3>Text Field</h3> <span>HOVER / FOCUS</span>
+        <div class="form-element">
+          <div class="space-b mg-b-5">
+            <h3>Text Field</h3> <span>HOVER / FOCUS</span>
+          </div>
+          <input class="input-active" type="text" placeholder="Email" value="This is pretty awesome">
         </div>
-        <input class="input-active" type="text" placeholder="Email" value="This is pretty awesome">
-      </div>
-
-      <div class="form-element">
-        <div class="space-b">
-          <h3>Dropdown</h3>
-        </div>
-        <div id="dropdown" class="button space-b">Сколько гостей<img class="expand_more"
-            src="./assets/images/expand_more_black_24dp.svg">
-        </div>
-        <div class="dropdown-hidden">
-
-          <div class="dropdown-hidder__item">
-            <div>
-              <div class="adults">
-                <h3>ВЗРОСЛЫЕ</h3>
-                <div class="adults-control"><div id="minus-adults" class="minus">-</div> <span id="adults-counter" class="adults-counter">0</span> <div id="plus-adults" class="plus">+</div></div>
+        <div class="form-element dropdown-menu">
+          <div class="space-b mg-b-5">
+            <h3>Dropdown</h3>
+          </div>
+          <div id="dropdown" class="button space-b">Сколько гостей<img class="expand_more"
+              src="./assets/images/expand_more_black_24dp.svg">
+          </div>
+          <div id="dropdown-show" class="dropdown-show dropdown-hidden">
+            <div class="dropdown-hidder__item">
+              <div>
+                <div class="adults">
+                  <h3>ВЗРОСЛЫЕ</h3>
+                  <div class="adults-control">
+                    <div id="minus-adults" class="minus">-</div> <span id="adults-counter"
+                      class="adults-counter">0</span>
+                    <div id="plus-adults" class="plus">+</div>
+                  </div>
+                </div>
+                <div class="children">
+                  <h3>ДЕТИ</h3>
+                  <div class="children-control">
+                    <div id="minus-children" class="minus">-</div> <span id="children-counter"
+                      class="children-counter">0</span>
+                    <div id="plus-children" class="plus">+</div>
+                  </div>
+                </div>
+                <div class="babies">
+                  <h3>МЛАДЕНЦЫ</h3>
+                  <div class="babies-control">
+                    <div id="minus-babies" class="minus">-</div> <span id="babies-counter"
+                      class="babies-counter">0</span>
+                    <div id="plus-babies" class="plus">+</div>
+                  </div>
+                </div>
               </div>
-              <div class="children">
-                <h3>
-                  ДЕТИ
-                </h3>
-                <div class="children-control"><div id="minus-children" class="minus">-</div> <span id="children-counter" class="children-counter">0</span> <div id="plus-children"  class="plus">+</div></div>
+              <div class="apply-clear">
+                <span>Очистить</span>
+                <span>Применить</span>
               </div>
-              <div class="babies">
-                <h3>МЛАДЕНЦЫ</h3>
-                <div class="babies-control"><div id="minus-babies" class="minus">-</div> <span id="babies-counter" class="babies-counter">0</span> <div id="plus-babies" class="plus">+</div></div>
-              </div>
-            </div>
-
-            <div class="apply-clear">
-              <span>Очистить</span>
-              <span>Применить</span>
             </div>
           </div>
+        </div>
+      </div>
 
+      <div class="colum__inner">
+        <div class="form-element">
+          <div class="mg-b-5">
+            <h3 class="mg-b-16">Checkbox Buttons</h3>
+            <div class="checkbox-buttons"><button type="button" class="checkbox-button"></button>
+              <span>Можно курить</span>
+            </div>
+            <div class="checkbox-buttons"><button type="button" class="checkbox-button"></button>
+              <span>Можно с питомцами</span>
+            </div>
+            <div class="checkbox-buttons"><button type="button" class="checkbox-button"></button>
+              <span>Можно пригласить гостей <br> (до 10 человек)</span>
+            </div>
+          </div>
         </div>
       </div>
 

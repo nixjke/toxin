@@ -1,13 +1,25 @@
-.colum-1 {
+.colum {
+  display: flex;
+}
+
+.colum__inner {
   width: 320px;
   margin: 140px 20px;
+  margin-right: 126px;
 }
 
 .space-b {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.mg-b-5 {
   margin: 0 0 5px 0;
+}
+
+.mg-b-16 {
+  margin: 0 0 16px 0;
 }
 
 .input {
@@ -46,6 +58,7 @@
   padding: 12px 15px;
   border-radius: 4px;
   outline: none;
+  user-select: none;
   font-family: "Conv_Montserrat-Regular";
   font-size: 14px;
   border: 1px solid rgba(31, 32, 65, 0.25);
@@ -57,7 +70,33 @@
   margin: 0 0 20px 0;
 }
 
+.dropdown-active {
+  border-radius: 4px 4px 0 0;
+  border: 1px solid rgba(31, 32, 65, 0.5);
+}
+.dropdown-menu {
+  position: relative;
+}
+.dropdown-default {
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 4px;
+}
+
 .dropdown-hidden {
+  border: 1px solid rgba(31, 32, 65, 0.5);
+  border-radius: 0px 0px 4px 4px;
+
+  visibility: hidden;
+
+  position: absolute;
+
+  &__item {
+    display: flex;
+    align-content: space-between;
+  }
+}
+
+.dropdown-show {
   min-width: 318px;
   min-height: 157px;
   border: 1px solid rgba(31, 32, 65, 0.5);
@@ -68,7 +107,9 @@
   }
 }
 
-.adults, .children, .babies {
+.adults,
+.children,
+.babies {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -108,7 +149,10 @@
   }
 }
 
-.minus, .plus {
+.minus,
+.plus {
+  user-select: none;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -125,7 +169,38 @@
   font-weight: bold;
   justify-content: space-between;
   text-transform: uppercase;
-  color: #BC9CFF;
+  color: #bc9cff;
   cursor: pointer;
   margin: 10px 7px 13px 13px;
+}
+
+// CHECKBOX BUTTONS
+
+.checkbox-button {
+  width: 20px;
+  height: 20px;
+  background-color: #ffffff;
+  border-radius: 4px;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  margin: 0 10px 10px 0;
+  &__active {
+    width: 20px;
+    height: 20px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    border: 1px solid #BC9CFF;
+    margin: 0 10px 10px 0;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    background: url("../images/check_mark.svg") no-repeat center;
+  }
+}
+
+.checkbox-buttons {
+  display: flex;
+  align-items: flex-start;
+  & > span {
+    margin-top: -2px;
+  }
 }

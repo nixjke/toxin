@@ -7,3 +7,4 @@ import "./assets/scss/cards.scss"
 import "./assets/scss/form-elements.scss"
 
 import "./functions/dropdown.js"
+import "./functions/checkbox-buttons"
