@@ -10,6 +10,10 @@ dropDown.addEventListener("click", event => {
   dropDown.classList.toggle("dropdown-active")
   dropDownShow.classList.toggle("dropdown-hidden")
 })
+// dropDown.onclick = function() {
+//   dropDown.classList.toggle("dropdown-active")
+//   dropDownShow.classList.toggle("dropdown-hidden")
+// }
 
 let countAdults = 0
 let countChildren = 0
