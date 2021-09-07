@@ -17,9 +17,14 @@
 .mg-b-5 {
   margin: 0 0 5px 0;
 }
-
+.mg-b-10 {
+  margin: 0 0 10px 0;
+}
 .mg-b-16 {
   margin: 0 0 16px 0;
+}
+.mg-b-40 {
+  margin: 0 0 40px 0;
 }
 
 .input {
@@ -233,4 +238,43 @@
   display: flex;
   align-items: center;
   margin: 0 20px 0 0;
+}
+
+// Toggle
+
+.toggle {
+  display: flex;
+  align-items: center;
+}
+
+input[type="checkbox"] {
+  position: relative;
+  width: 40px;
+  height: 20px;
+  appearance: none;
+  background: #ffffff;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 10px;
+  margin: 0 10px 0 0;
+}
+
+input:checked[type="checkbox"] {
+  border: 1px solid #bc9cff;
+}
+
+input[type="checkbox"]:before {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: rgba(31, 32, 65, 0.25);
+  border-radius: 10px;
+  top: 3px;
+  left: 4px;
+  transition: .2s ease;
+}
+
+input:checked[type="checkbox"]:before {
+  left: 22px;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
 }
