@@ -27,6 +27,8 @@
   margin: 0 0 40px 0;
 }
 
+// Colum 1
+
 .input {
   width: 288px;
   padding: 12px 15px;
@@ -59,6 +61,7 @@
 }
 
 .button {
+  cursor: pointer;
   width: 288px;
   padding: 12px 15px;
   border-radius: 4px;
@@ -182,6 +185,7 @@
 // CHECKBOX BUTTONS
 
 .checkbox-button {
+  cursor: pointer;
   width: 20px;
   height: 20px;
   background-color: #ffffff;
@@ -216,6 +220,7 @@
 }
 
 .form__radio-button {
+  cursor: pointer;
   width: 20px;
   height: 20px;
   border-radius: 10px;
@@ -248,6 +253,7 @@
 }
 
 input[type="checkbox"] {
+  cursor: pointer;
   position: relative;
   width: 40px;
   height: 20px;
@@ -271,10 +277,72 @@ input[type="checkbox"]:before {
   border-radius: 10px;
   top: 3px;
   left: 4px;
-  transition: .2s ease;
+  transition: 0.2s ease;
 }
 
 input:checked[type="checkbox"]:before {
   left: 22px;
-  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+}
+
+// Like Button
+
+.like-button {
+  display: flex;
+  &__item {
+    cursor: pointer;
+    margin-right: 10px;
+    width: 40px;
+    height: 20px;
+    background: #ffffff;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    &-img {
+      width: 20px;
+      height: 20px;
+      background: url("../images/like_default.svg") no-repeat center;
+    }
+    &-number {
+      font-size: 10px;
+      right: 100%;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      margin-left: 4px;
+    }
+  }
+
+  &__item-active {
+    cursor: pointer;
+    margin-right: 10px;
+    width: 40px;
+    height: 20px;
+    background: #ffffff;
+    border: 1px solid #BC9CFF;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    &-img-active {
+      width: 20px;
+      height: 20px;
+      background: url("../images/like_active.svg") no-repeat center;
+    }
+    &-number-active {
+      font-size: 10px;
+      right: 100%;
+      width: 20px;
+      height: 20px;
+      color: #BC9CFF;
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      margin-left: 4px;
+    }
+  }
 }
