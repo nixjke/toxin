@@ -11,12 +11,11 @@ npm install
 ### Local dev server
 
 ``` bash
-npm run serve
+npm run dev
 ```
 
 ### Build Setup
 
 ``` bash
-npm run dev
 npm run build
 ```
