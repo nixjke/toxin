@@ -346,3 +346,14 @@ input:checked[type="checkbox"]:before {
     }
   }
 }
+
+// Rate Button
+
+.rate {
+  display: flex;
+
+  &__item {
+    margin: 0 20px 0 0;
+    cursor: pointer;
+  }
+}
