@@ -1,0 +1,15 @@
+@import '../../node_modules/normalize.css/normalize.css';
+@import 'utils/variables.scss';
+@import '../fonts/fonts.scss';
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: $font-family;
+  font-size: 14px;
+  color: $DarkShade100;
+}
