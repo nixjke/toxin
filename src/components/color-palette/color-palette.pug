@@ -1,0 +1,20 @@
+mixin colorPalette({ variant, title, description })
+  -
+    let colorPaletteViewClass = 'color-palette__view';
+    const variants = [
+      'dark-shade',
+      'dark-shade-darker',
+      'dark-shade-middle',
+      'dark-shade-light',
+      'dark-shade-lightest',
+      'purple',
+      'green',
+    ]
+    if (variants.includes(variant)) { colorPaletteViewClass += ` color-palette__view_${variant}` }
+    
+  section.color-palette
+    .color-palette__wrap
+      div(class=colorPaletteViewClass)
+      .color-palette__content
+        h2.color-palette__title= title
+        p.color-palette__description= description

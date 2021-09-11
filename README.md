@@ -2,7 +2,7 @@
 
 ## Installation
 
-``` bash
+```bash
 git clone https://github.com/SosiskaPish/toxin.git
 cd toxin
 npm install
@@ -10,13 +10,12 @@ npm install
 
 ### Local dev server
 
-``` bash
-npm run serve
+```bash
+npm run dev
 ```
 
 ### Build Setup
 
-``` bash
-npm run dev
+```bash
 npm run build
 ```

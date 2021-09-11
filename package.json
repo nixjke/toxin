@@ -1,34 +1,59 @@
 {
   "name": "toxin",
   "version": "1.0.0",
-  "description": "",
-  "private": true,
+  "description": "MetaLamp",
+  "main": "src/page/main/main.js",
   "scripts": {
-    "dev": "webpack --mode development",
-    "build": "webpack --mode production",
-    "serve": "webpack server --mode development --open"
+    "dev": "webpack-dev-server --open --hot --config ./webpack.dev.conf.js",
+    "build": "webpack --config ./webpack.build.conf.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/SosiskaPish/toxin.git"
-  },
-  "author": "",
+  "author": "https://github.com/SosiskaPish",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/SosiskaPish/toxin/issues"
-  },
-  "homepage": "https://github.com/SosiskaPish/toxin#readme",
   "devDependencies": {
-    "clean-webpack-plugin": "^4.0.0-alpha.0",
-    "css-loader": "^6.2.0",
-    "file-loader": "^6.2.0",
-    "html-loader": "^2.1.2",
-    "html-webpack-plugin": "^5.3.2",
-    "sass": "^1.37.5",
-    "sass-loader": "^12.1.0",
-    "style-loader": "^3.2.1",
-    "webpack": "^5.50.0",
-    "webpack-cli": "^4.8.0",
-    "webpack-dev-server": "^3.11.2"
-  }
+    "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.11.6",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/preset-env": "^7.11.5",
+    "@prettier/plugin-pug": "^1.15.3",
+    "autoprefixer": "^9.8.6",
+    "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^6.3.0",
+    "css-loader": "^3.6.0",
+    "css-mqpacker": "^7.0.0",
+    "cssnano": "^4.1.10",
+    "file-loader": "^4.3.0",
+    "gh-pages": "^2.2.0",
+    "html-critical-webpack-plugin": "^2.1.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "husky": "^4.3.0",
+    "lint-staged": "^9.5.0",
+    "node-sass": "^4.14.1",
+    "postcss-combine-media-query": "^1.0.1",
+    "postcss-loader": "^3.0.0",
+    "prettier": "2.1.2",
+    "pug": "^3.0.1",
+    "pug-loader": "^2.4.0",
+    "resolve-url-loader": "^3.1.2",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-livereload-plugin": "^2.3.0",
+    "webpack-merge": "^5.4.0"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
 }

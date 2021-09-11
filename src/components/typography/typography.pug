@@ -1,0 +1,17 @@
+mixin typography({ text, variant, hasUpper })
+  -
+    let typographyClass = 'typography'
+    const variants = ['h1', 'h2', 'h3', 'body']
+
+    if (variants.includes(variant)) {typographyClass += ` typography_with-variant-${variant}`}
+
+    if (hasUpper) {typographyClass += ' typography_upper'}
+
+    const variantTag = {
+      'h1': 'h1',
+      'h2': 'h2',
+      'h3': 'h3',
+      'body': 'p'
+    }
+
+  #{variantTag[variant]}(class=typographyClass)= text
