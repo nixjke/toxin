@@ -1,0 +1,54 @@
+.color-palette {
+  &__wrap {
+    display: flex;
+    align-items: center;
+  }
+
+  &__view {
+    margin-right: 40px;
+    width: 70px;
+    height: 70px;
+    border-radius: 6px;
+
+    &_dark-shade {
+      background-color: $darkShade100;
+    }
+
+    &_dark-shade-darker {
+      background-color: $darkShade75;
+    }
+
+    &_dark-shade-middle {
+      background-color: $darkShade50;
+    }
+
+    &_dark-shade-light {
+      background-color: $darkShade25;
+    }
+
+    &_dark-shade-lightest {
+      background-color: $darkShade5;
+    }
+
+    &_purple {
+      background-color: $purple;
+    }
+
+    &_green {
+      background-color: $green;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 8px;
+    font-size: 19px;
+    font-weight: bold;
+  }
+
+  &__description {
+    margin: 0;
+    font-size: 16px;
+    font-weight: normal;
+  }
+}
