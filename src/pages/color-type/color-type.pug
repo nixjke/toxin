@@ -1,0 +1,46 @@
+include ../../components/logo-inactive/logo-inactive
+include ../../components/logo-active/logo-active
+include ../../components/color-palette/color-palette
+include ../../components/typography/typography
+
+block content
+  .color-type__logo-inactive-wrapper
+    +logoInactive
+  .color-type__container
+    .color-type__wrapper
+      ul.color-type__palette 
+        li.color-type__palette-item
+          +colorPalette({ title: 'Dark Shade 100%', description: '#1F2041', variant: 'dark-shade' })
+        li.color-type__palette-item
+          +colorPalette({ title: 'Dark Shade 75%', description: '#1F2041', variant: 'dark-shade-darker', })
+        li.color-type__palette-item
+          +colorPalette({ title: 'Dark Shade 50%', description: '#1F2041', variant: 'dark-shade-middle', })
+        li.color-type__palette-item
+          +colorPalette({ title: 'Dark Shade 25%', description: '#1F2041', variant: 'dark-shade-light', })
+        li.color-type__palette-item
+          +colorPalette({ title: 'Dark Shade 5%', description: '#1F2041', variant: 'dark-shade-lightest', })
+        li.color-type__palette-item
+          +colorPalette({ title: 'Purple', description: '#BC9CFF', variant: 'purple' })
+        li.color-type__palette-item
+          +colorPalette({ title: 'Green', description: '#6FCF97', variant: 'green' }) 
+      .color-type__typography
+        .color-type__typography-item
+          .color-type__typography-label-wrapper
+            p.color-type__typography-label.color-type__typography-label_upper.color-type__typography-label_size_large h1
+          .color-type__typography-wrapper
+            +typography({ text: 'This one is the sub-section or widget title', variant: 'h1', })
+        .color-type__typography-item
+          .color-type__typography-label-wrapper
+            p.color-type__typography-label.color-type__typography-label_upper.color-type__typography-label_size_medium h2
+          .color-type__typography-wrapper
+            +typography({ text: 'Next one is the item title inside widgets', variant: 'h2', })
+        .color-type__typography-item
+          .color-type__typography-label-wrapper
+            p.color-type__typography-label.color-type__typography-label_upper.color-type__typography-label_size_low h3
+          .color-type__typography-wrapper
+            +typography({ text: 'This is a label or CTA text', variant: 'h3', hasUpper: true })
+        .color-type__typography-item
+          .color-type__typography-label-wrapper
+            p.color-type__typography-label Body
+          .color-type__typography-wrapper
+            +typography({ text: 'This is the body text which is used for most of the design, like paragraphs, lists, etc.', variant: 'body', })

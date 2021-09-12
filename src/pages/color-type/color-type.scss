@@ -1,0 +1,73 @@
+@import '../../style/utils/mixin.scss';
+@import '../../style/utils/variables.scss';
+@import '../../components/color-palette/color-palette.scss';
+@import '../../components/typography/typography.scss';
+
+.color-type {
+  &__container {
+    @include container;
+  }
+
+  &__logo-inactive-wrapper {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+  }
+
+  &__wrapper {
+    padding-top: 140px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__palette {
+    margin: 0;
+    padding: 0;
+    padding-left: 10px;
+    list-style: none; 
+  }
+
+  &__palette-item {
+    margin-bottom: 20px;
+  }
+
+  &__typography-item {
+    margin-bottom: 50px;
+    display: flex;
+  }
+
+  &__typography-wrapper {
+    max-width: 336px;
+  }
+
+  &__typography-label-wrapper {
+    margin-right: 30px;
+    width: 37px;
+    text-align: right;
+  }
+
+  &__typography-label {
+    margin: 0;
+    font-family: $font-family;
+    font-size: 14px;
+    font-weight: normal;
+    color: $darkShade75;
+
+    &_upper {
+      text-transform: uppercase;
+    }
+
+    &_size_large {
+      font-size: 24px;
+    }
+
+    &_size_medium {
+      font-size: 19px;
+    }
+
+    &_size_low {
+      font-size: 13px;
+    }
+  }
+}
