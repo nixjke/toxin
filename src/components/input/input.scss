@@ -1,0 +1,85 @@
+.input {
+  display: flex;
+  width: 100%;
+  margin: 20px;
+  width: 320px;
+
+  &:hover {
+    .input__base {
+      border-color: $darkShade75;
+
+      &::placeholder {
+        color: $darkShade75;
+      }
+    }
+
+    .input__button {
+      border-color: $darkShade75;
+    }
+  }
+
+  &__base {
+    padding: 9px 14px;
+    box-sizing: border-box;
+    width: 100%;
+    font-family: $font-family;
+    font-size: 14px;
+    line-height: 24px;
+    color: $darkShade75;
+    border: 1px solid $darkShade25;
+    border-radius: 4px;
+    outline: none;
+    transition: border .2s ease;
+    appearance: none;
+    
+    &::placeholder {
+      color: $darkShade25;
+      transition: color .2s ease;
+    }
+    
+    &:hover,
+    &:focus {
+      border-color: $darkShade50;
+
+      &::placeholder {
+        color: $darkShade75;
+      }
+
+      + .input__button {
+        border-color: $darkShade50;
+      }
+    }
+
+    &_with-button {
+      padding-right: 0;
+      border-right: none;
+      border-radius: 4px 0 0 4px;
+    }
+
+    &_focused {
+      border-color: $darkShade50;
+
+      &::placeholder {
+        color: $darkShade75;
+      }
+    }
+
+  }
+
+  &__button {
+    padding: 0;
+    box-sizing: border-box;
+    width: 44px;
+    height: 44px;
+    background-color: transparent;
+    background-image: url('./img/arrow.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    border: 1px solid rgba(31, 32, 65, .25);
+    border-left: none;
+    border-radius: 0 4px 4px 0;
+    outline: none;
+    transition: border .2s ease, background .1s ease;
+    cursor: pointer;
+  }
+}
