@@ -1,0 +1,23 @@
+.rate-button {
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  &__star {
+    margin-right: 4px;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-image: url('./img/star_default.svg');
+    cursor: pointer;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &_active {
+      background-image: url('./img/star_active.svg');
+    }
+  }
+}
