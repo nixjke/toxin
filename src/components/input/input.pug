@@ -1,10 +1,9 @@
-mixin input({ type, name, placeholder, value, isFocused, withButton, classForJs})
+mixin input({ type, name, placeholder, value, isFocused, withButton})
   -
     let inputBaseClass = 'input__base'
 
     if (isFocused) { inputBaseClass += ' input__base_focused'}
     if (withButton) { inputBaseClass += ' input__base_with-button'}
-    if (classForJs) {inputBaseClass += ` ${classForJs}`}
 
   .input
     input(class=inputBaseClass, type=type, name=name, placeholder=placeholder, value=value)

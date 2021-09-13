@@ -1,0 +1,50 @@
+.dropdown-input {
+  &__wrapper {
+    display: flex;
+    width: 100%;
+    user-select: none;
+
+    &:active {
+      .dropdown-input__button {
+        background-position: center 60%;
+      }
+    }
+  }
+
+  &__body {
+    padding: 9px 14px;
+    box-sizing: border-box;
+    width: 100%;
+    font-family: $font-family;
+    font-size: 14px;
+    line-height: 24px;
+    color: $darkShade75;
+    border: 1px solid $darkShade25;
+    border-right: none;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+    transition: border 0.2s ease;
+    cursor: pointer;
+  }
+
+  &__button {
+    padding: 0;
+    box-sizing: border-box;
+    width: 44px;
+    height: 44px;
+    background-color: transparent;
+    background-image: url('./img/expand_more.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    border: 1px solid $darkShade25;
+    border-left: none;
+    border-radius: 0 4px 4px 0;
+    outline: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+
+    &:active{
+      background-position: center 60%;
+    }
+  }
+}

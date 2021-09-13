@@ -1,0 +1,9 @@
+mixin dropDownInput({ text }) 
+  -
+    let dropDownBodyClass = 'dropdown-input__body'
+    let dropDownButtonClass = 'dropdown-input__button'
+
+  .dropdown-input
+    .dropdown-input__wrapper
+      div(class=dropDownBodyClass)= text
+      button(class=dropDownButtonClass, type='button')

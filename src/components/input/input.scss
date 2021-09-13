@@ -1,16 +1,10 @@
 .input {
   display: flex;
   width: 100%;
-  margin: 20px;
-  width: 320px;
 
   &:hover {
     .input__base {
       border-color: $darkShade75;
-
-      &::placeholder {
-        color: $darkShade75;
-      }
     }
 
     .input__button {
@@ -39,14 +33,10 @@
     
     &:hover,
     &:focus {
-      border-color: $darkShade50;
-
-      &::placeholder {
-        color: $darkShade75;
-      }
+      border-color: $darkShade75;
 
       + .input__button {
-        border-color: $darkShade50;
+        border-color: $darkShade75;
       }
     }
 
@@ -57,7 +47,7 @@
     }
 
     &_focused {
-      border-color: $darkShade50;
+      border-color: $darkShade75;
 
       &::placeholder {
         color: $darkShade75;
@@ -75,7 +65,7 @@
     background-image: url('./img/arrow.svg');
     background-repeat: no-repeat;
     background-position: center center;
-    border: 1px solid rgba(31, 32, 65, .25);
+    border: 1px solid $darkShade25;
     border-left: none;
     border-radius: 0 4px 4px 0;
     outline: none;
