@@ -1,0 +1,87 @@
+.checkbox-buttons {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  &__label {
+    cursor: pointer;
+  }
+
+  &__title {
+    margin: 0;
+    padding-left: 30px;
+    font-family: $font-family;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: bold;
+    color: $darkShade75;
+  }
+
+  &__item {
+    margin: 0;
+    margin-bottom: 12px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__input[type='checkbox'] {
+    display: none;
+    &:checked {
+      & + .checkbox-buttons__label-text::after {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      & + .checkbox-buttons__label-text::before {
+        border-color: $purple;
+      }
+    }
+  }
+
+  &__label-text {
+    position: relative;
+    padding-left: 30px;
+    display: block;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: normal;
+    color: $darkShade50;
+
+    &::before {
+      position: absolute;
+      top: -2px;
+      left: 0;
+      box-sizing: border-box;
+      width: 20px;
+      height: 20px;
+      content: '';
+      background-color: transparent;
+      border: 1px solid $darkShade25;
+      border-radius: 4px;
+      transition: all .2s ease;
+    }
+
+    &::after {
+      position: absolute;
+      top: 3px;
+      left: 5px;
+      visibility: hidden;
+      opacity: 0;
+      content: url('./img/check_mark.svg');
+      background-color: transparent;
+      transition: all .2s ease;
+    }
+
+    &_description {
+      &::before {
+        top: -21px;
+      }
+
+      &::after {
+        top: -16px;
+      }
+    }
+  }
+}
