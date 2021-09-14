@@ -1,0 +1,19 @@
+.date-input {
+  position: relative;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+
+  &__wrapper {
+    margin-right: 20px;
+    flex-grow: 1;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__title-wrapper {
+    margin-bottom: 5px;
+  }
+}

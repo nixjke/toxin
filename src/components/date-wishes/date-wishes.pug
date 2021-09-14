@@ -1,0 +1,22 @@
+include ../typography/typography
+//- include ../button/button
+include ../date-input/date-input
+include ../dropdown-input/dropdown-input
+
+mixin dateWishes
+  section.date-wishes
+    .date-wishes__wrapper
+      form(action='rooms.html')
+        fieldset.date-wishes__fieldset
+          legend.date-wishes__title Найдём номера под ваши пожелания
+          .date-wishes__group
+            +dateInput([
+              { title: 'Прибытие', value: 'ДД.ММ.ГГГГ', classForJs: 'js-arrival-input' },
+              { title: 'Выезд', value: 'ДД.ММ.ГГГГ', classForJs: 'js-departure-input' }
+            ])
+            .date-wishes__date-picker-container
+          .date-wishes__title-wrapper
+            +typography({ text: 'Гости', variant: 'h3', hasUpper: true }) 
+          +dropDownInput({ text: 'Сколько гостей', classForJs: 'js-input-drop-down' })
+          .date-wishes__counter-container
+        //- +button({ title: 'Подобрать номер', withIcon: true, buttonType: 'submit' })
