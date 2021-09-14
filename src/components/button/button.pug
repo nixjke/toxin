@@ -1,0 +1,34 @@
+mixin button(options)
+  -
+     let buttonClass = 'button';
+     const { variant } = options;
+     const variantModifiers = ['outlined', 'text'];
+     if (variantModifiers.includes(variant)) {
+       buttonClass += ` button_with-variant-${variant}`;
+     }
+     const { size } = options;
+     const sizeModifiers = ['large', 'medium', 'higher'];
+     if (sizeModifiers.includes(size)) {
+       buttonClass += ` button_${size}`;
+     }
+    const {
+       isDisabled,
+       isExternalPath,
+       withIcon,
+       buttonType = 'button',
+       title,
+       path,
+     } = options;
+     if (isDisabled) {
+        buttonClass += ' button_disabled';
+     }
+     if (withIcon) {
+       buttonClass += ' button_with-icon';
+     }
+  if path
+    if isExternalPath
+      a(class=buttonClass, target='_blank', rel='noopener noreferrer', href=path)= title
+    else
+      a(class=buttonClass, href=path)= title
+  else
+    button(class=buttonClass, type=buttonType, disabled=isDisabled)= title

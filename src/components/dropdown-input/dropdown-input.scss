@@ -2,6 +2,7 @@
   &__wrapper {
     display: flex;
     width: 100%;
+    min-width: 150px;
     user-select: none;
 
     &:active {
@@ -13,6 +14,7 @@
 
   &__body {
     padding: 9px 14px;
+    padding-right: 0;
     box-sizing: border-box;
     width: 100%;
     font-family: $font-family;
