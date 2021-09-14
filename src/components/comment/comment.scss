@@ -1,0 +1,48 @@
+.comment {
+  &__wrapper {
+    display: flex;
+  }
+
+  &__column {
+    &:first-child {
+      margin-right: 10px;
+    }
+  }
+
+  &__avatar {
+    margin-bottom: 12px;
+    overflow: hidden;
+    width: 45px;
+    height: 45px;
+    background-color: $purple;
+    border: 2px solid white;
+    border-radius: 50%;
+
+    &-img {
+      object-fit: cover;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    color: $darkShade75;
+  }
+
+  &__date {
+    margin: 0;
+    margin-bottom: 14px;
+    font-size: 14px;
+    color: $darkShade75;
+  }
+
+  &__text {
+    margin: 0;
+    width: 99%;
+    font-size: 14px;
+    line-height: 24px;
+    color: $darkShade75;
+  }
+}
