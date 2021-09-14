@@ -1,0 +1,7 @@
+include ../checkbox-buttons/checkbox-buttons
+include ../typography/typography
+
+mixin expandableCheckbox({ summary, items, isOpened })
+  details.expandable-checkbox(open=isOpened)
+    summary.expandable-checkbox__summary= summary
+    +checkboxButtons({ items })
