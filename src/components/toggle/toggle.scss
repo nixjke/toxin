@@ -1,0 +1,53 @@
+.toggle {
+  &__label-text {
+    position: relative;
+    padding-left: 50px;
+    display: block;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: normal;
+    color: $darkShade50;
+    cursor: pointer;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      box-sizing: border-box;
+      width: 40px;
+      height: 20px;
+      content: '';
+      background-color: transparent;
+      border: 1px solid $darkShade25;
+      border-radius: 10px;
+      transition: all .2s ease;
+    }
+
+    &::after {
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      width: 12px;
+      height: 12px;
+      content: '';
+      background: $darkShade25;
+      border-radius: 50%;
+      transition: transform .2s ease 0s;
+    }
+  }
+
+  &__input[type='checkbox'] {
+    display: none;
+
+    &:checked {
+      & + .toggle__label-text::after {
+        background: $gradient;
+        transform: translateX(20px);
+      }
+
+      & + .toggle__label-text::before {
+        border-color: $purple;
+      }
+    }
+  }
+}

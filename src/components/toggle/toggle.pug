@@ -1,0 +1,10 @@
+mixin toggle({ text, isChecked })
+  -
+    let labelClass = 'toggle__label-text'
+    let inputClass = 'toggle__input'
+
+  .toggle
+    .toggle__wrap
+      label.toggle__label
+        input.toggle__input(class=inputClass type='checkbox', checked=isChecked)
+        span.toggle__label-text(class=labelClass)= text
