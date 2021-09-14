@@ -1,5 +1,5 @@
 include ../typography/typography
-//- include ../button/button
+include ../button/button
 include ../date-input/date-input
 include ../dropdown-input/dropdown-input
 
@@ -12,11 +12,11 @@ mixin dateWishes
           .date-wishes__group
             +dateInput([
               { title: 'Прибытие', value: 'ДД.ММ.ГГГГ', classForJs: 'js-arrival-input' },
-              { title: 'Выезд', value: 'ДД.ММ.ГГГГ', classForJs: 'js-departure-input' }
+              { title: 'Выезд', value: 'ДД.ММ.ГГГГ', classForJs: 'js-departure-input' },
             ])
-            .date-wishes__date-picker-container
+            .date-wishes__date-picker-container.js-date-picker-container
           .date-wishes__title-wrapper
             +typography({ text: 'Гости', variant: 'h3', hasUpper: true }) 
           +dropDownInput({ text: 'Сколько гостей', classForJs: 'js-input-drop-down' })
-          .date-wishes__counter-container
-        //- +button({ title: 'Подобрать номер', withIcon: true, buttonType: 'submit' })
+          .date-wishes__counter-container.js-drop-down-counter-container
+        +button({ title: 'Подобрать номер', withIcon: true, buttonType: 'submit' })

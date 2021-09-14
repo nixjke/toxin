@@ -4,8 +4,8 @@ include ../typography/typography
 mixin dateInput(inputs)
   .date-input
     each input in inputs
-      - const { title, value } = input
-    .date-input__wrapper
-      .date-input__title_wrapper
-        +typography({ text: title, variant: 'h3', hasUpper: true })
-      +dropDownInput({ text: value })
+      - const {title, value, classForJs} = input;
+      .date-input__wrapper
+        .date-input__title-wrapper
+          +typography({ text: title, variant: 'h3', hasUpper: true })
+        +dropDownInput({ text: value })
