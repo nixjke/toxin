@@ -1,0 +1,41 @@
+.like-button {
+  &__default {
+    position: relative;
+    margin: 0;
+    padding: 3px 0;
+    padding-right: 12px;
+    padding-left: 20px;
+    box-sizing: border-box;
+    min-width: 40px;
+    min-height: 20px;
+    font-family: $font-family;
+    font-size: 10px;
+    line-height: 12px;
+    font-weight: normal;
+    content: '';
+    color: $darkShade50;
+    background-color: transparent;
+    border: 1px solid $darkShade25;
+    border-radius: 10px;
+    cursor: pointer;
+
+    &::after {
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      width: 10px;
+      height: 8px;
+      content: '';
+      background: url('./img/like_default.svg') no-repeat;
+    }
+
+  }
+  &__active {
+    color: $purple;
+    border-color: $purple;
+
+    &::after {
+      background: url('./img/like_active.svg') no-repeat;
+    }
+  }
+}
