@@ -1,0 +1,22 @@
+include ../input/input
+include ../button/button
+
+mixin authCard
+  .auth-card
+    .auth-card__wrapper
+      form()
+        h2.auth-card__title Войти
+        fieldset.auth-card__fieldset
+          .auth-card__input-wrapper
+            +input({ name: 'email', placeholder: 'Email', type: 'email' })
+          +input({ name: 'pass', placeholder: 'Пароль', type: 'password', })
+        +button({ title: 'Войти', withIcon: true, buttonType: 'submit' })
+      .auth-card__account-enter
+        p.auth-card__account-enter-text Нет аккаунта на Toxin?
+        .auth-card__registration-button-wrapper
+          +button({ 
+            path: 'registration.html',
+            title: 'Создать',
+            variant: 'outlined',
+            size: 'medium',
+          })

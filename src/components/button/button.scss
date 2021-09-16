@@ -35,9 +35,9 @@
 
   &_with-variant-outlined {
     padding: 8px 18px;
-    color: $darkShade100;
+    color: $purple;
     background: #fff;
-    border: 2px solid $darkShade100;
+    border: 2px solid $purple;
 
     &::before {
       display: none;
@@ -45,7 +45,8 @@
     &:hover {
       opacity: 1;
       background: #fff;
-      border: 2px solid lighten($darkShade100, 10%);
+      border: 2px solid #DDCEFF;
+      
     }
   }
 
