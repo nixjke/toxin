@@ -1,0 +1,88 @@
+include ../logo-active/logo-active
+include ../nav-menu/nav-menu
+include ../input/input
+include ../copyright/copyright
+include ../social-buttons/social-buttons
+include ../typography/typography
+
+mixin footer({ isShort, copyrightYear })
+  -
+    const navMenuItems = [
+      {
+        title: 'Навигация',
+        list: [
+          { label: 'О нас', path: 'not-found-page.html' },
+          { label: 'Новости', path: 'not-found-page.html' },
+          { label: 'Служба поддержки', path: 'not-found-page.html' },
+          { label: 'Услуги', path: 'not-found-page.html' }
+        ]
+      },
+      {
+        title: 'О нас',
+        list: [
+          { label: 'О сервисе', path: 'not-found-page.html' },
+          { label: 'Наша команда', path: 'not-found-page.html' },
+          { label: 'Вакансии', path: 'not-found-page.html' },
+          { label: 'Инвесторы', path: 'not-found-page.html' }
+        ]
+      },
+      {
+        title: 'Служба поддержки',
+        list: [
+          { label: 'Соглашения', path: 'not-found-page.html' },
+          { label: 'Сообщества', path: 'not-found-page.html' },
+          { label: 'Связь с нами', path: 'not-found-page.html' }
+        ]
+      }
+    ];
+    let footerClass = 'page-footer';
+    if (isShort) {
+      footerClass += ' page-footer_short';
+    }
+  footer(class=footerClass)
+    .page-footer__container
+      if (isShort)
+        .page-footer__wrapper.page-footer__wrapper_short
+          .page-footer__logo-wrapper.page-footer__logo-wrap_short
+            +logoActive
+          .page-footer__copyright-wrapper.page-footer__copyright-wrap_short 
+            +copyright(copyrightYear)
+          +socialButtons
+      else
+        .page-footer__wrapper
+          .page-footer__content
+            .page-footer__col.page-footer__col_large
+              .page-footer__logo-wrapper
+                +logoActive
+              .page-footer__text-content-wrapper
+                +typography({
+                  variant: 'body',
+                  text: 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»',
+                })
+            .page-footer__col-group
+              .page-footer__col
+                .page-footer__title-nav-wrapper
+                  +typography({ variant: 'h3', text: 'Навигация', hasUpper: true })
+                +navMenu(navMenuItems[0])
+              .page-footer__col
+                .page-footer__title-nav-wrapper
+                  +typography({ variant: 'h3', text: 'О нас', hasUpper: true })
+                +navMenu(navMenuItems[1])
+              .page-footer__col
+                .page-footer__title-nav-wrapper
+                  +typography({ variant: 'h3', text: 'Служба поддержки', hasUpper: true })
+                +navMenu(navMenuItems[2])
+              section.page-footer__col.page-footer__col_large
+                .page-footer__title-wrapper
+                  +typography({ variant: 'h3', text: 'Подписка', hasUpper: true })
+                .page-footer__text-content-wrapper
+                  +typography({
+                    variant: 'body',
+                    text: 'Получайте специальные предложения и новости сервиса',
+                  })
+                form(action='not-found-page.html')
+                  +input({ type: 'text', name: 'date', placeholder: 'Email', withButton: true })
+          .page-footer__side-info
+            .page-footer__copyright-wrapper
+              +copyright(copyrightYear)
+            +socialButtons

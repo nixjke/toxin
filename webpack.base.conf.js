@@ -31,6 +31,7 @@ ENTRY_FILES.forEach((entryFile, index) => {
 })
 
 module.exports = {
+  mode: 'development',
   externals: {
     paths: PATHS,
   },
