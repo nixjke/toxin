@@ -1,2 +1,26 @@
-include ../../components/register-card/register-card
-+registerCard
+include ../../components/header/header
+-
+  const menuItems = [
+    { title: 'О нас', path: 'not-found-page.html' },
+    { 
+      title: 'Услуги',
+      path: 'not-found-page.html',
+      subMenu: [
+        { title: 'Подбор отелей', path: 'not-found-page.html' },
+        { title: 'Заказать трансфер', path: 'not-found-page.html' },
+        { title: 'Рейтинг отелей', path: 'not-found-page.html' }
+      ]
+    },
+    { title: 'Вакансии', path: 'not-found-page.html' },
+    { title: 'Новости', path: 'not-found-page.html' },
+    {
+      title: 'Соглашения',
+      path: 'not-found-page.html',
+      subMenu: [
+        { title: 'Пользовательские', path: 'not-found-page.html' },
+        { title: 'Международные', path: 'not-found-page.html' }
+      ]
+    }
+  ]
+
++header({ customMenuItems: menuItems })

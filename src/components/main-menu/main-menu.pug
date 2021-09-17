@@ -1,0 +1,27 @@
+mixin mainMenu(menuItems)
+  .main-menu.js-main-menu
+    .main-menu__burger-icon.js-main-menu-burger-btn
+      span.main-menu__burger-line
+      span.main-menu__burger-line
+      span.main-menu__burger-line
+    nav.main-menu__nav
+      ul.main-menu__list
+        each item in menuItems
+          -
+            const { title, subMenu, isActive } = item;
+            let { path } = item;
+            let itemClass = 'main-menu__item';
+            if (subMenu) {
+              itemClass += ' main-menu__item_with-sub-menu js-main-menu-item-sub-menu';
+            }
+            if (isActive) {
+              itemClass += ' main-menu__item_active';
+              path = null;
+            }
+          li(class=itemClass)
+            a.main-menu__item-link(href=path)= title
+            if subMenu
+              ul.main-menu__sub-menu
+                each subItem in subMenu
+                  li.main-menu__sub-item
+                    a.main-menu__item-link(href=subItem.path)= subItem.title

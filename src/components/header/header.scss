@@ -1,0 +1,183 @@
+.page-header {
+  position: relative;
+  background-color: white;
+  box-shadow: 0 10px 20px rgba(31, 32, 65, .05);
+
+  &__container {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    min-width: 320px;
+    max-width: 1160px;
+  }
+
+  &__wrap {
+    position: relative;
+    padding: 13px 0;
+    display: flex;
+    flex-wrap: wrap;
+
+    @media (max-width: 425px) {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+  }
+
+  &__auth {
+    margin-left: 22px;
+    padding-bottom: 1px;
+    display: flex;
+    align-items: center;
+
+    &_authenticated {
+      position: relative;
+      padding-left: 20px;
+
+      @media (max-width: 380px) {
+        margin-right: 10px;
+        padding-right: 0;
+      }
+
+      &::before {
+        position: absolute;
+        left: 0;
+        width: 1px;
+        height: 30px;
+        opacity: .1;
+        content: '';
+        background: $darkShade100;
+
+        @media (max-width: 1024px) {
+          right: 0;
+          left: auto;
+        }
+
+        @media (max-width: 380px) {
+          display: none;
+        }
+      }
+
+      @media (max-width: 1024px) {
+        margin-right: 20px;
+        padding-right: 20px;
+        padding-left: 0;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      margin-left: auto;
+      /* stylelint-disable */
+      order: 2;
+      /* stylelint-enable */
+    }
+  }
+
+  &__auth-list {
+    position: absolute;
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+
+    @media (max-width: 1024px) {
+      position: absolute;
+      z-index: 100;
+      top: 55px;
+      left: 50%;
+      padding: 0;
+      display: block;
+      visibility: hidden;
+      width: 100vw;
+      list-style: none;
+      background: #fff;
+      transition: transform .3s ease-in-out;
+      transform: translate(-50%, -10px);
+    }
+
+    &_active {
+      @media (max-width: 1024px) {
+        visibility: visible;
+        opacity: 1;
+        transform: translate(-50%, 0);
+      }
+    }
+
+    .page-header__auth-item {
+      @media (max-width: 1024px) {
+        width: 100%;
+      }
+
+      &:last-child {
+        @media (max-width: 1024px) {
+          box-shadow: 0 4px 2px -2px rgba(0, 0, 0, .2);
+        }
+      }
+    }
+
+    .page-header__auth-item-link {
+      @media (max-width: 1024px) {
+        padding: 20px 0;
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        vertical-align: top;
+        text-decoration: none;
+        color: transparentize($darkShade100, .5);
+        border-top: 1px solid transparentize($darkShade100, .75);
+      }
+    }
+
+    .page-header__auth-item-link:hover {
+      @media (max-width: 1024px) {
+        opacity: .5;
+      }
+    }
+  }
+
+  &__auth-btn-wrap {
+    margin-right: 20px;
+
+    @media (max-width: 1024px) {
+      display: none;
+    }
+  }
+
+  &__registration-btn-wrap {
+    @media (max-width: 1024px) {
+      display: none;
+    }
+  }
+
+  &__user-name {
+    margin: 0;
+    opacity: .5;
+    font-family: $font-family;
+    color: $darkShade100;
+  }
+
+  &__auth-profile {
+    display: none;
+
+    @media (max-width: 1024px) {
+      position: absolute;
+      right: 40px;
+      display: block;
+      box-sizing: border-box;
+      width: 24px;
+      height: 24px;
+      content: '';
+      background: url('./img/user.svg') no-repeat;
+      border: none;
+      cursor: pointer;
+    }
+
+    @media (min-width: 320px) and (max-width: 425px) {
+      right: 60px;
+    }
+
+    &_hidden {
+      @media (max-width: 1024px) {
+        display: none;
+      }
+    }
+  }
+}

@@ -10,20 +10,20 @@ mixin header({ customMenuItems, userName })
     }
   header.page-header
     .page-header__container
-      .page-header__wrapper
+      .page-header__wrap
         +logoActive
         +mainMenu(customMenuItems)
         section(class=authClass)
           if userName
             p.page-header__user-name= userName
           else
-            .page-header__auth-btn-wrapper
+            .page-header__auth-btn-wrap
               +button({ title: 'Войти', path: 'auth.html', variant: 'outlined' })
-            .page-header__registration-btn-wrapper
+            .page-header__registration-btn-wrap
               +button({ title: 'Зарегистрироваться', path: 'registration.html' })
             ul.page-header__auth-list.js-auth-list
               li.page-header__auth-item
-                a.page-header__auth-item-link(href='auth.html')= 'Войти'
+                a.page-header__auth-item-link(href='auth.html')= "Войти"
               li.page-header__auth-item
-                a.page-header__auth-item-link(href='registration.html')= 'Зарегистрироваться'
+                a.page-header__auth-item-link(href='registration.html')= "Зарегистрироваться"
             button.page-header__auth-profile.js-profile-btn(type='button')
