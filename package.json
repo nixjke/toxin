@@ -45,6 +45,7 @@
     "webpack-merge": "^5.4.0"
   },
   "dependencies": {
+    "air-datepicker": "^2.2.3",
     "normalize.css": "^8.0.1"
   },
   "husky": {
