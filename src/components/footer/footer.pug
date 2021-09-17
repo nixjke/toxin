@@ -43,9 +43,9 @@ mixin footer({ isShort, copyrightYear })
     .page-footer__container
       if (isShort)
         .page-footer__wrapper.page-footer__wrapper_short
-          .page-footer__logo-wrapper.page-footer__logo-wrap_short
+          .page-footer__logo-wrapper.page-footer__logo-wrapper_short
             +logoActive
-          .page-footer__copyright-wrapper.page-footer__copyright-wrap_short 
+          .page-footer__copyright-wrapper.page-footer__copyright-wrapper_short 
             +copyright(copyrightYear)
           +socialButtons
       else
