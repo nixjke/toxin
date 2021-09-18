@@ -1,5 +1,6 @@
 const path = require('path')
 const fs = require('fs')
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const LiveReloadPlugin = require('webpack-livereload-plugin')
@@ -129,6 +130,10 @@ module.exports = {
     ],
   },
   plugins: [
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+    }),
     new CleanWebpackPlugin(),
     new LiveReloadPlugin({ appendScriptTag: true }),
     new CopyWebpackPlugin({
