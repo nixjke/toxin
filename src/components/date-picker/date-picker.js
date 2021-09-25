@@ -17,7 +17,6 @@ const Calendar = function Calendar($element, options) {
 
 Calendar.prototype.typeSingle = TYPE_SINLGE
 Calendar.prototype.typeDouble = TYPE_DOUBLE
-
 Calendar.prototype.init = function init($element, { type }) {
   this.type = type
 
@@ -57,7 +56,6 @@ Calendar.prototype.initDatepicker = function initDatepicker() {
         that.addButtons(inst.$datepicker)
       },
       onSelect() {
-        // We shouldn't change input values immediately
         if (that.type === Calendar.prototype.typeDouble) {
           that.setDropdownValueTypeDouble(that.currentInputValues)
         }
@@ -86,7 +84,7 @@ Calendar.prototype.handleToggleButtonClick = function handleToggleButtonClick() 
 
 Calendar.prototype.setDates = function setDates() {
   const dates = this.type === Calendar.prototype.typeDouble ? this.parseDatesTypeDouble() : this.parseDatesTypeSingle()
-  console.log(dates, dates[1])
+
   const arrIsoFrom = dates[0].split('.')
   const arrIsoTo = dates[1].split('.')
 

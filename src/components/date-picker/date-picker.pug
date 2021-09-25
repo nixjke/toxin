@@ -19,17 +19,19 @@ mixin datePicker(options)
       if type === 'double'
         div(class=createBemClasses({ elementName: 'item', withJsPrefix }))
           if labels.length > 0
-            .calendar__label
+            .calendar__label 
           div(class=createBemClasses({ elementName: 'dropdown', withJsPrefix }))
             +dropDownInput({
               text: placeholder,
+              classForJs: 'js-dropdown'
             })
         div(class=createBemClasses({ elementName: 'item', withJsPrefix }))
           if labels.length > 1
-            .calendar__label
+            .calendar__label 
           div(class=createBemClasses({ elementName: 'dropdown', withJsPrefix }))
             +dropDownInput({
               text: placeholder,
+              classForJs: 'js-dropdown'
             })
       if type === 'single'
         div(class=createBemClasses({elementName: 'item', withJsPrefix}))
@@ -38,5 +40,6 @@ mixin datePicker(options)
           div(class=createBemClasses({elementName: 'dropdown', withJsPrefix}))
             +dropDownInput({
               text: placeholder,
+              classForJs: 'js-dropdown'
             })
     div(class=createBemClasses({elementName: 'container', withJsPrefix }))

@@ -10,5 +10,5 @@ mixin dropDownInput({ text, classForJs })
 
   .dropdown-input
     .dropdown-input__wrapper
-      div(class=dropDownBodyClass)= text
+      input(class=dropDownBodyClass, value=text, readonly)
       button(class=dropDownButtonClass, type='button')
