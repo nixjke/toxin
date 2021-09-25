@@ -1,0 +1,340 @@
+@import '../../style/utils/mixin.scss';
+
+.calendar {
+  $blockClass: &;
+
+  &__group {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+    grid-column-gap: 1.25rem;
+    grid-row-gap: 0.625rem;
+    margin-bottom: 0.375rem;
+  }
+
+  &__label {
+    margin-bottom: 0.3125rem;
+  }
+
+  &__container {
+    position: relative;
+    width: 100%;
+  }
+
+  &__item {
+    word-break: break-word;
+  }
+
+  .datepicker {
+    @include card;
+    font-size: 14px;
+    padding: 15px 18px 18px 20px;
+    display: none;
+    z-index: 100;
+
+    &.active {
+      display: block;
+    }
+
+    &__footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__clear-button {
+      color: $darkShade50;
+    }
+
+    &__apply-button {
+      color: $purple;
+    }
+
+    &--body {
+      display: none;
+      &.active {
+        display: block;
+      }
+    }
+
+    &--content {
+      padding: 1.625rem 0 1.25rem 0;
+    }
+
+    &--nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      line-height: 2rem;
+    }
+
+    &--nav-title,
+    &--nav-action {
+      display: flex;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &--nav-action {
+      @include reset-button;
+      @include reset-outline(text-shadow);
+      color: $purple;
+      &.-disabled- {
+        visibility: hidden;
+      }
+    }
+
+    &--nav-title {
+      font-family: 'Open Sans', Impact, sans-serif;
+      font-size: 19pxm;
+      font-weight: bold;
+      color: $darkShade100;
+      i {
+        font-family: Quicksand, Arial, sans-serif;
+        font-style: normal;
+        padding-left: 5px;
+      }
+    }
+
+    &--cells {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &--cell {
+      cursor: pointer;
+      display: flex;
+      position: relative;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      border-radius: 50%;
+      z-index: 1;
+      color: $darkShade50;
+
+      &.-focus- {
+        background: $gradient;
+        color: white;
+        font-weight: bold;
+
+        &.-range-from-,
+        &.-range-to- {
+          background: $gradient;
+        }
+
+        &.-in-range- {
+          background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
+          color: white;
+        }
+      }
+
+      &.-current- {
+        color: white;
+        font-weight: bold;
+        background: $gradientSecond;
+
+        &.-focus- {
+          color: $gradient;
+        }
+
+        &.-in-range- {
+          color: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
+        }
+      }
+
+      &.-in-range- {
+        border-radius: 0;
+        background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
+        color: $darkShade50;
+
+        &.-disabled- {
+          background: transparent;
+        }
+      }
+
+      &.-in-range-.-current-,
+      &.-range-from- {
+        border-radius: 50%;
+        background: $gradient;
+        font-weight: bold;
+        color: white;
+
+        &:after {
+          position: absolute;
+          content: '';
+          width: 50%;
+          height: 100%;
+          background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
+          right: 0;
+          z-index: -1;
+        }
+
+        &.-disabled- {
+          font-weight: normal;
+          background: transparent;
+
+          &.-focus- {
+            color: $darkShade25;
+          }
+
+          &:after {
+            content: none;
+          }
+        }
+      }
+
+      &.-range-to- {
+        border-radius: 50%;
+        background: $gradient;
+        font-weight: bold;
+        color: white;
+
+        &:before {
+          position: absolute;
+          content: '';
+          width: 50%;
+          height: 100%;
+          background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
+          left: 0;
+          z-index: -1;
+        }
+      }
+
+      &.-range-from-.-range-to- {
+        border-radius: 50%;
+        background-color: $gradient;
+        font-weight: bold;
+      }
+
+      &.-selected- {
+        color: white;
+        background: $gradient;
+
+        &.-focus- {
+          background: $gradient;
+        }
+      }
+    }
+
+    &--days-names {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &--day-name {
+      color: $purple;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      text-align: center;
+      text-transform: capitalize;
+      font-size: 0.75rem;
+      line-height: 2.5rem;
+      font-weight: bold;
+    }
+
+    &--cell-day {
+      width: 14.285714285714286%;
+
+      &.-other-month- {
+        color: $darkShade25;
+
+        &:hover {
+          color: white;
+        }
+
+        &.-selected- {
+          color: white;
+          background: $gradient;
+
+          &.-focus- {
+            background: $gradient;
+          }
+        }
+      }
+
+      &.-disabled-,
+      &.-disabled-.-other-month- {
+        color: $darkShade25;
+        font-weight: normal;
+        background: transparent;
+        cursor: default;
+        &:before {
+          content: none;
+        }
+      }
+
+      &:after {
+        content: '';
+        display: block;
+        padding-top: 100%;
+      }
+    }
+
+    &--cells-years,
+    &--years,
+    &--cells-months {
+      height: 10rem;
+    }
+
+    &--cell-month {
+      width: 33.33%;
+      height: 25%;
+      &.-range-from-,
+      &.-range-to-,
+      &.-range-from-.-range-to-,
+      &.-current-,
+      &.-focus- {
+        border-radius: 0.25rem;
+      }
+      &.-disabled- {
+        font-weight: normal;
+        background: transparent;
+        color: $darkShade25;
+      }
+    }
+
+    &--cell-year {
+      width: 25%;
+      height: 33.33%;
+      &.-range-from-,
+      &.-range-to-,
+      &.-range-from-.-range-to-,
+      &.-current-,
+      &.-selected,
+      &.-focus- {
+        border-radius: 0.25rem;
+      }
+      &.-disabled- {
+        font-weight: normal;
+        background: transparent;
+        color: $darkShade25;
+      }
+    }
+  }
+
+  .datepicker-inline {
+    position: absolute;
+    z-index: 11;
+  }
+
+  &_theme {
+    &_inline {
+      #{$blockClass}__group {
+        display: none;
+      }
+
+      .datepicker-inline {
+        position: static;
+      }
+    }
+  }
+  &_type {
+    &_single {
+      #{$blockClass}__group {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}
