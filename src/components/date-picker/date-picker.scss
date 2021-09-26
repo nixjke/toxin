@@ -1,340 +1,238 @@
-@import '../../style/utils/mixin.scss';
-
-.calendar {
-
-  &__group {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
-    grid-column-gap: 1.25rem;
-    grid-row-gap: 0.625rem;
-    margin-bottom: 0.375rem;
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
   }
 
-  &__label {
-    margin-bottom: 0.3125rem;
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
   }
 
-  &__container {
-    position: relative;
-    width: 100%;
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
   }
 
-  &__item {
-    word-break: break-word;
-  }
-
-  .datepicker {
-    @include card;
-    font-size: 14px;
-    padding: 15px 18px 18px 20px;
-    display: none;
-    z-index: 100;
-    &.active {
-      display: block;
-    }
-
-    &__footer {
-      margin-top: 19px;
-      display: flex;
-    }
-
-    &__clear-button {
-      color: $darkShade50;
-    }
-
-    &__apply-button {
-      color: $purple;
-    }
-
-    &--body {
-      display: none;
-      &.active {
-        display: block;
-      }
-    }
-
-    &--nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 2px;
-    }
-
-    &--nav-title,
-    &--nav-action {
-      display: flex;
-      cursor: pointer;
-      align-items: center;
-      justify-content: center;
-    }
-
-    &--nav-action {
-      @include reset-button;
-      @include reset-outline(text-shadow);
-      color: $purple;
-      &.-disabled- {
-        visibility: hidden;
-      }
-    }
-
-    &--nav-title {
-      font-family: $font-family;
-      font-size: 19pxm;
-      font-weight: bold;
-      color: $darkShade100;
-      i {
-        font-family: Quicksand, Arial, sans-serif;
-        font-style: normal;
-        padding-left: 5px;
-      }
-    }
-
-    &--cells {
-      display: flex;
-      flex-wrap: wrap;
-    }
-
-    &--cell {
-      cursor: pointer;
-      display: flex;
-      position: relative;
-      align-items: center;
-      justify-content: center;
-      font-size: 12px;
-      border-radius: 50%;
-      z-index: 1;
-      color: $darkShade50;
-
-      &.-focus- {
-        background: $gradient;
-        color: white;
-        font-weight: bold;
-
-        &.-range-from-,
-        &.-range-to- {
-          background: $gradient;
-        }
-
-        &.-in-range- {
-          background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
-          color: white;
-        }
-      }
-
-      &.-current- {
-        color: white;
-        font-weight: bold;
-        background: $gradientSecond;
-
-        &.-focus- {
-          color: $gradient;
-        }
-
-        &.-in-range- {
-          color: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
-        }
-      }
-
-      &.-in-range- {
-        border-radius: 0;
-        background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
-        color: $darkShade50;
-
-        &.-disabled- {
-          background: transparent;
-        }
-      }
-
-      &.-in-range-.-current-,
-      &.-range-from- {
-        border-radius: 50%;
-        background: $gradient;
-        font-weight: bold;
-        color: white;
-
-        &:after {
-          position: absolute;
-          content: '';
-          width: 50%;
-          height: 100%;
-          background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
-          right: 0;
-          z-index: -1;
-        }
-
-        &.-disabled- {
-          font-weight: normal;
-          background: transparent;
-
-          &.-focus- {
-            color: $darkShade25;
-          }
-
-          &:after {
-            content: none;
-          }
-        }
-      }
-
-      &.-range-to- {
-        border-radius: 50%;
-        background: $gradient;
-        font-weight: bold;
-        color: white;
-
-        &:before {
-          position: absolute;
-          content: '';
-          width: 50%;
-          height: 100%;
-          background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
-          left: 0;
-          z-index: -1;
-        }
-      }
-
-      &.-range-from-.-range-to- {
-        border-radius: 50%;
-        background-color: $gradient;
-        font-weight: bold;
-      }
-
-      &.-selected- {
-        color: white;
-        background: $gradient;
-
-        &.-focus- {
-          background: $gradient;
-        }
-      }
-    }
-
-    &--days-names {
-      display: flex;
-      flex-wrap: wrap;
-    }
-
-    &--day-name {
-      color: $purple;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex: 1;
-      text-align: center;
-      text-transform: capitalize;
-      font-size: 0.75rem;
-      line-height: 2.5rem;
-      font-weight: bold;
-    }
-
-    &--cell-day {
-      width: 14.285714285714286%;
-
-      &.-other-month- {
-        color: $darkShade25;
-
-        &:hover {
-          color: white;
-        }
-
-        &.-selected- {
-          color: white;
-          background: $gradient;
-
-          &.-focus- {
-            background: $gradient;
-          }
-        }
-      }
-
-      &.-disabled-,
-      &.-disabled-.-other-month- {
-        color: $darkShade25;
-        font-weight: normal;
-        background: transparent;
-        cursor: default;
-        &:before {
-          content: none;
-        }
-      }
-
-      &:after {
-        content: '';
-        display: block;
-        padding-top: 100%;
-      }
-    }
-
-    &--cells-years,
-    &--years,
-    &--cells-months {
-      height: 10rem;
-    }
-
-    &--cell-month {
-      width: 33.33%;
-      height: 25%;
-      &.-range-from-,
-      &.-range-to-,
-      &.-range-from-.-range-to-,
-      &.-current-,
-      &.-focus- {
-        border-radius: 0.25rem;
-      }
-      &.-disabled- {
-        font-weight: normal;
-        background: transparent;
-        color: $darkShade25;
-      }
-    }
-
-    &--cell-year {
-      width: 25%;
-      height: 33.33%;
-      &.-range-from-,
-      &.-range-to-,
-      &.-range-from-.-range-to-,
-      &.-current-,
-      &.-selected,
-      &.-focus- {
-        border-radius: 0.25rem;
-      }
-      &.-disabled- {
-        font-weight: normal;
-        background: transparent;
-        color: $darkShade25;
-      }
-    }
-  }
-
-  .datepicker-inline {
-    position: absolute;
-    z-index: 11;
-  }
-
-  &_theme {
-    &_inline {
-      &__group {
-        display: none;
-      }
-
-      .datepicker-inline {
-        position: static;
-      }
-    }
-  }
-  &_type {
-    &_single {
-      &__group {
-        grid-template-columns: 1fr;
-      }
-    }
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
   }
 }
 
-.button__date-picker {
-  width: 0%;
-  &:last-child {
-    margin-left: 196px;
+.date-picker {
+  position: absolute;
+  z-index: 100;
+  top: -200px;
+  left: 0;
+  visibility: hidden;
+  box-sizing: border-box;
+  width: 100%;
+  opacity: 0;
+  background-color: white;
+  border: 1px solid rgba(31, 32, 65, .25);
+  border-radius: 4px;
+  box-shadow: 0 10px 20px rgba(31, 32, 65, .05);
+  transition: transform .1s ease-in-out;
+  transform: translateY(-10px);
+
+  &_opened {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &_with-error {
+    transform: translate3d(0, 0, 0);
+    animation: shake .7s cubic-bezier(.36, .07, .19, .97) both;
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+  &_static {
+    position: static;
+    margin: 0;
+  }
+
+  &__wrap {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__control {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  &__slider-btn {
+    width: 24px;
+    height: 24px;
+    font-size: 0;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border: none;
+    outline: none;
+    transition: transform .2s ease;
+    cursor: pointer;
+
+    &:focus {
+      border: 1px solid #1f2041;
+    }
+
+    &_prev {
+      background-image: url('./img/arrow-back.svg');
+
+      &:active {
+        transform: translateX(-5px);
+      }
+    }
+
+    &_next {
+      background-image: url('./img/arrow-back.svg');
+      transform: rotate(180deg);
+
+      &:active {
+        transform: rotate(180deg) translateX(-5px);
+      }
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 19px;
+    line-height: 24px;
+    font-weight: bold;
+  }
+
+  &__calendar {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+
+    .date-picker__day_current {
+      font-weight: bold;
+      color: white;
+      background: $gradientSecond;
+    }
+
+    .date-picker__day_selected {
+      font-weight: bold;
+      color: white;
+      background: $gradient;
+    }
+
+    .date-picker__day_with-error {
+      font-weight: bold;
+      background: tomato;
+    }
+  }
+
+  &__calendar-head,
+  &__day {
+    box-sizing: border-box;
+    width: 40px;
+    height: 40px;
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  &__calendar-head {
+    color: $purple;
+  }
+
+  &__day {
+    font-weight: normal;
+    color: $darkShade50;
+    border-radius: 22px;
+    cursor: pointer;
+
+    &:hover {
+      font-weight: bold;
+      color: white;
+      background: $gradient;
+    }
+
+    &_selected-space {
+      background: transparentize($purple, .75);
+      border-radius: 0;
+    }
+
+    &_not-current {
+      color: $darkShade25;
+    }
+
+    &_lower {
+      height: 32px;
+    }
+
+    &_selected-start,
+    &_selected-end {
+      position: relative;
+
+      &::after {
+        position: absolute;
+        top: 0;
+        width: 36%;
+        height: 100%;
+        content: '';
+        background: linear-gradient(
+          180deg,
+          transparentize($purple, .75),
+          $darkShade25
+        );
+      }
+    }
+
+    &_selected-start {
+      &::after {
+        right: 0;
+      }
+    }
+
+    &_selected-end {
+      &::after {
+        left: 0;
+      }
+    }
+
+    @media (max-width: 320px) {
+      height: 30px;
+    }
+  }
+
+  &__button {
+    padding: 0;
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $darkShade50;
+    background: transparent;
+    border: none;
+    transition: color .2s ease-in-out, transform .1s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      color: $purple;
+    }
+
+    &:active {
+      transform: translateY(3px);
+    }
+
+    &_accent {
+      color: $purple;
+
+      &:hover {
+        color: $darkShade50;
+      }
+    }
   }
 }

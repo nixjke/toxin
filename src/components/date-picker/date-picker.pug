@@ -1,31 +1,31 @@
-include ../dropdown-input/dropdown-input
-
-mixin datePicker(options)
+mixin datePicker({ month, year, calendar })
   -
-    const {
-      theme,
-      type = 'double',
-      placeholder = 'ДД.ММ.ГГГГ',
-      values = ['', ''],
-    } = options || {}
-
-    const bemFactory = require('../../utils/helpers').bemFactory
-    const blockName = 'calendar'
-    const createBemClasses = bemFactory(blockName)
-    const withJsPrefix = true
-    const jsClassTheme = theme ? `js-${blockName}_theme_${theme}` : ''
-
-  div(class=createBemClasses({ modifiers: { theme, type }, withJsPrefix }), class=jsClassTheme)
-    div(class=createBemClasses({ elementName: "group", withJsPrefix }))
-      if type === 'double'
-        div(class=createBemClasses({ elementName: "item", withJsPrefix }))
-          div(class=createBemClasses({ elementName: "dropdown", withJsPrefix }))
-            +dropDownInput({ value: values[0], classForJs: 'js-dropdown', placeholder })
-        div(class=createBemClasses({ elementName: "item", withJsPrefix }))
-          div(class=createBemClasses({ elementName: "dropdown", withJsPrefix }))
-            +dropDownInput({ value: values[1], classForJs: 'js-dropdown', placeholder })
-      if type === 'single'
-        div(class=createBemClasses({ elementName: "item", withJsPrefix }))
-          div(class=createBemClasses({ elementName: "dropdown", withJsPrefix }))
-            +dropDownInput({ name: 'date-filter', value: values, placeholder })
-    div(class=createBemClasses({ elementName: "container", withJsPrefix }))
+    const daysWeekNames = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
+  .date-picker.date-picker_opened.date-picker_static
+    .date-picker__wrap
+      .date-picker__control
+        button.date-picker__slider-btn.date-picker__slider-btn_prev(type='button')
+        h2.date-picker__title= `${month} ${year}`
+        button.date-picker__slider-btn.date-picker__slider-btn_next(type='button')
+      table.date-picker__calendar
+        thead
+          tr
+            each dayName in daysWeekNames
+              th.date-picker__calendar-head= dayName
+        tbody
+          each week in calendar
+            tr
+              each day in week
+                -
+                  const { name, isCurrent, isOutRange } = day;
+                  let cellClass = 'date-picker__day';
+                  if (isCurrent) {
+                    cellClass += ' date-picker__day_current';
+                  }
+                  if (isOutRange) {
+                    cellClass += ' date-picker__day_not-current';
+                  }
+                td(class=cellClass)= name
+      .date-picker__control
+        button.date-picker__button(type='button') Очистить
+        button.date-picker__button.date-picker__button_accent(type='button') Применить
