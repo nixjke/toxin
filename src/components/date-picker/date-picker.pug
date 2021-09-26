@@ -5,41 +5,27 @@ mixin datePicker(options)
     const {
       theme,
       type = 'double',
-      placeholder = 'ДД.ММ.ГГГ',
-      labels = [],
+      placeholder = 'ДД.ММ.ГГГГ',
       values = ['', ''],
     } = options || {}
-    const bemFactory = require('../../utils/helpers').bemFactory;
-    const blockName = 'calendar';
-    const createBemClasses = bemFactory(blockName);
-    const withJsPrefix = true;
-    const jsClassTheme = theme ? `js-${blockName}_theme_${theme}` : '';
-  div(class=createBemClasses({ modifiers: { theme, type }, withJsPrefix }) class=jsClassTheme)
-    div(class=createBemClasses({ elementName: 'group', withJsPrefix }))
+
+    const bemFactory = require('../../utils/helpers').bemFactory
+    const blockName = 'calendar'
+    const createBemClasses = bemFactory(blockName)
+    const withJsPrefix = true
+    const jsClassTheme = theme ? `js-${blockName}_theme_${theme}` : ''
+
+  div(class=createBemClasses({ modifiers: { theme, type }, withJsPrefix }), class=jsClassTheme)
+    div(class=createBemClasses({ elementName: "group", withJsPrefix }))
       if type === 'double'
-        div(class=createBemClasses({ elementName: 'item', withJsPrefix }))
-          if labels.length > 0
-            .calendar__label 
-          div(class=createBemClasses({ elementName: 'dropdown', withJsPrefix }))
-            +dropDownInput({
-              text: placeholder,
-              classForJs: 'js-dropdown'
-            })
-        div(class=createBemClasses({ elementName: 'item', withJsPrefix }))
-          if labels.length > 1
-            .calendar__label 
-          div(class=createBemClasses({ elementName: 'dropdown', withJsPrefix }))
-            +dropDownInput({
-              text: placeholder,
-              classForJs: 'js-dropdown'
-            })
+        div(class=createBemClasses({ elementName: "item", withJsPrefix }))
+          div(class=createBemClasses({ elementName: "dropdown", withJsPrefix }))
+            +dropDownInput({ value: values[0], classForJs: 'js-dropdown', placeholder })
+        div(class=createBemClasses({ elementName: "item", withJsPrefix }))
+          div(class=createBemClasses({ elementName: "dropdown", withJsPrefix }))
+            +dropDownInput({ value: values[1], classForJs: 'js-dropdown', placeholder })
       if type === 'single'
-        div(class=createBemClasses({elementName: 'item', withJsPrefix}))
-          if labels.length > 0
-            .calendar__label
-          div(class=createBemClasses({elementName: 'dropdown', withJsPrefix}))
-            +dropDownInput({
-              text: placeholder,
-              classForJs: 'js-dropdown'
-            })
-    div(class=createBemClasses({elementName: 'container', withJsPrefix }))
+        div(class=createBemClasses({ elementName: "item", withJsPrefix }))
+          div(class=createBemClasses({ elementName: "dropdown", withJsPrefix }))
+            +dropDownInput({ name: 'date-filter', value: values, placeholder })
+    div(class=createBemClasses({ elementName: "container", withJsPrefix }))

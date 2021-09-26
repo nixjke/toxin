@@ -1,4 +1,4 @@
-mixin dropDownInput({ text, classForJs }) 
+mixin dropDownInput({ text, value, placeholder, classForJs })
   -
     let dropDownBodyClass = 'dropdown-input__body'
     let dropDownButtonClass = 'dropdown-input__button'
@@ -8,7 +8,14 @@ mixin dropDownInput({ text, classForJs })
       dropDownButtonClass += ` ${classForJs}`;
     }
 
-  .dropdown-input
+  .dropdown-input.js-dropdown__toggle-button
     .dropdown-input__wrapper
-      input(class=dropDownBodyClass, value=text, readonly)
+      input(
+        class=dropDownBodyClass,
+        title=value || false,
+        value=value || false,
+        placeholder=placeholder || false,
+        type='text',
+        readonly
+      )
       button(class=dropDownButtonClass, type='button')

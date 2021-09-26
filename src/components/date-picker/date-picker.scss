@@ -1,7 +1,6 @@
 @import '../../style/utils/mixin.scss';
 
 .calendar {
-  $blockClass: &;
 
   &__group {
     display: grid;
@@ -30,15 +29,13 @@
     padding: 15px 18px 18px 20px;
     display: none;
     z-index: 100;
-
     &.active {
       display: block;
     }
 
     &__footer {
+      margin-top: 19px;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
     }
 
     &__clear-button {
@@ -56,15 +53,11 @@
       }
     }
 
-    &--content {
-      padding: 1.625rem 0 1.25rem 0;
-    }
-
     &--nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      line-height: 2rem;
+      margin-top: 2px;
     }
 
     &--nav-title,
@@ -85,7 +78,7 @@
     }
 
     &--nav-title {
-      font-family: 'Open Sans', Impact, sans-serif;
+      font-family: $font-family;
       font-size: 19pxm;
       font-weight: bold;
       color: $darkShade100;
@@ -321,7 +314,7 @@
 
   &_theme {
     &_inline {
-      #{$blockClass}__group {
+      &__group {
         display: none;
       }
 
@@ -332,9 +325,16 @@
   }
   &_type {
     &_single {
-      #{$blockClass}__group {
+      &__group {
         grid-template-columns: 1fr;
       }
     }
+  }
+}
+
+.button__date-picker {
+  width: 0%;
+  &:last-child {
+    margin-left: 196px;
   }
 }
