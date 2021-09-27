@@ -1,0 +1,152 @@
+.drop-down-counter {
+  position: absolute;
+  z-index: 100;
+  top: -3px;
+  left: 0;
+  visibility: hidden;
+  box-sizing: border-box;
+  width: 100%;
+  opacity: 0;
+  background: $mainColor;
+  border: 1px solid rgba(31, 32, 65, .5);
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 10px 20px rgba(31, 32, 65, .05);
+  transition: transform .1s ease-in-out;
+  transform: translateY(-10px);
+
+  &_opened {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &__wrap {
+    padding-top: 7px;
+    padding-right: 7px;
+    padding-left: 14px;
+    padding-bottom: 8px;
+  }
+
+  &__count-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__count-item {
+    margin-bottom: 7px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__counter-menu {
+    display: flex;
+    width: 92px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__count-item-name {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  &__select-view {
+    margin: 0;
+    width: 20px;
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  &__counter-btn {
+    position: relative;
+    padding: 0;
+    box-sizing: border-box;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    text-align: center;
+    vertical-align: middle;
+    color: transparentize($contentColor, .5);
+    background: $mainColor;
+    border: 1px solid transparentize($contentColor, .5);
+    border-radius: 50%;
+    cursor: pointer;
+
+    &_with-plus::after {
+      position: absolute;
+      top: 5px;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      content: '+';
+    }
+
+    &_with-minus::after {
+      position: absolute;
+      top: 3px;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      content: '-';
+    }
+
+    &_disabled {
+      color: transparentize($contentColor, .75);
+      border: 1px solid transparentize($contentColor, .75);
+      cursor: default;
+    }
+  }
+
+  &__control {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__button {
+    padding: 0;
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: transparentize($contentColor, .5);
+    background: transparent;
+    border: none;
+    transition: color .2s ease-in-out, transform .1s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      color: $accentColor;
+    }
+
+    &:active {
+      transform: translateY(3px);
+    }
+
+    &_accent {
+      color: $accentColor;
+
+      &:hover {
+        color: transparentize($contentColor, .5);
+      }
+    }
+
+    &_hidden {
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+}
