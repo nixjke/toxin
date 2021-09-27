@@ -45,6 +45,7 @@
     "webpack-merge": "^5.4.0"
   },
   "dependencies": {
+    "@glidejs/glide": "^3.4.1",
     "air-datepicker": "^2.2.3",
     "jquery": "^3.6.0",
     "normalize.css": "^8.0.1"

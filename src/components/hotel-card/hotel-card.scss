@@ -1,0 +1,161 @@
+@import '../../../node_modules/@glidejs/glide/src/assets/sass/glide.core.scss';
+
+.hotel-card {
+  width: 270px;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 10px 20px $darkShade5;
+
+  &:hover {
+    .hotel-card__arrows {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  &__slides {
+    margin: 0;
+  }
+
+  &__picture {
+    border-radius: 4px 4px 0 0;
+  }
+
+  &__arrows {
+    visibility: hidden;
+    opacity: 0;
+    transition: all .2s ease-in;
+  }
+
+  &__slider {
+    position: relative;
+    height: 152px;
+  }
+
+  &__bullets {
+    position: absolute;
+    right: 15px;
+    bottom: 16px;
+    font-size: 0;
+
+    .hotel-card__bullet {
+      margin-right: 3.75px;
+      padding: 0;
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      font-size: 0;
+      vertical-align: middle;
+      background: transparent;
+      border: 1px solid white;
+      border-radius: 50%;
+      cursor: pointer;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    .hotel-card__bullet-active {
+      background-color: white;
+    }
+  }
+
+  &__slider-btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 42px;
+    height: 152px;
+    font-size: 0;
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, .5) 0%,
+      rgba(0, 0, 0, 0) 99.99%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    border: none;
+    border-radius: 5px 0 0;
+    cursor: pointer;
+
+    &::after {
+      position: absolute;
+      top: 69px;
+      left: 18px;
+      width: 8px;
+      height: 13px;
+      content: '';
+      background: url('./img/expand-more.svg') no-repeat;
+      border: none;
+    }
+  }
+
+  &__slider-btn_next {
+    right: -1px;
+    left: auto;
+    border-radius: 0 0 0 5px;
+    transform: rotate(180deg);
+  }
+
+  &__info {
+    padding: 20px;
+  }
+
+  &__info-item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    &:first-child {
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid transparentize($contentColor, .9);
+    }
+  }
+
+  &__title {
+    margin: 0;
+    overflow: hidden;
+    font-size: 13px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    .hotel-card__title-link {
+      text-decoration: none;
+      color: $contentColor;
+      transition: color .4s ease;
+
+      &:hover {
+        color: transparentize($contentColor, .5);
+      }
+    }
+  }
+
+  &__title-text {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  &__title-extra-text {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: $accentColor;
+  }
+
+  &__text {
+    margin: 0;
+    font-family: $font-family;
+    font-size: 12px;
+    color: transparentize($contentColor, .5);
+
+    &_large {
+      font-size: 14px;
+    }
+  }
+
+  &__review-count {
+    font-family: $font-family;
+    font-size: 14px;
+  }
+}
