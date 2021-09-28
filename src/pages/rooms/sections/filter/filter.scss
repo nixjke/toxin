@@ -1,0 +1,44 @@
+.filter {
+  margin-right: 60px;
+
+  @media (max-width: 768px) {
+    margin-right: 0;
+    width: 266px;
+  }
+
+  &__wrap {
+    width: 266px;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+  }
+
+  &__item {
+    margin-bottom: 30px;
+
+    &_less-indent {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__title-wrap {
+    margin-bottom: 5px;
+
+    &_with-bottom-gap {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__explain {
+    margin: 0;
+    margin-top: 14px;
+    font-size: 12px;
+    line-height: 14px;
+    color: $darkShade50;
+  }
+
+  &__counter-container {
+    position: relative;
+  }
+}

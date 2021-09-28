@@ -1,0 +1,36 @@
+include ../../../../components/typography/typography
+include ../../../../components/dropdown-input/dropdown-input
+include ../../../../components/date-input/date-input
+include ../../../../components/range-slider/range-slider
+include ../../../../components/checkbox-buttons/checkbox-buttons
+include ../../../../components/expandable-checkbox/expandable-checkbox
+
+mixin filter
+  .filter
+    .filter__wrap
+      .filter__item.filter__item_less-indent
+        +dateInput([ { title: 'Даты пребывания в отеле', value: '19 авг - 23 авг', classForJs: 'js-drop-down-input' }, ])
+        .rooms-page__date-picker-container.js-date-picker-container
+      .filter__item
+        .filter__title-wrap
+          +typography({ text: 'Гости', variant: 'h3', hasUpper: true })
+        +dropDownInput({ text: '3 гостя, 1 младенец', classForJs: 'js-input-drop-down-guest' })
+        .filter__counter-container.js-drop-down-counter-container-guest
+      .filter__item
+        +rangeSlider({ title: 'Диапазон цены', start: [5000, 10000], step: 100, range: { min: 300, max: 15700 }, })
+        p.filter__explain Стоимость за сутки пребывания в номере
+      .filter__item
+        .filter__title-wrap.filter__title-wrap_with-bottom-gap
+          +typography({ text: 'Правила дома', variant: 'h3', hasUpper: true })
+        +checkboxButtons({ items: [ { label: 'Можно курить' }, { label: 'Можно с питомцами', isChecked: true }, { label: 'Можно пригласить гостей (до 10 человек)', isChecked: true }, ], })
+      .filter__item
+        .filter__title-wrap.filter__title-wrap_with-bottom-gap
+          +typography({ text: 'Доступность', variant: 'h3', hasUpper: true })
+        +checkboxButtons({ items: [ { title: 'Широкий коридор', label: 'Ширина коридоров в номере не менее 91 см.', }, { title: 'Помощник для инвалидов', label: 'На 1 этаже вас встретит специалист и проводит до номера.', }, ], })
+      .filter__item
+        .filter__title-wrap
+          +typography({ text: 'Удобства номера', variant: 'h3', hasUpper: true })
+        +dropDownInput({ text: '2 спальни, 2 кровати...', classForJs: 'js-input-drop-down' })
+        .filter__counter-container.js-drop-down-counter-container
+      .filter__item
+        +expandableCheckbox({ summary: 'Дополнительные удобства', items: [ { label: 'Завтрак' }, { label: 'Письменный стол', isChecked: true }, { label: 'Стул для кормления', isChecked: true }, { label: 'Кроватка', isChecked: true }, { label: 'Телевизор' }, { label: 'Шампунь' }, ], })

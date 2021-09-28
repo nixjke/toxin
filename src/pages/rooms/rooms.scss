@@ -1,0 +1,57 @@
+@import '../../style/utils/variables.scss';
+@import '../../style/utils/mixin.scss';
+@import '../../layout/main/main.scss';
+@import '../../components/header/header.scss';
+@import './sections/filter/filter.scss';
+@import './sections/hotel-rooms/hotel-rooms.scss';
+@import '../../components/button/button.scss';
+@import '../../components/main-menu/main-menu.scss';
+@import '../../components/date-wishes/date-wishes.scss';
+@import '../../components/date-picker/date-picker.scss';
+@import '../../components/input/input.scss';
+@import '../../components/date-input/date-input.scss';
+@import '../../components/dropdown-input/dropdown-input.scss';
+@import '../../components/dropdown-counter/dropdown-counter.scss';
+@import '../../components/hotel-card/hotel-card.scss';
+@import '../../libs/RangeSlider/range-slider.scss';
+@import '../../components/checkbox-buttons/checkbox-buttons.scss';
+@import '../../components/expandable-checkbox/expandable-checkbox.scss';
+@import '../../components/rate-button/rate-button.scss';
+@import '../../components/pagination/pagination.scss';
+@import '../../components/footer/footer.scss';
+@import '../../components/nav-menu/nav-menu.scss';
+@import '../../components/typography/typography.scss';
+@import '../../components/social-buttons/social-buttons.scss';
+@import '../../components/copyright/copyright.scss';
+
+.rooms-page {
+  &__border {
+    border-bottom: 1px solid rgba(31, 32, 65, .25);
+  }
+
+  &__container {
+    @include container;
+  }
+
+  &__wrap {
+    padding: 30px 0 71px;
+    display: flex;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @media (max-width: 425px) {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+  }
+
+  &__date-picker-container {
+    position: relative;
+    top: 205px;
+    left: 0;
+    width: 100%;
+  }
+}

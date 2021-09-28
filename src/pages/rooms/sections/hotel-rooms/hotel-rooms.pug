@@ -1,0 +1,185 @@
+include ../../../../components/typography/typography
+include ../../../../components/hotel-card/hotel-card
+include ../../../../components/pagination/pagination
+
+mixin hotelRooms
+  -
+    const hotels = [
+      {
+        numberHotel: 888,
+        isLux: true,
+        reviewCount: 145,
+        dayCost: '9 990',
+        starCount: 5,
+        images: [
+          { src: './img/hotel-rooms/hotel-room-1.jpg', alt: 'Красивый отель' },
+          { src: './img/hotel-rooms/hotel-room-1.jpg', alt: 'Красивый отель' },
+          { src: './img/hotel-rooms/hotel-room-1.jpg', alt: 'Красивый отель' },
+          { src: './img/hotel-rooms/hotel-room-1.jpg', alt: 'Красивый отель' }
+        ]
+      },
+      {
+        numberHotel: 840,
+        isBtnSliderHide: true,
+        reviewCount: 65,
+        dayCost: '9 900',
+        starCount: 4,
+        images: [
+          { src: './img/hotel-rooms/hotel-room-2.jpg', alt: 'Красивый отель' },
+          { src: './img/hotel-rooms/hotel-room-2.jpg', alt: 'Красивый отель' },
+          { src: './img/hotel-rooms/hotel-room-2.jpg', alt: 'Красивый отель' },
+          { src: './img/hotel-rooms/hotel-room-2.jpg', alt: 'Красивый отель' }
+        ]
+      },
+      {
+        numberHotel: 980,
+        isBtnSliderHide: true,
+        isLux: true,
+        reviewCount: 35,
+        dayCost: '8 500',
+        starCount: 3,
+        images: [
+          { src: './img/hotel-rooms/hotel-room-3.jpg', alt: 'Красивый отель' },
+          { src: './img/hotel-rooms/hotel-room-3.jpg', alt: 'Красивый отель' },
+          { src: './img/hotel-rooms/hotel-room-3.jpg', alt: 'Красивый отель' },
+          { src: './img/hotel-rooms/hotel-room-3.jpg', alt: 'Красивый отель' }
+        ]
+      },
+      {
+        numberHotel: 856,
+        isBtnSliderHide: true,
+        reviewCount: 19,
+        dayCost: '7 300',
+        starCount: 5,
+        images: [
+          { src: './img/hotel-rooms/hotel-room-4.jpg', alt: 'Красивый отель' },
+          { src: './img/hotel-rooms/hotel-room-4.jpg', alt: 'Красивый отель' },
+          { src: './img/hotel-rooms/hotel-room-4.jpg', alt: 'Красивый отель' },
+          { src: './img/hotel-rooms/hotel-room-4.jpg', alt: 'Красивый отель' }
+        ]
+      },
+      {
+        numberHotel: 740,
+        isBtnSliderHide: true,
+        reviewCount: 44,
+        dayCost: '6 000',
+        starCount: 4,
+        images: [
+          { src: './img/hotel-rooms/hotel-room-5.jpg', alt: 'Красивый отель' },
+          { src: './img/hotel-rooms/hotel-room-5.jpg', alt: 'Красивый отель' },
+          { src: './img/hotel-rooms/hotel-room-5.jpg', alt: 'Красивый отель' },
+          { src: './img/hotel-rooms/hotel-room-5.jpg', alt: 'Красивый отель' }
+        ]
+      },
+      {
+        numberHotel: 982,
+        isBtnSliderHide: true,
+        reviewCount: 56,
+        dayCost: '5 800',
+        starCount: 3,
+        images: [
+          { src: './img/hotel-rooms/hotel-room-6.jpg', alt: 'Красивый отель' },
+          { src: './img/hotel-rooms/hotel-room-6.jpg', alt: 'Красивый отель' },
+          { src: './img/hotel-rooms/hotel-room-6.jpg', alt: 'Красивый отель' },
+          { src: './img/hotel-rooms/hotel-room-6.jpg', alt: 'Красивый отель' }
+        ]
+      },
+      {
+        numberHotel: 678,
+        isBtnSliderHide: true,
+        dayCost: '5 500',
+        starCount: 5,
+        reviewCount: 45,
+        images: [
+          { src: './img/hotel-rooms/hotel-room-7.jpg', alt: 'Красивый отель' },
+          { src: './img/hotel-rooms/hotel-room-7.jpg', alt: 'Красивый отель' },
+          { src: './img/hotel-rooms/hotel-room-7.jpg', alt: 'Красивый отель' },
+          { src: './img/hotel-rooms/hotel-room-7.jpg', alt: 'Красивый отель' }
+        ]
+      },
+      {
+        numberHotel: 450,
+        isBtnSliderHide: true,
+        dayCost: '5 300',
+        starCount: 4,
+        reviewCount: 39,
+        images: [
+          { src: './img/hotel-rooms/hotel-room-8.jpg', alt: 'Красивый отель' },
+          { src: './img/hotel-rooms/hotel-room-8.jpg', alt: 'Красивый отель' },
+          { src: './img/hotel-rooms/hotel-room-8.jpg', alt: 'Красивый отель' },
+          { src: './img/hotel-rooms/hotel-room-8.jpg', alt: 'Красивый отель' }
+        ]
+      },
+      {
+        numberHotel: 350,
+        isBtnSliderHide: true,
+        dayCost: '5 000',
+        starCount: 3,
+        reviewCount: 77,
+        images: [
+          { src: './img/hotel-rooms/hotel-room-9.jpg', alt: 'Красивый отель' },
+          { src: './img/hotel-rooms/hotel-room-9.jpg', alt: 'Красивый отель' },
+          { src: './img/hotel-rooms/hotel-room-9.jpg', alt: 'Красивый отель' },
+          { src: './img/hotel-rooms/hotel-room-9.jpg', alt: 'Красивый отель' }
+        ]
+      },
+      {
+        numberHotel: 666,
+        isBtnSliderHide: true,
+        dayCost: '5 000',
+        starCount: 5,
+        reviewCount: 25,
+        images: [
+          { src: './img/hotel-rooms/hotel-room-10.jpg', alt: 'Красивый отель' },
+          { src: './img/hotel-rooms/hotel-room-10.jpg', alt: 'Красивый отель' },
+          { src: './img/hotel-rooms/hotel-room-10.jpg', alt: 'Красивый отель' },
+          { src: './img/hotel-rooms/hotel-room-10.jpg', alt: 'Красивый отель' }
+        ]
+      },
+      {
+        numberHotel: 444,
+        isBtnSliderHide: true,
+        dayCost: '5 000',
+        starCount: 3,
+        reviewCount: 15,
+        images: [
+          { src: './img/hotel-rooms/hotel-room-11.jpg', alt: 'Красивый отель' },
+          { src: './img/hotel-rooms/hotel-room-11.jpg', alt: 'Красивый отель' },
+          { src: './img/hotel-rooms/hotel-room-11.jpg', alt: 'Красивый отель' },
+          { src: './img/hotel-rooms/hotel-room-11.jpg', alt: 'Красивый отель' }
+        ]
+      },
+      {
+        numberHotel: 352,
+        isBtnSliderHide: true,
+        dayCost: '5 000',
+        starCount: 3,
+        reviewCount: 55,
+        images: [
+          { src: './img/hotel-rooms/hotel-room-12.jpg', alt: 'Красивый отель' },
+          { src: './img/hotel-rooms/hotel-room-12.jpg', alt: 'Красивый отель' },
+          { src: './img/hotel-rooms/hotel-room-12.jpg', alt: 'Красивый отель' },
+          { src: './img/hotel-rooms/hotel-room-12.jpg', alt: 'Красивый отель' }
+        ]
+      }
+    ];
+
+    const pages = [
+      { title: '1', path: 'not-found-page.html', isActive: true },
+      { title: '2', path: 'not-found-page.html' },
+      { title: '3', path: 'not-found-page.html' },
+      { title: '...', path: 'not-found-page.html' },
+      { title: '15', path: 'not-found-page.html' },
+      { title: 'Далее', path: 'not-found-page.html', isNext: true },
+    ];
+
+  section.hotels
+    .hotels__wrap
+      .hotels__title-wrap
+        +typography({ variant: 'h1', text: 'Номера, которые мы для вас подобрали' })
+      ul.hotels__list
+        each item in hotels
+          li.hotels__item
+            +hotelCard(item)
+      .hotels__pagination 
+        +pagination(pages)

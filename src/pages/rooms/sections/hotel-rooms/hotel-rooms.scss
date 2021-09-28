@@ -1,0 +1,32 @@
+.hotels {
+  &__title-wrap {
+    margin-bottom: 21px;
+  }
+
+  &__list {
+    margin: 0;
+    margin-bottom: 25px;
+    padding: 0;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+
+    @media (max-width: 595px) {
+      justify-content: center;
+    }
+
+    @media (max-width: 768px) {
+      justify-content: space-around;
+    }
+  }
+
+  &__item {
+    margin-bottom: 21px;
+  }
+
+  &__pagination {
+    text-align: center;
+  }
+}
