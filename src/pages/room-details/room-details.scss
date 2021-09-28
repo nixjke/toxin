@@ -1,0 +1,219 @@
+@import '../../style/utils/variables.scss';
+@import '../../style/utils/mixin.scss';
+@import '../../layout/main/main.scss';
+@import '../../components/header/header.scss';
+@import '../../components/button/button.scss';
+@import '../../components/main-menu/main-menu.scss';
+@import '../../libs/PieChart/pie-chart.scss';
+@import '../../components/features/features.scss';
+@import '../../components/comment/comment.scss';
+@import '../../components/like-button/like-button.scss';
+@import '../../components/bulleted-list/bulleted-list.scss';
+@import '../../components/total-card/total-card.scss';
+@import '../../components/date-picker/date-picker.scss';
+@import '../../components/date-input/date-input.scss';
+@import '../../components/dropdown-input/dropdown-input.scss';
+@import '../../components/dropdown-counter/dropdown-counter.scss';
+@import '../../components/input/input.scss';
+@import '../../components/footer/footer.scss';
+@import '../../components/nav-menu/nav-menu.scss';
+@import '../../components/social-buttons/social-buttons.scss';
+@import '../../components/copyright/copyright.scss';
+@import '../../components/typography/typography.scss';
+
+.room-details {
+  &__container {
+    @include container;
+  }
+
+  &__picture {
+    display: grid;
+    grid-template-columns: 2.15fr 1fr;
+    overflow: hidden;
+
+    @media (max-width: 1440px) {
+      max-height: 485px;
+    }
+
+    @media (max-width: 980px) {
+      display: block;
+      max-height: 100%;
+    }
+
+    &-big {
+      min-width: 100%;
+      max-width: 100%;
+      min-height: 100%;
+      font-size: 0;
+      vertical-align: middle;
+
+      @media (max-width: 1440px) {
+        max-height: 485px;
+      }
+    }
+
+    &-miniature-wrap {
+      @media (max-width: 980px) {
+        display: flex;
+      }
+
+      @media (max-width: 768px) {
+        display: block;
+      }
+    }
+
+    &-miniature {
+      min-width: 100%;
+      max-width: 100%;
+      min-height: 50%;
+      font-size: 0;
+      vertical-align: middle;
+
+      @media (max-width: 1440px) {
+        max-height: 242.5px;
+      }
+
+      @media (max-width: 980px) {
+        min-width: 50%;
+      }
+
+      @media (max-width: 768px) {
+        min-width: 100%;
+      }
+    }
+  }
+
+  &__border {
+    border-bottom: 1px solid rgba(31, 32, 65, .25);
+  }
+
+  &__wrap {
+    padding: 70px 0 57px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    @media (max-width: 1160px) {
+      padding-top: 40px;
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+  }
+
+  &__content {
+    margin-right: 70px;
+    width: 61.3%;
+
+    @media (max-width: 1160px) {
+      margin-right: 0;
+      width: 100%;
+    }
+  }
+
+  &__content-wrap {
+    @media (max-width: 425px) {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+  }
+
+  &__column {
+    margin-bottom: 33px;
+    display: flex;
+    justify-content: space-between;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 800px) {
+      width: 100%;
+      flex-direction: column;
+    }
+  }
+
+  &__features {
+    @media (max-width: 800px) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__title-wrap {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+
+    &_larger-indentation {
+      margin-bottom: 22px;
+    }
+
+    &_with-left-gap {
+      padding-left: 20px;
+    }
+  }
+
+  &__title-alt {
+    padding-top: 6px;
+    font-family: $font-family;
+    font-size: 14px;
+    font-weight: normal;
+    color: transparentize($contentColor, .5);
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 23px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: bold;
+
+    &_low-mb {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__total-card-wrap {
+    @media (max-width: 1160px) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__reviews {
+    margin-bottom: 35px;
+  }
+
+  &__review-wrap {
+    margin-bottom: 27px;
+  }
+
+  &__info {
+    margin-right: 9px;
+    width: 48%;
+
+    @media (max-width: 800px) {
+      width: 100%;
+    }
+
+    .room-details__title {
+      margin-bottom: 20px;
+    }
+
+    .room-details__info-text {
+      margin: 0;
+      width: 100%;
+      font-family: $font-family;
+      font-size: 14px;
+      line-height: 24px;
+      color: transparentize($contentColor, .25);
+    }
+  }
+
+  &__date-picker-container {
+    top: 270px;
+
+    @media (max-width: 380px) {
+      top: 350px;
+    }
+  }
+}

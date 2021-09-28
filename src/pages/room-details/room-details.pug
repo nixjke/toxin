@@ -1,0 +1,114 @@
+extends ../../layout/main/main.pug
+include ../../components/features/features
+include ../../components/pie-chart/pie-chart
+include ../../components/comment/comment
+include ../../components/bulleted-list/bulleted-list
+include ../../components/total-card/total-card
+include ../../components/typography/typography
+
+block variables
+  -
+    const title = 'Toxin - детали комнаты!';
+    const description = 'Room details description';
+    const keywords = 'Toxin keywords';
+    const pageClass = 'room-details';
+    const faviconRoutes = {
+      apple: 'favicons/apple-touch-icon.png',
+      big: 'favicons/favicon-32x32.png',
+      small: 'favicons/favicon-16x16.png',
+      manifest: 'favicons/site.webmanifest',
+      pinned: 'favicons/safari-pinned-tab.svg',
+    };
+
+block content
+  .room-details__picture 
+    .room-details__picture-big-wrap
+      img.room-details__picture-big(
+        src='img/room-details/room-details-1.jpg',
+        alt='Детали комнаты'
+      )
+    .room-details__picture-miniature-wrap
+      img.room-details__picture-miniature(
+        src='img/room-details/room-details-2.jpg',
+        alt='Детали комнаты'
+      )
+      img.room-details__picture-miniature(
+        src='img/room-details/room-details-3.jpg',
+        alt='Детали комнаты'
+      )
+  .room-details__border
+    .room-details__container
+      .room-details__wrap
+        .room-details__content
+          .room-details__content-wrap
+            .room-details__column
+              section.room-details__features
+                .room-details__title-wrap
+                  +typography({ variant: 'h2', text: 'Сведения о номере' })
+                +features({
+                  items: [
+                    {
+                      title: 'Комфорт',
+                      description: 'Шумопоглощающие стены',
+                      icon: 'emoticon',
+                    },
+                    { title: 'Удобство', description: 'Окно в каждой из спален', icon: 'city' },
+                    { title: 'Уют', description: 'Номер оснащён камином', icon: 'whats' },
+                  ],
+                })
+              section.room-details__impression
+                .room-details__title-wrap
+                  +typography({ variant: 'h2', text: 'Впечатления от номера' })
+                +pieChart({
+                  voteCount: 260,
+                  listLabels: [
+                    { title: 'Великолепно', color: 'yellow' },
+                    { title: 'Хорошо', color: 'green' },
+                    { title: 'Удовлетворительно', color: 'purple' },
+                    { title: 'Разочарован' },
+                  ],
+                  pieData: [25, 25, 50],
+                })
+            section.room-details__reviews
+              .room-details__title-wrap.room-details__title-wrap_larger-indentation
+                +typography({ variant: 'h2', text: 'Отзывы посетителей номера' })
+                span.room-details__title-alt 2 отзыва
+              .room-details__review-wrap
+                +comment({
+                  authorName: 'Мурад Сарафанов',
+                  datePost: '5 дней назад',
+                  likeCount: 12,
+                  isLikeActive: true,
+                  avatarSrc: 'img/avatars/murad.jpg',
+                  text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
+                })
+              +comment({
+                authorName: 'Патрисия Стёклышкова',
+                datePost: 'Неделю назад',
+                likeCount: 2,
+                avatarSrc: 'img/avatars/patric.jpg',
+                text: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент',
+              })
+            .room-details__column
+              .room-details__bullet-wrap
+                .room-details__title-wrap.room-details__title-wrap_with-left-gap
+                  +typography({ variant: 'h2', text: 'Правила' })
+                +bulletedList({
+                  items: [
+                    { text: 'Нельзя с питомцами' },
+                    { text: 'Без вечеринок и мероприятий' },
+                    { text: 'Время прибытия — после 13:00, а выезд до 12:00' },
+                  ],
+                })
+              section.room-details__info
+                h2.room-details__title Отмена
+                p.room-details__info-text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+        .room-details__total-card-wrap
+          +totalCard({
+            numberHotel: 888,
+            dayCost: 9990,
+            amountDay: 0,
+            discount: 2179,
+            additionalService: 300,
+            isLux: true,
+          })
