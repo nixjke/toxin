@@ -1,0 +1,13 @@
+include ../typography/typography
+
+mixin rangeSlider({ title, start, step, range })
+  -
+    const startString = start.join();
+    const { min, max } = range;
+  .range-slider.js-range-slider-options(data-start=startString, data-step=step, data-range-min=min, data-range-max=max)
+    .range-slider__view
+      +typography({ text: title, variant: 'h3', hasUpper: true })
+      .range-slider__price
+        p.range-slider__cost.js-range-slider-lower-value
+        p.range-slider__cost.js-range-slider-upper-value
+    .range-slider__slider.js-range-slider

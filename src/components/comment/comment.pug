@@ -6,7 +6,7 @@ mixin comment({ avatarSrc, authorName, likeCount, isLikeActive, datePost, text }
       .comment__column
         .comment__avatar
           img.comment__avatar-img(src=avatarSrc, alt=authorName)
-        +likeBtn({ count: likeCount, isActive: isLikeActive })
+        +likeButton({ count: likeCount, isActive: isLikeActive })
       .comment__column
         p.comment__title= authorName
         p.comment__date= datePost

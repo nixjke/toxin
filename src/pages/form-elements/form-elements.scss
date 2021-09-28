@@ -1,0 +1,71 @@
+@import '../../style/utils/variables.scss';
+@import '../../style/utils/mixin.scss';
+@import './sections/inputs/inputs.scss';
+@import './sections/controls/controls.scss';
+@import './sections/buttons/buttons.scss';
+@import './sections/drop-with-expandable/drop-with-expandable.scss';
+@import './sections/drop-with-rich/drop-with-rich.scss';
+@import './sections/drop-with-bullet/drop-with-bullet.scss';
+@import '../../components/input/input.scss';
+@import '../../components/typography/typography.scss';
+@import '../../components/dropdown-input/dropdown-input.scss';
+@import '../../components/dropdown-counter/dropdown-counter.scss';
+@import '../../components/checkbox-buttons/checkbox-buttons.scss';
+@import '../../components/radio-button/radio-button.scss';
+@import '../../components/toggle/toggle.scss';
+@import '../../components/like-button/like-button.scss';
+@import '../../components/rate-button/rate-button.scss';
+@import '../../libs/RangeSlider/range-slider.scss';
+@import '../../components/button/button.scss';
+@import '../../components/pagination/pagination.scss';
+@import '../../components/expandable-checkbox/expandable-checkbox.scss';
+@import '../../components/bulleted-list/bulleted-list.scss';
+@import '../../components/features/features.scss';
+@import '../../components/comment/comment.scss';
+
+.form-elements {
+  &__logo-wrap {
+    padding-top: 30px;
+    padding-left: 30px;
+  }
+
+  &__container {
+    @include container;
+  }
+
+  &__wrap {
+    padding-top: 62px;
+    padding-bottom: 100px;
+  }
+
+  &__row {
+    margin-bottom: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__inputs {
+    width: 27.6%;
+  }
+
+  &__controls {
+    width: 22.9%;
+  }
+
+  &__buttons {
+    width: 27.7%;
+  }
+
+  &__row-wrap {
+    width: 23%;
+
+    &_size_large {
+      width: 61.3%;
+    }
+  }
+}

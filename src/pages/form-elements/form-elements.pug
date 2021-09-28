@@ -1,0 +1,67 @@
+extends ../../layout/ui-kit.pug
+include ./sections/inputs/inputs
+include ./sections/controls/controls
+include ./sections/buttons/buttons
+include ./sections/drop-with-expandable/drop-with-expandable
+include ./sections/drop-with-rich/drop-with-rich
+include ./sections/drop-with-bullet/drop-with-bullet
+include ../../components/logo-inactive/logo-inactive
+include ../../components/features/features
+include ../../components/comment/comment
+
+block variables
+  -
+    const title = 'Toxin - элементы форм';
+    const description = 'Toxin description';
+    const keywords = 'Toxin keywords';
+    const pageClass = 'form-elements';
+    const faviconRoutes = {
+      apple: 'favicons/apple-touch-icon.png',
+      big: 'favicons/favicon-32x32.png',
+      small: 'favicons/favicon-16x16.png',
+      manifest: 'favicons/site.webmanifest',
+      pinned: 'favicons/safari-pinned-tab.svg',
+    };
+
+block content
+  .form-elements__logo-wrap
+    +logoInactive
+  .form-elements__container
+    .form-elements__wrap
+      .form-elements__row
+        .form-elements__inputs
+          +inputs
+        .form-elements__controls
+          +controls
+        .form-elements__buttons
+          +buttons
+      .form-elements__row
+        .form-elements__row-wrap
+          +dropWithExpandable
+        .form-elements__row-wrap
+          +dropWithRich
+        .form-elements__row-wrap
+          +dropWithBullet
+      .form-elements__row
+        .form-elements__row-wrap
+          .form-elements__features
+            +features({
+              items: [
+                {
+                  title: 'Комфорт',
+                  description: 'Шумопоглощающие стены',
+                  icon: 'emoticon',
+                },
+                { title: 'Удобство', description: 'Окно в каждой из спален', icon: 'city' },
+              ],
+            })
+        .form-elements__row-wrap.form-elements__row-wrap_size_large
+          .form-elements__comment
+            +comment({
+              authorName: 'Мурад Сарафанов',
+              datePost: '5 дней назад',
+              likeCount: 12,
+              isLikeActive: true,
+              avatarSrc: 'img/avatars/murad.jpg',
+              text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
+            })

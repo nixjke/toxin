@@ -7,8 +7,8 @@
   box-sizing: border-box;
   width: 100%;
   opacity: 0;
-  background: $mainColor;
-  border: 1px solid rgba(31, 32, 65, .5);
+  background: white;
+  border: 1px solid $darkShade50;
   border-radius: 0 0 4px 4px;
   box-shadow: 0 10px 20px rgba(31, 32, 65, .05);
   transition: transform .1s ease-in-out;
@@ -78,9 +78,9 @@
     font-size: 18px;
     text-align: center;
     vertical-align: middle;
-    color: transparentize($contentColor, .5);
-    background: $mainColor;
-    border: 1px solid transparentize($contentColor, .5);
+    color: $darkShade50;
+    background: white;
+    border: 1px solid $darkShade50;
     border-radius: 50%;
     cursor: pointer;
 
@@ -103,8 +103,8 @@
     }
 
     &_disabled {
-      color: transparentize($contentColor, .75);
-      border: 1px solid transparentize($contentColor, .75);
+      color: $darkShade25;
+      border: 1px solid $darkShade25;
       cursor: default;
     }
   }
@@ -122,14 +122,14 @@
     line-height: 15px;
     font-weight: bold;
     text-transform: uppercase;
-    color: transparentize($contentColor, .5);
+    color: $darkShade50;
     background: transparent;
     border: none;
     transition: color .2s ease-in-out, transform .1s ease-in-out;
     cursor: pointer;
 
     &:hover {
-      color: $accentColor;
+      color: $purple;
     }
 
     &:active {
@@ -137,10 +137,10 @@
     }
 
     &_accent {
-      color: $accentColor;
+      color: $purple;
 
       &:hover {
-        color: transparentize($contentColor, .5);
+        color: $darkShade50;
       }
     }
 

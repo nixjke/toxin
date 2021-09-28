@@ -1,0 +1,35 @@
+.controls {
+  width: 100%;
+
+  &__control {
+    margin-bottom: 40px;
+  }
+
+  &__title-wrap {
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__toggle {
+    margin-bottom: 10px;
+  }
+
+  &__like-wrap {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__like-btn {
+    margin-right: 10px;
+  }
+
+  &__rate-btn-wrap {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__rate-btn {
+    margin-right: 20px;
+  }
+}

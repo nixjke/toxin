@@ -1,0 +1,39 @@
+.drop-with-expandable {
+  width: 100%;
+
+  &__title-wrap {
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title-alt {
+    margin: 0;
+    padding: 0;
+    font-family: $font-family;
+    font-size: 12px;
+    font-weight: normal;
+    text-transform: uppercase;
+    color: $darkShade50;
+  }
+
+  &__input {
+    margin-bottom: 20px;
+
+    &_with-bottom-gap {
+      margin-bottom: 174px;
+    }
+
+    &_with-bottom-large-gap {
+      margin-bottom: 220px;
+    }
+  }
+
+  &__checkbox-list {
+    margin-bottom: 32px;
+  }
+
+  &__counter-container {
+    position: relative;
+  }
+}

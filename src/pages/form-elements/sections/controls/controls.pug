@@ -1,0 +1,48 @@
+include ../../../../components/typography/typography
+include ../../../../components/checkbox-buttons/checkbox-buttons
+include ../../../../components/radio-button/radio-button
+include ../../../../components/toggle/toggle
+include ../../../../components/like-button/like-button
+include ../../../../components/rate-button/rate-button
+
+mixin controls
+  .controls
+    .controls__control
+      .controls__title-wrap
+        +typography({ text: 'Checkbox Buttons', variant: 'h3', hasUpper: true })
+      +checkboxButtons({
+        items: [
+          { label: 'Можно курить' },
+          { label: 'Можно с питомцами', isChecked: true },
+          { label: 'Можно пригласить гостей (до 10 человек)', isChecked: true },
+        ],
+      })
+    .controls__control
+      .controls__title-wrap
+        +typography({ text: 'Radio Buttons', variant: 'h3', hasUpper: true })
+      +radioButton({
+        items: [
+          { groupName: 'gender', label: 'Мужчина', isChecked: true },
+          { groupName: 'gender', label: 'Женщина' },
+        ],
+      })
+    .controls__control
+      .controls__title-wrap
+        +typography({ text: 'Toggle', variant: 'h3', hasUpper: true })
+      .controls__toggle
+        +toggle({ text: 'Получать спецпредложения', isChecked: true })
+      +toggle({ text: 'Получать спецпредложения' })
+    .controls__control
+      .controls__title-wrap
+        +typography({ text: 'Like Button', variant: 'h3', hasUpper: true })
+      .controls__like-wrap
+        .controls__like-btn
+          +likeButton({ count: 2 })
+        +likeButton({ count: 12, isActive: true })
+    .controls__control
+      .controls__title-wrap
+        +typography({ text: 'Rate button', variant: 'h3', hasUpper: true })
+      .controls__rate-btn-wrap
+        .controls__rate-btn
+          +rateButton({ currentRating: 5, ratingLength: 5 })
+        +rateButton({ currentRating: 4, ratingLength: 5 }) 

@@ -9,15 +9,15 @@
 
   &__slider {
     height: 6px;
-    background-color: $mainColor;
-    border: 1px solid transparentize($contentColor, .75);
+    background-color: white;
+    border: 1px solid $darkShade25;
     border-radius: 3px;
 
     .range-slider__handle {
       right: -8px;
       width: 14px;
       height: 14px;
-      background: $accentSecondGradient;
+      background: $gradientSecond;
       border: 2px solid white;
       border-radius: 50%;
       box-shadow: none;
@@ -33,7 +33,7 @@
 
   &__connect {
     height: 6px;
-    background: $accentSecondGradient;
+    background: $gradientSecond;
   }
 
   &__cost {
@@ -47,7 +47,7 @@
     font-style: normal;
     vertical-align: middle;
     text-transform: uppercase;
-    color: transparentize($contentColor, .55);
+    color: $darkShade50;
 
     &:first-child {
       position: relative;
