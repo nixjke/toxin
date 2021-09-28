@@ -1,0 +1,41 @@
+@import '../../style/utils/variables.scss';
+@import '../../style/utils/mixin.scss';
+@import '../../components/header/header.scss';
+@import '../../components/main-menu/main-menu.scss';
+@import '../../components/button/button.scss';
+@import '../../components/footer/footer.scss';
+@import '../../components/typography/typography.scss';
+@import '../../components/input/input.scss';
+@import '../../components/nav-menu/nav-menu.scss';
+@import '../../components/social-buttons/social-buttons.scss';
+@import '../../components/copyright/copyright.scss';
+
+.headers-and-footers {
+  background: #f4f4f6;
+
+  &__logo-wrap {
+    padding-top: 30px;
+    padding-left: 30px;
+  }
+
+  &__wrap {
+    margin-top: 63px;
+  }
+
+  &__item {
+    margin-bottom: 40px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:nth-child(3) {
+      margin-bottom: 42px;
+    }
+
+    &_short {
+      margin: 0 auto;
+      width: 53.3%;
+    }
+  }
+}

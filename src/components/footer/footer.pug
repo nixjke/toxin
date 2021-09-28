@@ -5,7 +5,7 @@ include ../copyright/copyright
 include ../social-buttons/social-buttons
 include ../typography/typography
 
-mixin footer({ isShort, copyrightYear })
+mixin footer({ isShort })
   -
     const navMenuItems = [
       {
@@ -46,7 +46,7 @@ mixin footer({ isShort, copyrightYear })
           .page-footer__logo-wrapper.page-footer__logo-wrapper_short
             +logoActive
           .page-footer__copyright-wrapper.page-footer__copyright-wrapper_short 
-            +copyright(copyrightYear)
+            +copyright
           +socialButtons
       else
         .page-footer__wrapper
