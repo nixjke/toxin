@@ -84,7 +84,7 @@
   }
 
   &__border {
-    border-bottom: 1px solid rgba(31, 32, 65, .25);
+    border-bottom: 1px solid $darkShade25;
   }
 
   &__wrap {
@@ -157,7 +157,7 @@
     font-family: $font-family;
     font-size: 14px;
     font-weight: normal;
-    color: transparentize($contentColor, .5);
+    color: $darkShade50;
   }
 
   &__title {
@@ -205,7 +205,7 @@
       font-family: $font-family;
       font-size: 14px;
       line-height: 24px;
-      color: transparentize($contentColor, .25);
+      color: $darkShade75;
     }
   }
 

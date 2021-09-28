@@ -5,7 +5,7 @@ mixin dateInput(inputs)
   .date-input
     each input in inputs
       - const {title, value, classForJs} = input;
-      .date-input__wrapper
-        .date-input__title-wrapper
+      .date-input__wrap
+        .date-input__title-wrap
           +typography({ text: title, variant: 'h3', hasUpper: true })
         +dropDownInput({ text: value, classForJs })
