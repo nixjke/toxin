@@ -5,27 +5,3 @@
   min-width: 320px;
   max-width: 1160px;
 }
-
-@mixin card {
-  border: 0.0625rem solid rgba(0, 0, 0, 0.12);
-  border-radius: 0.25rem;
-  box-shadow: 0 0 1.5625rem rgba(0, 0, 0, 0.2);
-  background: white;
-}
-
-@mixin reset-button {
-  border: none;
-  appearance: none;
-  user-select: none;
-  background: transparent;
-  cursor: pointer;
-}
-
-@mixin reset-outline($property: box-shadow) {
-  transition: #{$property} .25s ease-in-out;
-
-  &:focus {
-    outline: none;
-    #{$property}: 0 0.3125rem 0.3125rem $darkShade25;
-  }
-}

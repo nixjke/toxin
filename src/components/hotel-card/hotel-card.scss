@@ -110,7 +110,7 @@
     &:first-child {
       margin-bottom: 10px;
       padding-bottom: 10px;
-      border-bottom: 1px solid transparentize($contentColor, .9);
+      border-bottom: 1px solid $darkShade5;;
     }
   }
 
@@ -123,11 +123,11 @@
 
     .hotel-card__title-link {
       text-decoration: none;
-      color: $contentColor;
+      color: $darkShade100;
       transition: color .4s ease;
 
       &:hover {
-        color: transparentize($contentColor, .5);
+        color: $darkShade50;
       }
     }
   }
@@ -140,14 +140,14 @@
   &__title-extra-text {
     font-size: 12px;
     text-transform: uppercase;
-    color: $accentColor;
+    color: $purple;
   }
 
   &__text {
     margin: 0;
     font-family: $font-family;
     font-size: 12px;
-    color: transparentize($contentColor, .5);
+    color: $darkShade50;
 
     &_large {
       font-size: 14px;

@@ -46,14 +46,14 @@
   &__title-extra-text {
     font-size: 12px;
     text-transform: uppercase;
-    color: $accentColor;
+    color: $purple;
   }
 
   &__per-day {
     margin: 0;
     padding-top: 5px;
     font-size: 12px;
-    color: transparentize($contentColor, .5);
+    color: $darkShade50;;
   }
 
   &__cost-text {
@@ -134,8 +134,8 @@
         font-weight: bold;
         text-align: center;
         content: 'i';
-        color: transparentize($contentColor, .75);
-        border: 1px solid transparentize($contentColor, .75);
+        color: $darkShade25;
+        border: 1px solid $darkShade25;
         border-radius: 50%;
         cursor: pointer;
       }
@@ -158,7 +158,7 @@
       top: -6px;
       width: 100%;
       content: '';
-      border: 1px dashed transparentize($contentColor, .75);
+      border: 1px dashed $darkShade25;
     }
   }
 
