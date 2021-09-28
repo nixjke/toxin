@@ -4,7 +4,7 @@ include ../button/button
 mixin authCard
   .auth-card
     .auth-card__wrapper
-      form()
+      form
         h2.auth-card__title Войти
         fieldset.auth-card__fieldset
           .auth-card__input-wrapper
@@ -14,9 +14,4 @@ mixin authCard
       .auth-card__account-enter
         p.auth-card__account-enter-text Нет аккаунта на Toxin?
         .auth-card__registration-button-wrapper
-          +button({ 
-            path: 'registration.html',
-            title: 'Создать',
-            variant: 'outlined',
-            size: 'medium',
-          })
+          +button({ path: 'registration.html', title: 'Создать', variant: 'outlined', size: 'medium', })
