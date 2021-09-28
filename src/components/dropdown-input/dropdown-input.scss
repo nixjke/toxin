@@ -1,12 +1,12 @@
-.dropdown-input {
-  &__wrapper {
+.drop-down-input {
+  &__wrap {
     display: flex;
     width: 100%;
     min-width: 150px;
     user-select: none;
 
     &:active {
-      .dropdown-input__button {
+      .drop-down-input__button {
         background-position: center 60%;
       }
     }

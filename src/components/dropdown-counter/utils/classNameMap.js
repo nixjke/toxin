@@ -16,6 +16,6 @@ const classNameMap = {
   control: 'drop-down-counter__control',
   button: 'drop-down-counter__button',
   buttonAccent: 'drop-down-counter__button_accent',
-};
+}
 
-export default classNameMap;
+export default classNameMap
