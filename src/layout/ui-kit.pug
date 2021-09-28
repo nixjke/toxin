@@ -11,11 +11,29 @@ html(lang='ru', class=pageClass)
     meta(name='keywords', content=keywords)
     meta(name='msapplication-TileColor', content='#da532c')
     meta(name='theme-color', content='#ffffff')
-    link(rel='apple-touch-icon', sizes='180x180', href=faviconRoutes.apple)
-    link(rel='icon', type='image/png', sizes='32x32', href=faviconRoutes.big)
-    link(rel='icon', type='image/png', sizes='16x16', href=faviconRoutes.small)
+    link(
+      rel='apple-touch-icon',
+      sizes='180x180',
+      href=faviconRoutes.apple
+    )
+    link(
+      rel='icon',
+      type='image/png',
+      sizes='32x32',
+      href=faviconRoutes.big
+    )
+    link(
+      rel='icon',
+      type='image/png',
+      sizes='16x16',
+      href=faviconRoutes.small
+    )
     link(rel='manifest', href=faviconRoutes.manifest)
-    link(rel='mask-icon', href=faviconRoutes.pinned, color='#5bbad5')
-    title #{ title }
+    link(
+      rel='mask-icon',
+      href=faviconRoutes.pinned,
+      color='#5bbad5'
+    )
+    title #{title}
   body
     block content

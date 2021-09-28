@@ -1,0 +1,58 @@
+@import '../../style/utils/variables.scss';
+@import '../../style/utils/mixin.scss';
+@import '../../layout/main/main.scss';
+@import '../../components/header/header.scss';
+@import '../../components/main-menu/main-menu.scss';
+@import '../../components/button/button.scss';
+@import '../../components/date-wishes/date-wishes.scss';
+@import '../../components/date-input/date-input.scss';
+@import '../../components/date-picker/date-picker.scss';
+@import '../../components/dropdown-input/dropdown-input.scss';
+@import '../../components/dropdown-counter/dropdown-counter.scss';
+@import '../../components/footer/footer.scss';
+@import '../../components/typography/typography.scss';
+@import '../../components/nav-menu/nav-menu.scss';
+@import '../../components/input/input.scss';
+@import '../../components/copyright/copyright.scss';
+@import '../../components/social-buttons/social-buttons.scss';
+
+.index-block {
+  box-sizing: border-box;
+  height: 830px;
+  background-image: url('./img/interior.jpg');
+  background-repeat: no-repeat;
+  background-position: center -69px;
+
+  @media (min-width: 1440px) {
+    background-size: cover;
+  }
+
+  &__container {
+    @include container;
+  }
+
+  &__wrap {
+    position: relative;
+    padding-top: 70px;
+    min-height: 830px;
+  }
+
+  &__slogan {
+    position: absolute;
+    right: 4px;
+    bottom: 92px;
+    width: 297px;
+
+    @media (max-width: 425px) {
+      right: 24px;
+    }
+  }
+
+  &__slogan-text {
+    margin: 0;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: right;
+    color: transparentize($contentColor, .25);
+  }
+}
