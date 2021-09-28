@@ -1,0 +1,50 @@
+include ../../components/header/header
+include ../../components/footer/footer
+-
+  const menuItems = [
+    { title: 'О нас', path: 'not-found-page.html' },
+    { 
+      title: 'Услуги',
+      path: 'not-found-page.html',
+      subMenu: [
+        { title: 'Подбор отелей', path: 'not-found-page.html' },
+        { title: 'Заказать трансфер', path: 'not-found-page.html' },
+        { title: 'Рейтинг отелей', path: 'not-found-page.html' }
+      ]
+    },
+    { title: 'Вакансии', path: 'not-found-page.html' },
+    { title: 'Новости', path: 'not-found-page.html' },
+    {
+      title: 'Соглашения',
+      path: 'not-found-page.html',
+      subMenu: [
+        { title: 'Пользовательские', path: 'not-found-page.html' },
+        { title: 'Международные', path: 'not-found-page.html' }
+      ]
+    }
+  ];
+block variables
+
+doctype html
+html(lang='ru')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    meta(name='description', content=description)
+    meta(name='keywords', content=keywords)
+    meta(name='msapplication-TileColor', content='#da532c')
+    meta(name='theme-color', content='#ffffff')
+    link(rel='apple-touch-icon', sizes='180x180', href=faviconRoutes.apple)
+    link(rel='icon', type='image/png', sizes='32x32', href=faviconRoutes.big)
+    link(rel='icon', type='image/png', sizes='16x16', href=faviconRoutes.small)
+    link(rel='manifest', href=faviconRoutes.manifest)
+    link(rel='mask-icon', href=faviconRoutes.pinned, color='#5bbad5')
+    title #{ title }
+  body(class=pageClass)
+    .main-layout__wrapper
+      .main-layout__content
+        +header({ customMenuItems: menuItems })
+        main(class=mainClass)
+          block content
+      +footer

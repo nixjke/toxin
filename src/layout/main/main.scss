@@ -1,0 +1,11 @@
+.main-layout {
+  &__wrapper {
+    display: flex;
+    min-height: 100%;
+    flex-direction: column;
+  }
+
+  &__content {
+    flex-grow: 1;
+  }
+}
