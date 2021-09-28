@@ -1,0 +1,36 @@
+@import '../../style/utils/variables.scss';
+@import '../../style/utils/mixin.scss';
+@import '../../layout/main/main.scss';
+@import '../../components/header/header.scss';
+@import '../../components/button/button.scss';
+@import '../../components/main-menu/main-menu.scss';
+@import '../../components/register-card/register-card.scss';
+@import '../../components/input/input.scss';
+@import '../../components/radio-btn/radio-btn.scss';
+@import '../../components/toggle/toggle.scss';
+@import '../../components/footer/footer.scss';
+@import '../../components/nav-menu/nav-menu.scss';
+@import '../../components/social-buttons/social-buttons.scss';
+@import '../../components/copyright/copyright.scss';
+@import '../../components/typography/typography.scss';
+
+.registration-page {
+  &__container {
+    @include container;
+  }
+
+  &__main {
+    background: url('./img/room-interior.jpg') no-repeat;
+    background-position: center -70px;
+
+    @media (min-width: 1440px) {
+      background-size: cover;
+    }
+  }
+
+  &__wrap {
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+  }
+}
