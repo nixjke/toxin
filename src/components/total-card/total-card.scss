@@ -1,0 +1,180 @@
+.total-card {
+  width: 380px;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, .2);
+
+  @media (max-width: 380px) {
+    margin: 0 auto;
+    width: 100%;
+    min-width: 320px;
+  }
+
+  &__wrap {
+    position: relative;
+    padding: 30px;
+    padding-top: 40px;
+
+    .total-card__date-inputs {
+      @media (max-width: 380px) {
+        flex-direction: column;
+      }
+    }
+  }
+
+  &__head {
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title {
+    margin: 0;
+    overflow: hidden;
+    font-size: 13px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  &__title-text {
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+  &__title-extra-text {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: $accentColor;
+  }
+
+  &__per-day {
+    margin: 0;
+    padding-top: 5px;
+    font-size: 12px;
+    color: transparentize($contentColor, .5);
+  }
+
+  &__cost-text {
+    font-family: $font-family;
+    font-size: 14px;
+  }
+
+  &__date-inputs {
+    position: relative;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__date-picker-container {
+    position: absolute;
+    top: 269px;
+    left: 0;
+    width: 100%;
+  }
+
+  &__date-input-wrap {
+    width: 150px;
+
+    @media (max-width: 380px) {
+      margin-bottom: 15px;
+      width: 100%;
+    }
+  }
+
+  &__title-wrap {
+    margin-bottom: 5px;
+  }
+
+  &__calc {
+    margin-top: 20px;
+    margin-bottom: 28px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__calc-row {
+    width: 75%;
+
+    &_low {
+      width: 25%;
+    }
+
+    &_with-right-aligned {
+      text-align: right;
+    }
+  }
+
+  &__calc-text {
+    margin: 0;
+    margin-bottom: 15px;
+    font-family: $font-family;
+    font-size: 14px;
+    line-height: 19px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &_informational {
+      position: relative;
+      padding-right: 20px;
+
+      &::after {
+        position: absolute;
+        top: -1px;
+        right: 1px;
+        width: 18px;
+        height: 18px;
+        font-family: $font-family;
+        font-size: 12px;
+        line-height: 19px;
+        font-weight: bold;
+        text-align: center;
+        content: 'i';
+        color: transparentize($contentColor, .75);
+        border: 1px solid transparentize($contentColor, .75);
+        border-radius: 50%;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__total {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  &__total-separator {
+    position: relative;
+    flex-grow: .95;
+
+    &::after {
+      position: absolute;
+      top: -6px;
+      width: 100%;
+      content: '';
+      border: 1px dashed transparentize($contentColor, .75);
+    }
+  }
+
+  &__total-text,
+  &__total-price {
+    margin: 0;
+    font-size: 19px;
+    line-height: 24px;
+    font-weight: bold;
+  }
+
+  &__total-price {
+    text-align: right;
+  }
+
+  &__counter-container {
+    position: relative;
+  }
+}

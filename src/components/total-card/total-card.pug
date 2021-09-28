@@ -1,0 +1,59 @@
+include ../date-input/date-input
+
+mixin totalCard(options)
+  -
+    const {
+      numberHotel,
+      dayCost,
+      amountDay,
+      additionalService = 0,
+      discount = 0,
+      isLux,
+    } = options;
+
+    const getNumStringWithSpaces = num => {
+      const numString = String(num); 
+      return numString
+        .split('')
+        .reverse()
+        .join('')
+        .match(/\d\d?\d?/g)
+        .map(el => el.split('').reverse().join(''))
+        .reverse()
+        .join(' ');
+    }
+
+    const costPerDays = dayCost * amountDay;
+    const totalPrice =
+      amountDay === 0 ? 0 : costPerDays - discount + additionalService;
+
+  section.total-card
+    .total-card__wrap
+      form(action='not-found-page.html')
+        .total-card__head
+          if (isLux)
+            h2.total-card__title № #[span.total-card__title-text= numberHotel] #[b.total-card__title-extra-text люкс]
+          else
+            h2.total-card__title № #[span.total-card__title-text= numberHotel]
+          p.total-card__per-day #[b.total-card__cost-text= getNumStringWithSpaces(dayCost) + "₽ в сутки"]
+        .total-card__date-inputs
+          +dateInput([ { title: 'Прибытие', value: 'ДД.ММ.ГГГГ', classForJs: 'js-arrival-input' }, { title: 'Выезд', value: 'ДД.ММ.ГГГГ', classForJs: 'js-departure-input' }, ])
+          .total-card__date-picker-container.js-date-picker-container
+        .total-card__title-wrap
+          +typography({ text: 'Гости', variant: 'h3', hasUpper: true }) 
+        +dropDownInput({ text: 'Сколько гостей', classForJs: 'js-input-drop-down' })
+        .total-card__counter-container.js-drop-down-counter-container
+        .total-card__calc
+          .total-card__calc-row
+            p.total-card__calc-text #[span.total-card__day-cost= getNumStringWithSpaces(dayCost)] ₽ х #[span.total-card__amount-day.js-amount-day= amountDay] суток
+            p.total-card__calc-text.total-card__calc-text_informational= `Сбор за услуги: скидка ${getNumStringWithSpaces(discount)}₽`
+            p.total-card__calc-text.total-card__calc-text_informational Сбор за дополнительные услуги
+          .total-card__calc-row.total-card__calc-row_low.total-card__calc-row_with-right-aligned
+            p.total-card__calc-text.js-cost-per-days= `${getNumStringWithSpaces(costPerDays)}₽`
+            p.total-card__calc-text 0₽
+            p.total-card__calc-text= `${additionalService}₽`
+        .total-card__total
+          p.total-card__total-text Итого
+          .total-card__total-separator
+          p.total-card__total-price.js-total-price= `${getNumStringWithSpaces(totalPrice)}₽`
+        +button({ title: 'Забронировать', withIcon: true, buttonType: 'submit' })
