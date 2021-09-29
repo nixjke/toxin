@@ -8,16 +8,19 @@ mixin mainMenu(menuItems)
       ul.main-menu__list
         each item in menuItems
           -
-            const { title, subMenu, isActive } = item;
-            let { path } = item;
-            let itemClass = 'main-menu__item';
+            const { title, subMenu, isActive } = item
+            let { path } = item
+            let itemClass = 'main-menu__item'
+
             if (subMenu) {
-              itemClass += ' main-menu__item_with-sub-menu js-main-menu-item-sub-menu';
+              itemClass += ' main-menu__item_with-sub-menu js-main-menu-item-sub-menu'
             }
+
             if (isActive) {
-              itemClass += ' main-menu__item_active';
-              path = null;
+              itemClass += ' main-menu__item_active'
+              path = null
             }
+
           li(class=itemClass)
             a.main-menu__item-link(href=path)= title
             if subMenu
