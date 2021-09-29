@@ -3,11 +3,18 @@ include ../../components/auth-card/auth-card
 
 block variables
   -
-    const title = 'Toxin - авторизация!';
-    const description = 'Toxin authorization';
-    const keywords = 'Toxin keywords';
-    const pageClass = 'auth-page';
-    const mainClass = 'auth-page__main';
+    const title = 'Toxin - авторизация!'
+    const description = 'Toxin authorization'
+    const keywords = 'Toxin keywords'
+    const pageClass = 'auth-page'
+    const mainClass = 'auth-page__main'
+    const faviconRoutes = {
+      apple: 'favicons/apple-touch-icon.png',
+      big: 'favicons/favicon-32x32.png',
+      small: 'favicons/favicon-16x16.png',
+      manifest: 'favicons/site.webmanifest',
+      pinned: 'favicons/safari-pinned-tab.svg',
+    }
 
 block content
   .auth-page__container
