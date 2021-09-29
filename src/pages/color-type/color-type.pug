@@ -1,46 +1,93 @@
+extends ../../layout/ui-kit.pug
 include ../../components/logo-inactive/logo-inactive
-include ../../components/logo-active/logo-active
 include ../../components/color-palette/color-palette
 include ../../components/typography/typography
 
+block variables
+  -
+    const title = 'Toxin - типографика!';
+    const description = 'Toxin description';
+    const keywords = 'Toxin keywords';
+    const pageClass = 'colors-and-type';
+    const faviconRoutes = {
+      apple: 'favicons/apple-touch-icon.png',
+      big: 'favicons/favicon-32x32.png',
+      small: 'favicons/favicon-16x16.png',
+      manifest: 'favicons/site.webmanifest',
+      pinned: 'favicons/safari-pinned-tab.svg',
+    };
+
 block content
-  .color-type__logo-inactive-wrapper
+  .colors-and-type__logo-wrap
     +logoInactive
-  .color-type__container
-    .color-type__wrapper
-      ul.color-type__palette 
-        li.color-type__palette-item
-          +colorPalette({ title: 'Dark Shade 100%', description: '#1F2041', variant: 'dark-shade' })
-        li.color-type__palette-item
-          +colorPalette({ title: 'Dark Shade 75%', description: '#1F2041', variant: 'dark-shade-darker', })
-        li.color-type__palette-item
-          +colorPalette({ title: 'Dark Shade 50%', description: '#1F2041', variant: 'dark-shade-middle', })
-        li.color-type__palette-item
-          +colorPalette({ title: 'Dark Shade 25%', description: '#1F2041', variant: 'dark-shade-light', })
-        li.color-type__palette-item
-          +colorPalette({ title: 'Dark Shade 5%', description: '#1F2041', variant: 'dark-shade-lightest', })
-        li.color-type__palette-item
+  .colors-and-type__container
+    .colors-and-type__wrap
+      ul.colors-and-type__palette
+        li.colors-and-type__palette-item
+          +colorPalette({
+            title: 'Dark Shade 100%',
+            description: '#1F2041',
+            variant: 'dark-shade',
+          })
+        li.colors-and-type__palette-item
+          +colorPalette({
+            title: 'Dark Shade 75%',
+            description: '#1F2041',
+            variant: 'dark-shade-darker',
+          })
+        li.colors-and-type__palette-item
+          +colorPalette({
+            title: 'Dark Shade 50%',
+            description: '#1F2041',
+            variant: 'dark-shade-middle',
+          })
+        li.colors-and-type__palette-item
+          +colorPalette({
+            title: 'Dark Shade 25%',
+            description: '#1F2041',
+            variant: 'dark-shade-light',
+          })
+        li.colors-and-type__palette-item
+          +colorPalette({
+            title: 'Dark Shade 5%',
+            description: '#1F2041',
+            variant: 'dark-shade-lightest',
+          })
+        li.colors-and-type__palette-item
           +colorPalette({ title: 'Purple', description: '#BC9CFF', variant: 'purple' })
-        li.color-type__palette-item
+        li.colors-and-type__palette-item
           +colorPalette({ title: 'Green', description: '#6FCF97', variant: 'green' }) 
-      .color-type__typography
-        .color-type__typography-item
-          .color-type__typography-label-wrapper
-            p.color-type__typography-label.color-type__typography-label_upper.color-type__typography-label_size_large h1
-          .color-type__typography-wrapper
-            +typography({ text: 'This one is the sub-section or widget title', variant: 'h1', })
-        .color-type__typography-item
-          .color-type__typography-label-wrapper
-            p.color-type__typography-label.color-type__typography-label_upper.color-type__typography-label_size_medium h2
-          .color-type__typography-wrapper
-            +typography({ text: 'Next one is the item title inside widgets', variant: 'h2', })
-        .color-type__typography-item
-          .color-type__typography-label-wrapper
-            p.color-type__typography-label.color-type__typography-label_upper.color-type__typography-label_size_low h3
-          .color-type__typography-wrapper
-            +typography({ text: 'This is a label or CTA text', variant: 'h3', hasUpper: true })
-        .color-type__typography-item
-          .color-type__typography-label-wrapper
-            p.color-type__typography-label Body
-          .color-type__typography-wrapper
-            +typography({ text: 'This is the body text which is used for most of the design, like paragraphs, lists, etc.', variant: 'body', })
+      .colors-and-type__typography
+        .colors-and-type__typography-item
+          .colors-and-type__typography-label-wrap
+            p.colors-and-type__typography-label.colors-and-type__typography-label_upper.colors-and-type__typography-label_size_large h1
+          .colors-and-type__typography-wrap
+            +typography({
+              text: 'This one is the sub-section or widget title',
+              variant: 'h1',
+            })
+        .colors-and-type__typography-item
+          .colors-and-type__typography-label-wrap
+            p.colors-and-type__typography-label.colors-and-type__typography-label_upper.colors-and-type__typography-label_size_medium h2
+          .colors-and-type__typography-wrap
+            +typography({
+              text: 'Next one is the item title inside widgets',
+              variant: 'h2',
+            })
+        .colors-and-type__typography-item
+          .colors-and-type__typography-label-wrap
+            p.colors-and-type__typography-label.colors-and-type__typography-label_upper.colors-and-type__typography-label_size_low h3
+          .colors-and-type__typography-wrap
+            +typography({
+              text: 'This is a label or cta text',
+              variant: 'h3',
+              hasUpper: true,
+            })
+        .colors-and-type__typography-item
+          .colors-and-type__typography-label-wrap
+            p.colors-and-type__typography-label Body
+          .colors-and-type__typography-wrap
+            +typography({
+              text: 'This is the body text which is used for most of the design, like paragraphs, lists, etc.',
+              variant: 'body',
+            })
