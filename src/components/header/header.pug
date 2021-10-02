@@ -11,7 +11,8 @@ mixin header({ customMenuItems, userName })
   header.page-header
     .page-header__container
       .page-header__wrap
-        +logoActive
+        .logo-active
+          +logoActive
         +mainMenu(customMenuItems)
         section(class=authClass)
           if userName

@@ -22,9 +22,9 @@ mixin mainMenu(menuItems)
             }
 
           li(class=itemClass)
-            a.main-menu__item-link(href=path)= title
+            a.main-menu__item-link= title
             if subMenu
               ul.main-menu__sub-menu
                 each subItem in subMenu
                   li.main-menu__sub-item
-                    a.main-menu__item-link(href=subItem.path)= subItem.title
+                    a.main-menu__item-link= subItem.title

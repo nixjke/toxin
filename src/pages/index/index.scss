@@ -18,7 +18,7 @@
 
 .index-block {
   box-sizing: border-box;
-  height: 830px;
+  height: 93.25vh;
   background-image: url('./img/interior.jpg');
   background-repeat: no-repeat;
   background-position: center -69px;
@@ -34,13 +34,12 @@
   &__wrap {
     position: relative;
     padding-top: 70px;
-    min-height: 830px;
   }
 
   &__slogan {
     position: absolute;
-    right: 4px;
-    bottom: 92px;
+    right: 0px;
+    bottom: -400px;
     width: 297px;
 
     @media (max-width: 425px) {
@@ -53,6 +52,6 @@
     font-size: 14px;
     line-height: 24px;
     text-align: right;
-    color: $darkShade25;
+    color: $darkShade75;
   }
 }

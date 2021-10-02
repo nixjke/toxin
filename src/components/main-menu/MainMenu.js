@@ -55,16 +55,18 @@ class MainMenu {
   _addSubMenuItemListener = subMenuItem => {
     const subMenuLink = subMenuItem.firstChild
     const subMenu = subMenuLink.nextSibling
-    subMenuItem.addEventListener('mouseover', () => this._addSubMenuClass(subMenu))
-    subMenuItem.addEventListener('mouseleave', () => this._removeSubMenuClass(subMenu))
+    subMenuItem.addEventListener('click', () => this._toggleSubMenuClass(subMenu))
   }
 
-  _addSubMenuClass(subMenu) {
-    subMenu.classList.add('main-menu__sub-menu_opened')
+  _toggleSubMenuClass(subMenu) {
+    subMenu.classList.toggle('main-menu__sub-menu_opened')
+
   }
 
   _removeSubMenuClass(subMenu) {
-    subMenu.classList.remove('main-menu__sub-menu_opened')
+    if (subMenu.classList.contains('main-menu__sub-menu_opened')) {
+      subMenu.classList.remove('main-menu__sub-menu_opened')
+    }
   }
 
   _toggleBurgerBtnClass() {
