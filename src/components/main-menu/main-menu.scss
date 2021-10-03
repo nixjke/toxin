@@ -84,7 +84,7 @@
       width: 100%;
       height: 2px;
       background-color: $darkShade100;
-      transition: transform .3s ease-in-out, opacity .2s ease-in-out;
+      transition: transform .2s ease-in-out, opacity .2s ease-in-out;
 
       &:nth-child(2) {
         top: 7px;
