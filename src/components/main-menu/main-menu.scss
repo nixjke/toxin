@@ -29,7 +29,7 @@
       width: 100vw;
       opacity: 0;
       background: #fff;
-      transition: transform .3s ease-in-out;
+      transition: transform .2s ease-in-out;
       transform: translate(-50%, -10px);
     }
   }
@@ -98,7 +98,7 @@
 
   &__sub-menu {
     position: absolute;
-    top: 41px;
+    top: 43px;
     padding: 7px 20px;
     visibility: hidden;
     left: -35%;
@@ -108,7 +108,6 @@
     border-top: none;
     background-color: #fff;
     border-radius: 0 0 5px 5px;
-    box-shadow: 0 10px 20px rgba(31, 32, 65, .05);
 
     &_opened {
       z-index: 100;
@@ -141,7 +140,7 @@
       line-height: 17px;
       text-decoration: none;
       color: $darkShade50;
-      transition: all .2s ease;
+      transition: color .2s ease;
 
       &:hover {
         color: $darkShade75;
@@ -226,6 +225,6 @@
   }
 
   &__sub-item {
-    margin: 4px 0;
+    padding: 4px 0;
   }
 }

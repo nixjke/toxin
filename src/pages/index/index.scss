@@ -18,7 +18,7 @@
 
 .index-block {
   box-sizing: border-box;
-  height: 93.25vh;
+  height: 100vh;
   background-image: url('./img/interior.jpg');
   background-repeat: no-repeat;
   background-position: center -69px;
@@ -32,8 +32,7 @@
   }
 
   &__wrap {
-    position: relative;
-    padding-top: 70px;
+    padding-top: 140px;
   }
 
   &__slogan {

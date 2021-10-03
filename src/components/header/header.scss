@@ -1,14 +1,12 @@
 .page-header {
-  position: relative;
+  position: absolute;
+  width: 100%;
   background-color: white;
   box-shadow: 0 10px 20px rgba(31, 32, 65, .05);
+  z-index: 1;
 
   &__container {
-    position: relative;
-    margin: 0 auto;
-    width: 100%;
-    min-width: 320px;
-    max-width: 1160px;
+    @include container;
   }
 
   &__wrap {
@@ -17,6 +15,10 @@
     display: flex;
     flex-wrap: wrap;
 
+    @media (max-width: 1200px) {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
     @media (max-width: 425px) {
       padding-right: 20px;
       padding-left: 20px;
@@ -66,9 +68,7 @@
 
     @media (max-width: 1024px) {
       margin-left: auto;
-      /* stylelint-disable */
       order: 2;
-      /* stylelint-enable */
     }
   }
 
@@ -121,8 +121,8 @@
         text-align: center;
         vertical-align: top;
         text-decoration: none;
-        color: transparentize($darkShade100, .5);
-        border-top: 1px solid transparentize($darkShade100, .75);
+        color: $darkShade50;
+        border-top: 1px solid $darkShade25;
       }
     }
 
