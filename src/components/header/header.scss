@@ -1,9 +1,7 @@
 .page-header {
-  position: absolute;
-  width: 100%;
+  position: relative;
   background-color: white;
   box-shadow: 0 10px 20px rgba(31, 32, 65, .05);
-  z-index: 1;
 
   &__container {
     @include container;
@@ -15,7 +13,7 @@
     display: flex;
     flex-wrap: wrap;
 
-    @media (max-width: 1200px) {
+    @media (max-width: 425px) {
       padding-right: 20px;
       padding-left: 20px;
     }
@@ -64,7 +62,9 @@
 
     @media (max-width: 1024px) {
       margin-left: auto;
+      /* stylelint-disable */
       order: 2;
+      /* stylelint-enable */
     }
   }
 
@@ -78,22 +78,20 @@
       position: absolute;
       z-index: 100;
       top: 55px;
-      left: 56%;
+      right: 0px;
       padding: 0;
       display: block;
       visibility: hidden;
-      width: 380px;
+      min-width: 380px;;
       list-style: none;
-      background: #fff;
-      transition: transform .2s ease-in-out;
-      transform: translate3d(-380px);
+      background: white;
     }
 
     &_active {
       @media (max-width: 1024px) {
+        display: block;
         visibility: visible;
         opacity: 1;
-        transform: translate3d(380px);
       }
     }
 
@@ -155,13 +153,13 @@
 
     @media (max-width: 1024px) {
       position: absolute;
-      right: 70px;
+      right: 40px;
       display: block;
       box-sizing: border-box;
       width: 24px;
       height: 24px;
       content: '';
-      background: url('./img/user.svg') no-repeat;
+      background: url('../../components/header/img/user.svg') no-repeat;
       border: none;
       cursor: pointer;
     }
@@ -177,3 +175,4 @@
     }
   }
 }
+

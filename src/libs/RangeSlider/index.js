@@ -1,20 +1,20 @@
-import noUiSlider from 'nouislider';
-import wNumb from 'wnumb';
+import noUiSlider from 'nouislider'
+import wNumb from 'wnumb'
 
 class RangeSlider {
   static init(domElements) {
-    const {root} = domElements;
-    const element = this._getElement(root);
-    this._createSlider(element, domElements);
+    const { root } = domElements
+    const element = this._getElement(root)
+    this._createSlider(element, domElements)
   }
 
   static _createSlider(item, domElements) {
-    const {options, handle, connect, upperValue, lowValue} = domElements;
-    const viewNodes = this._getViewNodes(upperValue, lowValue);
+    const { options, handle, connect, upperValue, lowValue } = domElements
+    const viewNodes = this._getViewNodes(upperValue, lowValue)
     noUiSlider.create(item, {
       start: this._getStartData(options),
       connect: true,
-      format: wNumb({decimals: 0}),
+      format: wNumb({ decimals: 0 }),
       step: this._getStepData(options),
       range: this._getRangeData(options),
       cssClasses: {
@@ -55,43 +55,43 @@ class RangeSlider {
         valueLarge: 'value-large',
         valueSub: 'value-sub',
       },
-    });
+    })
 
-    item.noUiSlider.on('update', function(values, handle) {
-      let viewPrice = values[handle].replace(/(\d)(?=(\d{3})+(\D|$))/g, '$1 ');
-      viewPrice += '₽';
-      viewNodes[handle].textContent = viewPrice;
-    });
+    item.noUiSlider.on('update', function (values, handle) {
+      let viewPrice = values[handle].replace(/(\d)(?=(\d{3})+(\D|$))/g, '$1 ')
+      viewPrice += '₽'
+      viewNodes[handle].textContent = viewPrice
+    })
   }
 
   static _getViewNodes(upperValue, lowValue) {
-    const lowerViewPrice = document.querySelector(`.${lowValue}`);
-    const upperViewPrice = document.querySelector(`.${upperValue}`);
-    return [lowerViewPrice, upperViewPrice];
+    const lowerViewPrice = document.querySelector(`.${lowValue}`)
+    const upperViewPrice = document.querySelector(`.${upperValue}`)
+    return [lowerViewPrice, upperViewPrice]
   }
 
   static _getElement(root) {
-    return document.querySelector(`.${root}`);
+    return document.querySelector(`.${root}`)
   }
 
   static _getStartData(options) {
-    const rangeSliderOptions = document.querySelector(`.${options}`);
-    const startData = rangeSliderOptions.getAttribute('data-start');
-    return startData.split(',').map(item => parseInt(item));
+    const rangeSliderOptions = document.querySelector(`.${options}`)
+    const startData = rangeSliderOptions.getAttribute('data-start')
+    return startData.split(',').map(item => parseInt(item))
   }
 
   static _getStepData(options) {
-    const rangeSliderOptions = document.querySelector(`.${options}`);
-    const stepData = rangeSliderOptions.getAttribute('data-step');
-    return parseInt(stepData);
+    const rangeSliderOptions = document.querySelector(`.${options}`)
+    const stepData = rangeSliderOptions.getAttribute('data-step')
+    return parseInt(stepData)
   }
 
   static _getRangeData(options) {
-    const rangeSliderOptions = document.querySelector(`.${options}`);
-    const min = parseInt(rangeSliderOptions.getAttribute('data-range-min'));
-    const max = parseInt(rangeSliderOptions.getAttribute('data-range-max'));
-    return {min, max};
+    const rangeSliderOptions = document.querySelector(`.${options}`)
+    const min = parseInt(rangeSliderOptions.getAttribute('data-range-min'))
+    const max = parseInt(rangeSliderOptions.getAttribute('data-range-max'))
+    return { min, max }
   }
 }
 
-export default RangeSlider;
+export default RangeSlider

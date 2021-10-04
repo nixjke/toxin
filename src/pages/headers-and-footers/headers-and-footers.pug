@@ -22,6 +22,7 @@ block variables
       { title: 'О нас', isActive: true },
       { 
         title: 'Услуги',
+    
         subMenu: [
           { title: 'Подбор отелей' },
           { title: 'Заказать трансфер' },
@@ -37,17 +38,17 @@ block variables
           { title: 'Международные' }
         ]
       }
-    ]
+    ];
 
 block content
   .headers-and-footers__logo-wrap
     +logoInactive
   .headers-and-footers__wrap
     .headers-and-footers__item
-      +header({ customMenuItems: menuItems, })
+      +header({ customMenuItems: menuItems })
     .headers-and-footers__item.headers-and-footers__item_authorized
-      +header({ customMenuItems: menuItems, userName: 'Юлий Цезарь', })
+      +header({ customMenuItems: menuItems, userName: 'Юлий Цезарь' })
     .headers-and-footers__item
       +footer
     .headers-and-footers__item.headers-and-footers__item_short
-      +footer({ isShort: true, })
+      +footer({ isShort: true })
