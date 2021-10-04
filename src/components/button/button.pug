@@ -1,18 +1,18 @@
 mixin button(options)
   -
-     let buttonClass = 'button'
-     const { variant } = options
-     const variantModifiers = ['outlined', 'text']
+     let buttonClass = 'button';
+     const { variant } = options;
+     const variantModifiers = ['outlined', 'text'];
 
      if (variantModifiers.includes(variant)) {
-       buttonClass += ` button_with-variant-${variant}`
+       buttonClass += ` button_with-variant-${variant}`;
      }
 
-     const { size } = options
-     const sizeModifiers = ['large', 'medium', 'higher']
+     const { size } = options;
+     const sizeModifiers = ['large', 'medium', 'higher'];
 
      if (sizeModifiers.includes(size)) {
-       buttonClass += ` button_${size}`
+       buttonClass += ` button_${size}`;
      }
 
     const {
@@ -22,14 +22,14 @@ mixin button(options)
        buttonType = 'button',
        title,
        path,
-     } = options
+     } = options;
 
      if (isDisabled) {
-        buttonClass += ' button_disabled'
+        buttonClass += ' button_disabled';
      }
 
      if (withIcon) {
-       buttonClass += ' button_with-icon'
+       buttonClass += ' button_with-icon';
      }
 
   if path

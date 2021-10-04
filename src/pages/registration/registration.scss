@@ -18,18 +18,15 @@
   &__container {
     @include container;
   }
-
   &__main {
     background: url('./img/room-interior.jpg') no-repeat;
-    background-position: center -70px;
-
-    @media (min-width: 1440px) {
-      background-size: cover;
-    }
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
   }
 
   &__wrap {
-    padding: 20px 0;
+    padding: 150px 0 20px;
     display: flex;
     justify-content: center;
   }

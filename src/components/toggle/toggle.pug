@@ -1,10 +1,15 @@
-mixin toggle({ text, isChecked })
+mixin toggle({ text, isChecked, classForJs })
   -
-    let labelClass = 'toggle__label-text'
-    let inputClass = 'toggle__input'
+    let labelClass = 'toggle__label-text';
+    let inputClass = 'toggle__input';
+
+    if (classForJs) {
+      labelClass += ` ${classForJs}`;
+      inputClass += ` ${classForJs}-input`;
+    }
 
   .toggle
     .toggle__wrap
       label.toggle__label
-        input.toggle__input(class=inputClass type='checkbox', checked=isChecked)
-        span.toggle__label-text(class=labelClass)= text
+        input.toggle__input(class=inputClass, type='checkbox', checked=isChecked)
+        span.toggle__label-text(class=labelClass, tabindex='0')= text

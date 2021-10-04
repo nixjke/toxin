@@ -13,10 +13,20 @@ mixin registerCard
             +input({ type: 'text', name: 'name', placeholder: 'Имя' })
           .register-card__input-wrap 
             +input({ type: 'text', name: 'surname', placeholder: 'Фамилия' })
-          +radioButton({ items: [ { groupName: 'gender', label: 'Мужчина', isChecked: true, classForJs: 'js-gender-man' }, { groupName: 'gender', label: 'Женщина', classForJs: 'js-gender-female' }, ], })
+          +radioButton({
+            items: [
+              { groupName: 'gender', label: 'Мужчина', isChecked: true, classForJs: 'js-gender-man' },
+              { groupName: 'gender', label: 'Женщина', classForJs: 'js-gender-female' },
+            ],
+          })
         fieldset.register-card__fieldset
           legend.register-card__legend Дата рождения
-          +input({ type: 'text', name: 'date-of-birth', placeholder: 'ДД.ММ.ГГГГ', classForJs: 'js-date-birth', })
+          +input({
+            type: 'text',
+            name: 'date-of-birth',
+            placeholder: 'ДД.ММ.ГГГГ',
+            classForJs: 'js-date-birth',
+          })
         fieldset.register-card__fieldset
           legend.register-card__legend Данные для входа в сервис
           .register-card__input-wrap
@@ -28,4 +38,9 @@ mixin registerCard
       .register-card__account-enter
         p.register-card__account-enter-text Уже есть аккаунт на Toxin
         .register-card__auth-btn-wrap
-          +button({ path: 'auth.html', title: 'Войти', variant: 'outlined', size: 'large', })
+          +button({
+            path: 'auth.html',
+            title: 'Войти',
+            variant: 'outlined',
+            size: 'large',
+          })
