@@ -63,6 +63,10 @@
 
   &__row-wrap {
     width: 23%;
+    
+    .drop-with-bullet__list {
+      padding-top: 200px;
+    }
 
     &_size_large {
       width: 61.3%;
