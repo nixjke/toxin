@@ -7,10 +7,14 @@
   }
 
   &__item {
-    margin-bottom: 20px;
+    margin-bottom: 21px;
 
     &:last-child {
       margin-bottom: 0;
+    }
+
+    @media (max-width: 768px) {
+      margin-bottom: 10px;
     }
 
     .nav-menu__link {
@@ -19,7 +23,13 @@
       text-decoration: none;
       color: $darkShade50;
       transition: color .2s ease;
-      cursor: pointer;
+
+      @media (max-width: 768px) {
+        display: inline-block;
+        width: 100%;
+        vertical-align: top;
+      }
+
       &:hover {
         color: $darkShade75;
       }

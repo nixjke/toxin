@@ -1,7 +1,7 @@
 .page-footer {
   position: relative;
   background-color: white;
-  box-shadow: 0 10px 20px $darkShade5;
+  box-shadow: 0 10px 20px rgba(31, 32, 65, .05);
 
   &::after {
     position: absolute;
@@ -10,6 +10,14 @@
     height: 1px;
     content: '';
     background: $darkShade5;
+
+    @media (max-width: 555px) {
+      bottom: 120px;
+    }
+
+    @media (max-width: 394px) {
+      bottom: 135px;
+    }
   }
 
   &_short::after {
@@ -17,7 +25,7 @@
   }
 
   &_with-border-top {
-    border-top: 1px solid $darkShade25
+    border-top: 1px solid $darkShade25;
   }
 
   &_tight-bottom::after {
@@ -25,23 +33,24 @@
   }
 
   &__container {
-    position: relative;
-  margin: 0 auto;
-  width: 100%;
-  min-width: 320px;
-  max-width: 1160px;
+    @include container;
   }
 
-  &__wrapper {
+  &__wrap {
     &_short {
       padding: 120px 0;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
+
+    @media (max-width: 425px) {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
   }
 
-  &__logo-wrapper {
+  &__logo-wrap {
     margin-bottom: 13px;
 
     &_short {
@@ -50,7 +59,11 @@
     }
   }
 
-  &__copyright-wrapper {
+  &__copyright-wrap {
+    @media (max-width: 555px) {
+      margin-bottom: 20px;
+      text-align: center;
+    }
 
     &_short {
       margin-bottom: 26px;
@@ -60,6 +73,30 @@
   &__content {
     padding: 102px 0 105px;
     display: flex;
+
+    @media (max-width: 1100px) {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    @media (min-width: 320px) and (max-width: 768px) {
+      padding-top: 30px;
+      padding-bottom: 40px;
+      flex-direction: column;
+    }
+
+    & > .page-footer__col {
+      @media (max-width: 1100px) {
+        margin-right: 14%;
+        box-sizing: border-box;
+        width: 240px;
+      }
+
+      @media (min-width: 320px) and (max-width: 768px) {
+        margin-bottom: 40px;
+        width: 100%;
+      }
+    }
   }
 
   &__col-group {
@@ -67,6 +104,45 @@
     display: flex;
     justify-content: space-between;
     flex-grow: 1;
+
+    @media (max-width: 1100px) {
+      flex-wrap: wrap;
+    }
+
+    .page-footer__col {
+      @media (max-width: 1100px) {
+        margin-bottom: 40px;
+        box-sizing: border-box;
+        width: 50%;
+      }
+
+      @media (min-width: 320px) and (max-width: 768px) {
+        margin-bottom: 40px;
+        width: 100%;
+      }
+
+      &:first-child {
+        @media (width: 1440px) {
+          margin-right: 57px;
+        }
+      }
+
+      &:nth-child(3) {
+        @media (max-width: 1100px) {
+          margin-bottom: 0;
+        }
+
+        @media (min-width: 320px) and (max-width: 768px) {
+          margin-bottom: 30px;
+        }
+      }
+
+      &:last-child {
+        @media (max-width: 1100px) {
+          margin-bottom: 0;
+        }
+      }
+    }
   }
 
   &__col {
@@ -87,17 +163,37 @@
     }
   }
 
-  &__text-content-wrapper {
+  &__text-content-wrap {
     margin-bottom: 22px;
     width: 260px;
+
+    @media (max-width: 1100px) {
+      width: 85%;
+    }
+
+    @media (min-width: 320px) and (max-width: 768px) {
+      width: 100%;
+    }
   }
 
-  &__title-wrapper {
+  &__title-wrap {
     margin-bottom: 20px;
+
+    @media (min-width: 320px) and (max-width: 768px) {
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid $darkShade100;
+    }
   }
 
-  &__title-nav-wrapper {
+  &__title-nav-wrap {
     margin-bottom: 23px;
+
+    @media (min-width: 320px) and (max-width: 768px) {
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid $darkShade100;
+    }
   }
 
   &__side-info {
@@ -106,5 +202,9 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+
+    @media (max-width: 555px) {
+      flex-direction: column;
+    }
   }
 }
