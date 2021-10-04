@@ -14,12 +14,10 @@
 
 .auth-page {
   &__main {
+    height: 100vh;
     background: url('./img/room-interior.jpg') no-repeat;
-    background-position: center -70px;
-
-    @media (min-width: 1440px) {
-      background-size: cover;
-    }
+    background-position: center;
+    background-size: cover;
   }
 
   &__container {
@@ -27,7 +25,7 @@
   }
 
   &__wrap {
-    padding: 173px 0 174px;
+    padding: 243px 0 174px;
     display: flex;
     justify-content: center;
   }
