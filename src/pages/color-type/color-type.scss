@@ -1,31 +1,51 @@
-@import '../../style/utils/mixin.scss';
 @import '../../style/utils/variables.scss';
-@import '../../components/color-palette/color-palette.scss';
+@import '../../style/utils/mixin.scss';
 @import '../../components/typography/typography.scss';
+@import '../../components/color-palette/color-palette.scss';
 
-.color-type {
+.colors-and-type {
+  &__logo-wrap {
+    padding-top: 30px;
+    padding-left: 30px;
+  }
+
   &__container {
     @include container;
   }
 
-  &__logo-inactive-wrapper {
-    position: absolute;
-    top: 30px;
-    left: 30px;
-  }
-
-  &__wrapper {
-    padding-top: 140px;
+  &__wrap {
+    padding-top: 67px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+
+    @media (width: 1440px) {
+      justify-content: start;
+    }
+
+    @media (max-width: 860px) {
+      flex-direction: column;
+    }
+
+    @media (max-width: 425px) {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
   }
 
   &__palette {
     margin: 0;
     padding: 0;
     padding-left: 10px;
-    list-style: none; 
+    list-style: none;
+
+    @media (width: 1440px) {
+      margin-right: 428px;
+    }
+
+    @media (max-width: 860px) {
+      margin-bottom: 60px;
+    }
   }
 
   &__palette-item {
@@ -37,11 +57,11 @@
     display: flex;
   }
 
-  &__typography-wrapper {
+  &__typography-wrap {
     max-width: 336px;
   }
 
-  &__typography-label-wrapper {
+  &__typography-label-wrap {
     margin-right: 30px;
     width: 37px;
     text-align: right;
@@ -52,7 +72,7 @@
     font-family: $font-family;
     font-size: 14px;
     font-weight: normal;
-    color: $darkShade75;
+    color: $darkShade25;
 
     &_upper {
       text-transform: uppercase;
