@@ -20,6 +20,12 @@ npm run dev
 npm run build
 ```
 
+### Deploy gh-pages
+
+```bash
+npm run deploy
+```
+
 ### URL
 1. Пользовательские страницы:
   - [Главная](https://sosiskapish.github.io/toxin/)
