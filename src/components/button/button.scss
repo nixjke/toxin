@@ -23,14 +23,7 @@
 
   &_disabled {
     opacity: .5;
-    pointer-events: none;
-    cursor: default;
-
-    &:hover {
-      &::before {
-        display: none;
-      }
-    }
+    cursor: not-allowed;
   }
 
   &_with-variant-outlined {
@@ -46,7 +39,6 @@
       opacity: 1;
       background: #fff;
       border: 2px solid #DDCEFF;
-      
     }
   }
 
