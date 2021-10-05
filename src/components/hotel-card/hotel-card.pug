@@ -1,28 +1,22 @@
 include ../rate-button/rate-button
 
-mixin hotelCard({images,numberHotel,starCount,reviewCount,dayCost,isLux})
+mixin hotelCard({ images, numberHotel, starCount, reviewCount, dayCost, isLux })
   section.hotel-card
     .hotel-card__wrap.glide.js-hotel-card-glide
       .hotel-card__slider.glide__track(data-glide-el='track')
         ul.hotel-card__slides.glide__slides
           each image in images
-            - const {src, alt} = image;
+            - const { src, alt } = image
             li.hotel-card__slide.glide__slide #[img.hotel-card__picture(src=src, alt=alt)]
         .glide__arrows.hotel-card__arrows(data-glide-el='controls')
-          button.glide__arrow.glide__arrow_left.hotel-card__slider-btn(
-            data-glide-dir='<',
-            type='button'
-          ) Назад
+          button.glide__arrow.glide__arrow_left.hotel-card__slider-btn(data-glide-dir='<', type='button') Назад
           button.glide__arrow.glide__arrow_right.hotel-card__slider-btn.hotel-card__slider-btn_next(
             data-glide-dir='>',
             type='button'
           ) Вперед
         .hotel-card__bullets.glide__bullets(data-glide-el='controls[nav]')
           each image, index in images
-            button.hotel-card__bullet.glide__bullet(
-              data-glide-dir=`=${index}`,
-              type='button'
-            )
+            button.hotel-card__bullet.glide__bullet(data-glide-dir=`=${index}`, type='button')
       .hotel-card__info
         .hotel-card__info-item
           if (isLux)

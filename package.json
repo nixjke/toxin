@@ -5,7 +5,8 @@
   "main": "src/page/main/main.js",
   "scripts": {
     "dev": "webpack-dev-server --open --hot --config ./webpack.dev.conf.js",
-    "build": "webpack --config ./webpack.build.conf.js"
+    "build": "webpack --config ./webpack.build.conf.js",
+    "deploy": "gh-pages -d dist"
   },
   "author": "https://github.com/SosiskaPish",
   "license": "ISC",
