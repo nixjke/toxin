@@ -15,7 +15,7 @@
     display: flex;
     flex-wrap: wrap;
 
-    @media (max-width: 425px) {
+    @media (max-width: 1224px) {
       padding-right: 20px;
       padding-left: 20px;
     }
@@ -148,33 +148,6 @@
     opacity: .5;
     font-family: $font-family;
     color: $darkShade100;
-  }
-
-  &__auth-profile {
-    display: none;
-
-    @media (max-width: 1024px) {
-      position: absolute;
-      right: 40px;
-      display: block;
-      box-sizing: border-box;
-      width: 24px;
-      height: 24px;
-      content: '';
-      background: url('../../components/header/img/user.svg') no-repeat;
-      border: none;
-      cursor: pointer;
-    }
-
-    @media (min-width: 320px) and (max-width: 425px) {
-      right: 60px;
-    }
-
-    &_hidden {
-      @media (max-width: 1024px) {
-        display: none;
-      }
-    }
   }
 }
 

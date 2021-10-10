@@ -30,7 +30,6 @@ class MainMenu {
       return
     }
 
-    this._toggleAuthBtnClass()
     const authList = this.parentDom.parentNode.querySelector('.js-auth-list')
     const isAuthListActive = authList.classList.contains('page-header__auth-list_active')
 
@@ -48,7 +47,6 @@ class MainMenu {
 
   _handleAuthBtnClick = () => {
     this._toggleBurgerBtnClass()
-    this._toggleAuthBtnClass()
     this._toggleAuthListClass()
   }
 
@@ -76,11 +74,6 @@ class MainMenu {
 
   _toggleMainMenuClass() {
     this.parentDom.classList.toggle('main-menu_active')
-  }
-
-  _toggleAuthBtnClass() {
-    const authBtn = this.parentDom.parentNode.querySelector('.js-profile-btn')
-    authBtn.classList.toggle('page-header__auth-profile_hidden')
   }
 
   _toggleAuthListClass() {
