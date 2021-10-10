@@ -13,23 +13,19 @@
     overflow: hidden;
     nav.main-menu__nav {
       @media (max-width: 1024px) {
-        visibility: visible;
-        opacity: 1;
+        transform: translatex(-380px);
       }
     }
   }
 
   &__nav {
     @media (max-width: 1024px) {
-      position: absolute;
+      position: fixed;
       z-index: 100;
       top: 69px;
-      visibility: hidden;
       max-width: 380px;
-      right: 0px;
-      // right: 380px;
+      right: -380px;
       width: 100%;
-      opacity: 0;
       background: #fff;
       transition: transform .2s ease-in-out;
     }
@@ -144,10 +140,11 @@
       line-height: 17px;
       text-decoration: none;
       color: $darkShade50;
-      transition: color .2s ease;
+      transition: color .2s ease, background .2s ease;
 
       &:hover {
         color: $darkShade75;
+        background-color: $darkShade5;
       }
     }
   }
