@@ -1,6 +1,5 @@
 import '../../style/main.scss'
 import './room-details.scss'
-import '../../components/main-menu'
 import '../../components/total-card'
 import '../../components/pie-chart'
 import datePickerInitial from '../../components/date-picker'
