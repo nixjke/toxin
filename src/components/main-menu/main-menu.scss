@@ -107,12 +107,12 @@
     border-radius: 0 0 5px 5px;
 
     @media (max-width: 1024px) {
-      padding: 7px 20px;
+      padding: 7px 40px;
       left: 0%;
       top: 57px;
       border: none;
-      align-items: center;
-      text-align: center;
+      align-items: start;
+      text-align: start;
 
       &_opened {
         position: static;
@@ -132,10 +132,10 @@
 
   &__item > .main-menu__item-link {
     @media (max-width: 1024px) {
-      padding: 20px 0;
+      padding: 20px 40px;
       display: inline-block;
       width: 100%;
-      text-align: center;
+      text-align: start;
       vertical-align: top;
       border-top: 1px solid $darkShade25;
       position: relative;
