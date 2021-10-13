@@ -1,15 +1,10 @@
 {
-  "name": "toxin",
-  "version": "1.0.0",
-  "description": "MetaLamp",
-  "main": "src/page/main/main.js",
+  "private": true,
   "scripts": {
     "dev": "webpack-dev-server --open --hot --config ./webpack.dev.conf.js",
     "build": "webpack --config ./webpack.build.conf.js",
     "deploy": "gh-pages -d dist"
   },
-  "author": "https://github.com/SosiskaPish",
-  "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.11.6",
     "@babel/core": "^7.11.6",
@@ -53,14 +48,5 @@
     "nouislider": "^14.6.2",
     "validator": "^12.2.0",
     "wnumb": "^1.2.0"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions"
-  ]
+  }
 }
