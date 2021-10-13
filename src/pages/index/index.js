@@ -1,6 +1,7 @@
 import '../../style/main.scss'
 import './index.scss'
 import '../../favicons/favicons.js'
+import '../../components/main-menu/index'
 import datePickerInitial from '../../components/date-picker'
 import dropDownCounterInitial from '../../components/dropdown-counter'
 
