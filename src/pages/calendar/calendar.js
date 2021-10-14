@@ -8,6 +8,9 @@ import AirDatepicker from '../../libs/Air-datepicker/index'
 let Datepicker = new AirDatepicker('.d', {
   inline: true,
   buttons: ['clear', 'today'],
+  locale: {
+    today: 'Применить'
+  },
   navTitles: {
     days: 'MMMM yyyy',
   },

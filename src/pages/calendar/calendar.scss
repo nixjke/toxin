@@ -2,6 +2,12 @@
 
 .air-datepicker {
   width: 318px;
+  font-family: $font-family;
+  &--content {
+    width: 280px;
+    margin: 0 auto;
+    margin-top: 23px;
+  }
 
   &-nav {
     margin-top: 11px;
@@ -22,7 +28,6 @@
 
     // Title calendar
     &--title {
-      font-family: $font-family;
       font-weight: bold;
       font-size: 19px;
       line-height: 22.8px;
@@ -33,10 +38,51 @@
     }
   }
 
-  &--content {
-    width: 280px;
-    margin: 0 auto;
-    margin-top: 24px;
+  &--buttons {
+    border-top: none;
+    & .air-datepicker-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 2px;
+      margin-bottom: 5px;
+
+      :first-child {
+        margin-left: 5px;
+      }
+      :last-child {
+        margin-right: 5px;
+      }
+      & .air-datepicker-button {
+        color: $purple;
+        font-size: 12px;
+        line-height: 14.4px;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  &-body {
+    // Days of the week
+    &--day-names {
+      margin-bottom: 14px;
+    }
+    &--day-name {
+      color: $purple;
+      font-weight: bold;
+      line-height: 14.4px;
+    }
+    &--cells.-days- {
+      grid-auto-rows: 40px;
+    }
+  }
+  // Days
+  &-cell {
+    color: $darkShade50;
+    font-size: 12px;
+    line-height: 14.4px;
+    width: 40px;
+    height: 40px;
   }
 }
 
