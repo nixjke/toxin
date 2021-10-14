@@ -8,6 +8,7 @@ import AirDatepicker from '../../libs/Air-datepicker/index'
 let Datepicker = new AirDatepicker('.d', {
   inline: true,
   buttons: ['clear', 'today'],
+  range: true,
   locale: {
     today: 'Применить'
   },
@@ -16,5 +17,5 @@ let Datepicker = new AirDatepicker('.d', {
   },
   prevHtml: '<span class="material-icons-outlined">arrow_back</span>',
   nextHtml: '<span class="material-icons-outlined">arrow_forward</span>',
-  startDate: new Date(1566888888882)
+  startDate: new Date()
 })

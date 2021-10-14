@@ -83,6 +83,59 @@
     line-height: 14.4px;
     width: 40px;
     height: 40px;
+    &.-current- {
+      background: $gradientSecond;
+      color: white;
+      font-weight: bold;
+      border-radius: 50%;
+      &.-in-range- {
+        border-radius: 0;
+        font-weight: normal;
+        color: $darkShade50;
+      }
+    }
+    &.-focus- {
+      border-radius: 50%;
+      color: white;
+      background: $gradient;
+      font-weight: bold;
+      &.-in-range- {
+        font-weight: normal;
+        border-radius: 0;
+        background: linear-gradient(to top, #bc9cff3f 0%, #8ba4f93f 100%);
+      }
+    }
+    &.-select- {
+      border-radius: 50%;
+      background: $gradient;
+      font-weight: bold;
+    }
+    &.-selected- {
+      border-radius: 50%;
+      background: $gradient;
+      font-weight: bold;
+      &.-focus- {
+        background: $gradient;
+        border-radius: 50%;
+      }
+    }
+    &.-range-from- {
+      border: none;
+      border-radius: 50%;
+      background: $gradient;
+      &.-select- {
+        border-radius: 0;
+      }
+    }
+    &.-range-to- {
+      border: none;
+      border-radius: 50%;
+      background: $gradient;
+    }
+    &.-in-range- {
+      background: linear-gradient(to top, #bc9cff3f 0%, #8ba4f93f 100%);
+      color: $darkShade50;
+    }
   }
 }
 
