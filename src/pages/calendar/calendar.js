@@ -1,9 +1,16 @@
 import '../../style/main.scss'
-import './calendar.scss'
-import AirDatepicker from '../../libs/Air-datepicker/index'
 import '../../../node_modules/air-datepicker/air-datepicker.css'
+import '../../libs/Material-icons/index'
+import './calendar.scss'
 
-new AirDatepicker('.d', {
+import AirDatepicker from '../../libs/Air-datepicker/index'
+
+let Datepicker = new AirDatepicker('.d', {
   inline: true,
-  buttons: ['clear', 'today' ]
+  buttons: ['clear', 'today'],
+  navTitles: {
+    days: 'MMMM yyyy',
+  },
+  prevHtml: '<span class="material-icons-outlined">arrow_back</span>',
+  nextHtml: '<span class="material-icons-outlined">arrow_forward</span>'
 })

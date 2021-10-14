@@ -1,6 +1,29 @@
+@import '../../style/utils/variables.scss';
+
 
 .air-datepicker {
-  height: 380px;
+  width: 318px;
+
+  &-nav {
+
+    // SVG [prev, next]
+    &--action {
+      > svg {
+        display: none;
+      }
+    }
+    // Title calendar
+    &--title {
+      font-family: $font-family;
+      font-weight: bold;
+      font-size: 19px;
+      line-height: 22.8px;
+      color: $darkShade100;
+      > i {
+        color: $darkShade100;
+      }
+    }
+  }
 }
 
 
