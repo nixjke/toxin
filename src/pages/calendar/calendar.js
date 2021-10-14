@@ -12,5 +12,6 @@ let Datepicker = new AirDatepicker('.d', {
     days: 'MMMM yyyy',
   },
   prevHtml: '<span class="material-icons-outlined">arrow_back</span>',
-  nextHtml: '<span class="material-icons-outlined">arrow_forward</span>'
+  nextHtml: '<span class="material-icons-outlined">arrow_forward</span>',
+  startDate: new Date(1566888888882)
 })

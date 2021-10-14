@@ -1,17 +1,25 @@
 @import '../../style/utils/variables.scss';
 
-
 .air-datepicker {
   width: 318px;
 
   &-nav {
+    margin-top: 11px;
+    border-bottom: none;
 
     // SVG [prev, next]
+    :first-child {
+      margin-left: 7.7px;
+    }
+    :last-child {
+      margin-right: 7.7px;
+    }
     &--action {
       > svg {
         display: none;
       }
     }
+
     // Title calendar
     &--title {
       font-family: $font-family;
@@ -24,71 +32,17 @@
       }
     }
   }
+
+  &--content {
+    width: 280px;
+    margin: 0 auto;
+    margin-top: 24px;
+  }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.material-icons-outlined {
+  color: $purple;
+}
 
 .d {
   margin: 30px;
