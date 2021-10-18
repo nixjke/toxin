@@ -4,7 +4,6 @@ include ../../components/logo-inactive/logo-inactive
 include ../../components/register-card/register-card
 include ../../components/total-card/total-card
 include ../../components/auth-card/auth-card
-include ../../components/date-picker/date-picker
 include ../../components/hotel-card/hotel-card
 
 block variables
@@ -19,54 +18,7 @@ block variables
       small: 'favicons/favicon-16x16.png',
       manifest: 'favicons/site.webmanifest',
       pinned: 'favicons/safari-pinned-tab.svg',
-    };
-    const defaultCalendar = [
-      [
-        { name: 29, isOutRange: true },
-        { name: 30, isOutRange: true },
-        { name: 31, isOutRange: true },
-        { name: 1 },
-        { name: 2 },
-        { name: 3 },
-        { name: 4 },
-      ],
-      [
-        { name: 5 },
-        { name: 6 },
-        { name: 7 },
-        { name: 8, isCurrent: true },
-        { name: 9 },
-        { name: 10 },
-        { name: 11 },
-      ],
-      [
-        { name: 12 },
-        { name: 13 },
-        { name: 14 },
-        { name: 15 },
-        { name: 16 },
-        { name: 17 },
-        { name: 18 },
-      ],
-      [
-        { name: 19 },
-        { name: 20 },
-        { name: 21 },
-        { name: 22 },
-        { name: 23 },
-        { name: 24 },
-        { name: 25 },
-      ],
-      [
-        { name: 26 },
-        { name: 27 },
-        { name: 28 },
-        { name: 29 },
-        { name: 30 },
-        { name: 31 },
-        { name: 1, isOutRange: true },
-      ],
-    ];
+    }
 
 block content
   .cards-page__logo-wrap
@@ -86,9 +38,8 @@ block content
       .cards-page__row
         .cards-page__item
           .cards-page__stub-card
-            +datePicker({ month: 'Август', year: 2019, calendar: defaultCalendar })
         .cards-page__item
           .cards-page__item-hotel-wrap
-            +hotelCard({ numberHotel: 888, isLux: true, reviewCount: 145, dayCost: '9 900', starCount: 5, images: [ { src: 'img/hotel-rooms/hotel-room-1.jpg', alt: 'Красивый отель' }, { src: 'img/hotel-rooms/hotel-room-1.jpg', alt: 'Красивый отель' }, { src: 'img/hotel-rooms/hotel-room-1.jpg', alt: 'Красивый отель' }, { src: 'img/hotel-rooms/hotel-room-1.jpg', alt: 'Красивый отель' }, ], })
+            +hotelCard({ numberHotel: 888, isLux: true, reviewCount: 145, dayCost: '9 900', starCount: 5, images: [{ src: 'img/hotel-rooms/hotel-room-1.jpg', alt: 'Красивый отель' }, { src: 'img/hotel-rooms/hotel-room-1.jpg', alt: 'Красивый отель' }, { src: 'img/hotel-rooms/hotel-room-1.jpg', alt: 'Красивый отель' }, { src: 'img/hotel-rooms/hotel-room-1.jpg', alt: 'Красивый отель' }]})
           .cards-page__item-hotel-wrap
-            +hotelCard({ numberHotel: 840, isBtnSliderHide: true, reviewCount: 65, dayCost: '9 900', starCount: 4, images: [ { src: 'img/hotel-rooms/hotel-room-2.jpg', alt: 'Красивый отель' }, { src: 'img/hotel-rooms/hotel-room-2.jpg', alt: 'Красивый отель' }, { src: 'img/hotel-rooms/hotel-room-2.jpg', alt: 'Красивый отель' }, { src: 'img/hotel-rooms/hotel-room-2.jpg', alt: 'Красивый отель' }, ], })
+            +hotelCard({ numberHotel: 840, isBtnSliderHide: true, reviewCount: 65, dayCost: '9 900', starCount: 4, images: [{ src: 'img/hotel-rooms/hotel-room-2.jpg', alt: 'Красивый отель' }, { src: 'img/hotel-rooms/hotel-room-2.jpg', alt: 'Красивый отель' }, { src: 'img/hotel-rooms/hotel-room-2.jpg', alt: 'Красивый отель' }, { src: 'img/hotel-rooms/hotel-room-2.jpg', alt: 'Красивый отель' }]})

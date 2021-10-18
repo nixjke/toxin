@@ -2,18 +2,7 @@ import '../../style/main.scss'
 import './index.scss'
 import '../../favicons/favicons.js'
 import '../../components/main-menu/index'
-import datePickerInitial from '../../components/date-picker'
 import dropDownCounterInitial from '../../components/dropdown-counter'
-
-const datePickerDomElements = {
-  parentNode: document.querySelector('.js-date-picker-container'),
-  arrivalInput: document.querySelector('.js-arrival-input'),
-  arrivalSplitBtn: document.querySelector('.js-arrival-input-split-btn'),
-  departureInput: document.querySelector('.js-departure-input'),
-  departureSplitBtn: document.querySelector('.js-departure-input-split-btn'),
-}
-
-datePickerInitial(datePickerDomElements)
 
 const dropDownContainer = document.querySelector('.js-drop-down-counter-container')
 const inputDropDown = document.querySelector('.js-input-drop-down')
