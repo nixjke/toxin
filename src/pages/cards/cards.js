@@ -7,15 +7,16 @@ import '../../components/date-picker/date-picker.scss'
 import AirDatepicker from '../../libs/Air-datepicker/index'
 
 let Datepicker = new AirDatepicker('.cards-page__stub-card', {
+  range: true,
   inline: true,
   buttons: ['clear', 'today'],
   locale: {
-    today: 'Применить'
+    today: 'Применить',
   },
   navTitles: {
     days: 'MMMM yyyy',
   },
   prevHtml: '<span class="material-icons-outlined">arrow_back</span>',
   nextHtml: '<span class="material-icons-outlined">arrow_forward</span>',
-  startDate: new Date()
+  startDate: new Date(),
 })
