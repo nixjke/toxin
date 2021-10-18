@@ -33,6 +33,7 @@ ENTRY_FILES.forEach((entryFile, index) => {
 
 module.exports = {
   mode: 'development',
+  devtool: 'source-map',
   externals: {
     paths: PATHS,
   },

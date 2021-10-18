@@ -42,9 +42,11 @@
   },
   "dependencies": {
     "@glidejs/glide": "^3.4.1",
+    "air-datepicker": "^3.0.1",
     "chart.js": "^2.9.3",
-    "normalize.css": "^8.0.1",
     "inputmask": "^4.0.9",
+    "material-icons": "^1.9.1",
+    "normalize.css": "^8.0.1",
     "nouislider": "^14.6.2",
     "validator": "^12.2.0",
     "wnumb": "^1.2.0"

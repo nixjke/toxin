@@ -1,4 +1,3 @@
-import datePickerInitial from '../../../../components/date-picker'
 import dropDownCounterInitial from '../../../../components/dropdown-counter'
 
 const datePickerDomElements = {
@@ -8,7 +7,6 @@ const datePickerDomElements = {
   isCellLower: true,
 }
 
-datePickerInitial(datePickerDomElements)
 
 const dropDownGuestContainer = document.querySelector('.js-drop-down-counter-container-guest')
 const inputDropDownGuest = document.querySelector('.js-input-drop-down-guest')

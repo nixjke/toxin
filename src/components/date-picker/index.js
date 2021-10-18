@@ -1,8 +1,3 @@
-import DatePicker from './DatePicker'
-
-const datePickerInitial = domElements => {
-  const datePicker = new DatePicker(domElements)
-  datePicker.init()
-}
-
-export default datePickerInitial
+import '../../../node_modules/air-datepicker/air-datepicker.css'
+import '../../libs/Material-icons/index'
+import './date-picker.scss'
