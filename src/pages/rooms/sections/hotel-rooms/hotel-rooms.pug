@@ -165,12 +165,12 @@ mixin hotelRooms
     ];
 
     const pages = [
-      { title: '1', path: 'not-found-page.html', isActive: true },
-      { title: '2', path: 'not-found-page.html' },
-      { title: '3', path: 'not-found-page.html' },
-      { title: '...', path: 'not-found-page.html' },
-      { title: '15', path: 'not-found-page.html' },
-      { title: 'Далее', path: 'not-found-page.html', isNext: true },
+      { title: '1', isActive: true },
+      { title: '2' },
+      { title: '3' },
+      { title: '...' },
+      { title: '15' },
+      { title: 'Далее', isNext: true },
     ];
 
   section.hotels
@@ -181,5 +181,5 @@ mixin hotelRooms
         each item in hotels
           li.hotels__item
             +hotelCard(item)
-      .hotels__pagination 
+      .hotels__pagination
         +pagination(pages)
