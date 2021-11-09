@@ -11,23 +11,11 @@
 
   &_active {
     overflow: hidden;
-    nav.main-menu__nav {
-      @media (max-width: 1024px) {
-        transform: translatex(-380px);
-      }
-    }
   }
 
   &__nav {
     @media (max-width: 1024px) {
-      position: fixed;
-      z-index: 100;
-      top: 69px;
-      max-width: 380px;
-      right: -380px;
-      width: 100%;
-      background: #fff;
-      transition: transform 0.2s ease-in-out;
+      display: none;
     }
   }
 
@@ -59,22 +47,6 @@
       display: block;
     }
 
-    &_active {
-      .main-menu__burger-line {
-        &:first-child {
-          transform: rotate(45deg) translate(7px, 3px);
-        }
-
-        &:nth-child(2) {
-          opacity: 0;
-        }
-
-        &:last-child {
-          transform: rotate(-45deg) translate(7px, -3px);
-        }
-      }
-    }
-
     .main-menu__burger-line {
       position: absolute;
       display: inline-block;
@@ -98,7 +70,7 @@
     top: 43px;
     padding: 7px 20px;
     visibility: hidden;
-    left: -35%;
+    right: 0;
     opacity: 0;
     text-align: start;
     border: 1px solid grey;
