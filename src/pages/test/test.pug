@@ -1,1 +1,38 @@
-input.block
+include ../../components/button/button
+
+-
+  const menuItems = [
+    { title: 'О нас' },
+    {
+      title: 'Услуги',
+      subMenu: [
+        { title: 'Услуги' },
+        { title: 'Услуги' },
+      ]
+    },
+    { title: 'Вакансии' },
+    { title: 'Новости' },
+    {
+      title: 'Соглашения',
+      subMenu: [
+        { title: 'Соглашения' },
+        { title: 'Соглашения' }
+      ]
+    }
+  ]
+
+.sub-menu
+  each item in menuItems
+    -
+      const { title, subMenu } = item
+    .sub-menu__item= title
+      if subMenu
+        ul.main-menu__sub-menu
+          each subItem in subMenu
+            li.main-menu__sub-item
+              a.main-menu__item-link= subItem.title
+  .buttons
+    .buttons-auth
+      +button({ title: 'Войти', path: 'auth.html', variant: 'outlined' })
+    .buttons-reg
+      +button({ title: 'Зарегистрироваться', path: 'registration.html' })
