@@ -20,17 +20,20 @@ include ../../components/button/button
       ]
     }
   ]
-
 .sub-menu
-  each item in menuItems
-    -
-      const { title, subMenu } = item
-    .sub-menu__item= title
-      if subMenu
-        ul.main-menu__sub-menu
-          each subItem in subMenu
-            li.main-menu__sub-item
-              a.main-menu__item-link= subItem.title
+  .main-menu.js-main-menu.main-menu_active
+    span.material-icons-outlined close
+  .sub-menu__item О нас
+  .sub-menu__item Услуги
+    ul.sub-menu__item-li
+      li Услуги
+      li Услуги
+  .sub-menu__item Вакансии
+  .sub-menu__item Новости
+  .sub-menu__item Соглашения
+    ul.sub-menu__item-li
+      li Соглашения
+      li Соглашения
   .buttons
     .buttons-auth
       +button({ title: 'Войти', path: 'auth.html', variant: 'outlined' })

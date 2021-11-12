@@ -1,5 +1,6 @@
 mixin mainMenu(menuItems)
-  
+
+
   .main-menu.js-main-menu
     .main-menu__burger-icon.js-main-menu-burger-btn
       span.main-menu__burger-line
@@ -27,3 +28,21 @@ mixin mainMenu(menuItems)
                 each subItem in subMenu
                   li.main-menu__sub-item
                     a.main-menu__item-link= subItem.title
+
+  .sub-menu
+    .sub-menu__item О нас
+    .sub-menu__item Услуги
+      ul.sub-menu__item-li
+        li Услуги
+        li Услуги
+    .sub-menu__item Вакансии
+    .sub-menu__item Новости
+    .sub-menu__item Соглашения
+      ul.sub-menu__item-li
+        li Соглашения
+        li Соглашения
+    .buttons
+      .buttons-auth
+        +button({ title: 'Войти', path: 'auth.html', variant: 'outlined' })
+      .buttons-reg
+        +button({ title: 'Зарегистрироваться', path: 'registration.html' })

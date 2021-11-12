@@ -1,5 +1,8 @@
+import '../../libs/Material-icons/index.js'
 import '../../style/main.scss'
 import './test.scss'
+
+
 // import '../../libs/Material-icons/index'
 // import '../../../node_modules/air-datepicker/air-datepicker.css'
 // import '../../components/date-picker/date-picker.scss'
