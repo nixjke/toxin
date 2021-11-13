@@ -215,8 +215,9 @@
   display: none;
   @media (max-width: 1024px) {
     display: none;
-    position: fixed;
-    margin-top: 56px;
+    position: absolute;
+    top: 0;
+    margin-top: 58px;
     width: 280px;
     right: 0;
     background-color: #fff;
@@ -260,6 +261,16 @@
     &-active {
       display: block;
     }
+  }
+}
+
+span.burger-icon {
+  display: none;
+  @media (max-width: 1024px) {
+    display: inline;
+    font-size: 32px;
+    user-select: none;
+    cursor: pointer;
   }
 }
 

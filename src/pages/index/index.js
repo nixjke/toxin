@@ -1,5 +1,6 @@
 import '../../style/main.scss'
 import './index.scss'
+import '../../libs/Material-icons/index'
 import '../../favicons/favicons.js'
 import '../../components/main-menu/index'
 import dropDownCounterInitial from '../../components/dropdown-counter'
