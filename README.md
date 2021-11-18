@@ -28,12 +28,12 @@ npm run deploy
 
 ### URL
 
-- [Главная](https://sosiskapish.github.io/toxin/)
-- [Поиск отелей](https://sosiskapish.github.io/toxin/rooms)
-- [Детали отеля](https://sosiskapish.github.io/toxin/room-details)
-- [Регистрация](https://sosiskapish.github.io/toxin/registration)
-- [Авторизация](https://sosiskapish.github.io/toxin/auth)
-- [Colors & Type](https://sosiskapish.github.io/toxin/color-type)
-- [Form Elements](https://sosiskapish.github.io/toxin/form-elements)
-- [Cards](https://sosiskapish.github.io/toxin/cards)
-- [Headers & Footers](https://sosiskapish.github.io/toxin/headers-and-footers)
+- [Главная](https://nixjke.github.io/toxin/)
+- [Поиск отелей](https://nixjke.github.io/toxin/rooms)
+- [Детали отеля](https://nixjke.github.io/toxin/room-details)
+- [Регистрация](https://nixjke.github.io/toxin/registration)
+- [Авторизация](https://nixjke.github.io/toxin/auth)
+- [Colors & Type](https://nixjke.github.io/toxin/color-type)
+- [Form Elements](https://nixjke.github.io/toxin/form-elements)
+- [Cards](https://nixjke.github.io/toxin/cards)
+- [Headers & Footers](https://nixjke.github.io/toxin/headers-and-footers)
