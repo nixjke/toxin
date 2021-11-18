@@ -6,41 +6,26 @@ include ../toggle/toggle
 mixin registerCard
   .register-card
     .register-card__wrap
-      form(action='not-found-page.html')
+      form
         h2.register-card__title Регистрация аккаунта
         fieldset.register-card__fieldset
           .register-card__input-wrap
             +input({ type: 'text', name: 'name', placeholder: 'Имя' })
-          .register-card__input-wrap 
+          .register-card__input-wrap
             +input({ type: 'text', name: 'surname', placeholder: 'Фамилия' })
-          +radioButton({
-            items: [
-              { groupName: 'gender', label: 'Мужчина', isChecked: true, classForJs: 'js-gender-man' },
-              { groupName: 'gender', label: 'Женщина', classForJs: 'js-gender-female' },
-            ],
-          })
+          +radioButton({ items: [ { groupName: 'gender', label: 'Мужчина', isChecked: true, classForJs: 'js-gender-man' }, { groupName: 'gender', label: 'Женщина', classForJs: 'js-gender-female' }, ], })
         fieldset.register-card__fieldset
           legend.register-card__legend Дата рождения
-          +input({
-            type: 'text',
-            name: 'date-of-birth',
-            placeholder: 'ДД.ММ.ГГГГ',
-            classForJs: 'js-date-birth',
-          })
+          +input({ type: 'text', name: 'date-of-birth', placeholder: 'ДД.ММ.ГГГГ', classForJs: 'js-date-birth', })
         fieldset.register-card__fieldset
           legend.register-card__legend Данные для входа в сервис
           .register-card__input-wrap
             +input({ type: 'email', name: 'email', placeholder: 'Email' })
-          .register-card__input-wrap 
+          .register-card__input-wrap
             +input({ type: 'password', name: 'pass', placeholder: 'Пароль' })
           +toggle({ text: 'Получать спецпредложения', classForJs: 'js-special-offer' })
         +button({ title: 'Перейти к оплате', withIcon: true, buttonType: 'submit' })
       .register-card__account-enter
         p.register-card__account-enter-text Уже есть аккаунт на Toxin
         .register-card__auth-btn-wrap
-          +button({
-            path: 'auth.html',
-            title: 'Войти',
-            variant: 'outlined',
-            size: 'large',
-          })
+          +button({ path: 'auth.html', title: 'Войти', variant: 'outlined', size: 'large', })

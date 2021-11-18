@@ -1,7 +1,7 @@
 .page-footer {
   position: relative;
   background-color: white;
-  box-shadow: 0 10px 20px rgba(31, 32, 65, .05);
+  box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
 
   &::after {
     position: absolute;
@@ -10,6 +10,10 @@
     height: 1px;
     content: '';
     background: $darkShade5;
+
+    @media (max-width: 1024px) {
+      display: none;
+    }
 
     @media (max-width: 555px) {
       bottom: 120px;
@@ -38,10 +42,15 @@
 
   &__wrap {
     &_short {
-      padding: 120px 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      display: none;
+      @media (max-width: 1024px) {
+        padding-right: 20px;
+        padding-left: 20px;
+        padding: 120px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
     }
 
     @media (max-width: 1024px) {
@@ -72,11 +81,15 @@
 
   &__content {
     padding: 102px 0 105px;
-    display: flex;
+    display: none;
 
     @media (max-width: 1100px) {
       padding-top: 50px;
       padding-bottom: 50px;
+    }
+
+    @media (min-width: 1024px) and (max-width: 5000px) {
+      display: flex;
     }
 
     @media (min-width: 320px) and (max-width: 768px) {
@@ -196,10 +209,14 @@
 
   &__side-info {
     padding: 20px 0;
-    display: flex;
+    display: none;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+
+    @media (min-width: 1024px) and (max-width: 9999px) {
+      display: flex;
+    }
 
     @media (max-width: 555px) {
       flex-direction: column;

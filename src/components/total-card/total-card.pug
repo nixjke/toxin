@@ -12,7 +12,7 @@ mixin totalCard(options)
     } = options;
 
     const getNumStringWithSpaces = num => {
-      const numString = String(num); 
+      const numString = String(num);
       return numString
         .split('')
         .reverse()
@@ -29,7 +29,7 @@ mixin totalCard(options)
 
   section.total-card
     .total-card__wrap
-      form(action='not-found-page.html')
+      form()
         .total-card__head
           if (isLux)
             h2.total-card__title № #[span.total-card__title-text= numberHotel] #[b.total-card__title-extra-text люкс]
@@ -40,7 +40,7 @@ mixin totalCard(options)
           +dateInput([ { title: 'Прибытие', value: 'ДД.ММ.ГГГГ', classForJs: 'js-arrival-input' }, { title: 'Выезд', value: 'ДД.ММ.ГГГГ', classForJs: 'js-departure-input' }, ])
           .total-card__date-picker-container.js-date-picker-container
         .total-card__title-wrap
-          +typography({ text: 'Гости', variant: 'h3', hasUpper: true }) 
+          +typography({ text: 'Гости', variant: 'h3', hasUpper: true })
         +dropDownInput({ text: 'Сколько гостей', classForJs: 'js-input-drop-down' })
         .total-card__counter-container.js-drop-down-counter-container
         .total-card__calc

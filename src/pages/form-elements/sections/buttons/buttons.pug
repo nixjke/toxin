@@ -6,40 +6,30 @@ include ../../../../components/range-slider/range-slider
 mixin buttons
   -
     const pages = [
-      { title: '1', path: 'not-found-page.html', isActive: true },
-      { title: '2', path: 'not-found-page.html' },
-      { title: '3', path: 'not-found-page.html' },
-      { title: '...', path: 'not-found-page.html' },
-      { title: '15', path: 'not-found-page.html' },
-      { title: 'Далее', path: 'not-found-page.html', isNext: true },
+      { title: '1', isActive: true },
+      { title: '2' },
+      { title: '3' },
+      { title: '...' },
+      { title: '15' },
+      { title: 'Далее', isNext: true },
     ];
 
   .buttons
     .buttons__range-slider-wrap
-      +rangeSlider({
-        title: 'Range Slider',
-        start: [5000, 10000],
-        step: 100,
-        range: { min: 300, max: 15700 },
-      })
+      +rangeSlider({ title: 'Range Slider', start: [5000, 10000], step: 100, range: { min: 300, max: 15700 }, })
     .buttons__button
       .buttons__title-wrap
         +typography({ text: 'Buttons', variant: 'h3', hasUpper: true })
       .buttons__buttons-wrap
         .buttons__button-wrap
           +button({ title: 'Click me', size: 'higher' })
-        .buttons__button-wrap 
+        .buttons__button-wrap
           +button({ title: 'Click me', size: 'higher', isDisabled: true })
       .buttons__buttons-wrap
         .buttons__button-wrap
           +button({ title: 'Click me', size: 'medium', variant: 'outlined' })
         .buttons__button-wrap
-          +button({
-            title: 'Click me',
-            size: 'medium',
-            variant: 'outlined',
-            isDisabled: true,
-          })
+          +button({ title: 'Click me', size: 'medium', variant: 'outlined', isDisabled: true, })
       .buttons__buttons-wrap
         .buttons__button-wrap
           +button({ title: 'Click me', variant: 'text' })

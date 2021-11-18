@@ -41,14 +41,12 @@ mixin footer(isShort)
     }
   footer(class=footerClass)
     .page-footer__container
-      if (isShort)
         .page-footer__wrap.page-footer__wrap_short
           .page-footer__logo-wrap.page-footer__logo-wrap_short
             +logoActive
           .page-footer__copyright-wrap.page-footer__copyright-wrap_short
             +copyright
           +socialButtons
-      else
         .page-footer__wrap
           .page-footer__content
             .page-footer__col.page-footer__col_large
@@ -74,7 +72,7 @@ mixin footer(isShort)
                   +typography({ variant: 'h3', text: 'Подписка', hasUpper: true })
                 .page-footer__text-content-wrap
                   +typography({ variant: 'body', text: 'Получайте специальные предложения и новости сервиса', })
-                form(action='not-found-page.html')
+                form
                   +input({ type: 'text', name: 'date', placeholder: 'Email', withButton: true })
           .page-footer__side-info
             .page-footer__copyright-wrap

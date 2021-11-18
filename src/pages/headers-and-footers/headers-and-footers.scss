@@ -12,7 +12,7 @@
 
 .headers-and-footers {
   background: #f4f4f6;
-  
+
   &__logo-wrap {
     padding-top: 30px;
     padding-left: 30px;
@@ -35,18 +35,13 @@
       top: 250px;
     }
 
-    &:nth-child(3) {
-      top: 360px;
-    }
-
     &:last-child {
-      top: 843px;
+      top: 360px;
     }
 
     &_short {
       left: 25%;
       margin: 0 auto;
-      width: 50%;
     }
   }
 }
