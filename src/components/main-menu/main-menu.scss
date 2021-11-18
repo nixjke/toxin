@@ -267,7 +267,7 @@
 span.burger-icon {
   display: none;
   @media (max-width: 1024px) {
-    display: inline;
+    display: block;
     font-size: 32px;
     user-select: none;
     cursor: pointer;
