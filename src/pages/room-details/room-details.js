@@ -17,8 +17,8 @@ const datepickerInputSecond = document.querySelector('.js-departure-input')
 const datepickerSplitBtn = document.querySelectorAll('.drop-down-input__wrap')
 
 
-console.log(new AirDatepickerInit(datepickerInput, datepickerInputSecond, datepickerSplitBtn))
-new AirDatepickerInit(datepickerInput, datepickerInputSecond, datepickerSplitBtn)
+// console.log(new AirDatepickerInit(datepickerInput, datepickerInputSecond, datepickerSplitBtn))
+// new AirDatepickerInit(datepickerInput, datepickerInputSecond, datepickerSplitBtn)
 const dropDownOptions = {
   container: dropDownContainer,
   input: inputDropDown,

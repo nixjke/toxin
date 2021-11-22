@@ -3,6 +3,7 @@ import './index.scss'
 import '../../libs/Material-icons/index'
 import '../../favicons/favicons.js'
 import '../../components/main-menu/index'
+import '../../components/date-wishes/index'
 import dropDownCounterInitial from '../../components/dropdown-counter'
 
 const dropDownContainer = document.querySelector('.js-drop-down-counter-container')
