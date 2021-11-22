@@ -6,8 +6,15 @@ import '../../libs/Material-icons/index'
 import '../../../node_modules/air-datepicker/air-datepicker.css'
 import '../../components/date-picker/date-picker.scss'
 import AirDatepicker from '../../libs/Air-datepicker/index'
+import AirDatepickerInit from '../../libs/Air-datepicker/index'
 
 let datePickerInput = document.querySelectorAll('.block')
+
+let test = document.querySelectorAll('.drop-down-input')
+
+let date = new AirDatepickerInit(test[0], test[1])
+
+console.log(date.hide)
 
 let Datepicker = new AirDatepicker(datePickerInput[0], {
   multipleDates: true,
