@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --open --hot --config ./webpack.dev.conf.js",
+    "start": "webpack-dev-server --open --hot --config ./webpack.dev.conf.js",
     "build": "webpack --config ./webpack.build.conf.js",
     "deploy": "gh-pages -d dist"
   },

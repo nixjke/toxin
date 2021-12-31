@@ -6,7 +6,7 @@ import AirDatepicker from '../../libs/Air-datepicker/index'
 const input = document.querySelector('.js-arrival-input')
 const inputSecond = document.querySelector('.js-departure-input')
 
-new AirDatepicker(input, {
+const inputAirDatepicker = new AirDatepicker(input, {
   multipleDates: true,
   range: true,
   multipleDatesSeparator: '-',
@@ -24,4 +24,8 @@ new AirDatepicker(input, {
   prevHtml: '<span class="material-icons-outlined">arrow_back</span>',
   nextHtml: '<span class="material-icons-outlined">arrow_forward</span>',
   startDate: new Date(),
+})
+
+inputSecond.addEventListener('click', () => {
+  inputAirDatepicker.show()
 })
