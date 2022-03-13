@@ -1,6 +1,6 @@
-import {getHtmlElement, getRandomNumber, declensionWordEnding} from './utils';
-import classNameMap from './utils/classNameMap';
-import keyCodes from './utils/constants';
+import { getHtmlElement, getRandomNumber, declensionWordEnding } from './utils'
+import classNameMap from './utils/classNameMap'
+import keyCodes from './utils/constants'
 
 class DropDownCounter {
   constructor({
@@ -14,352 +14,325 @@ class DropDownCounter {
     isPinShow = false,
     isHideControl = false,
   }) {
-    const {dropDownCounter} = classNameMap;
+    const { dropDownCounter } = classNameMap
     this.domElements = {
       dropDownParent: getHtmlElement('section', dropDownCounter),
       container,
       input,
       inputSplitBtn,
-    };
+    }
 
     this.countElementsGroup = {
       countElements,
       countGroupView,
-    };
+    }
 
     this.settings = {
       placeholder,
       isPinShow,
       isHideControl,
       maxLengthInput,
-    };
+    }
   }
 
   init = () => {
-    const {input, inputSplitBtn, dropDownParent, container} = this.domElements;
-    const {isPinShow, placeholder, isHideControl} = this.settings;
-    const {
-      wrap,
-      countList: countListClass,
-      control,
-      button,
-      buttonAccent,
-    } = classNameMap;
+    const { input, inputSplitBtn, dropDownParent, container } = this.domElements
+    const { isPinShow, placeholder, isHideControl } = this.settings
+    const { wrap, countList: countListClass, control, button, buttonAccent } = classNameMap
 
     if (isPinShow) {
-      this._show();
+      this._show()
     } else {
-      input.addEventListener('click', this._handleInputClick);
+      input.addEventListener('click', this._handleInputClick)
     }
 
     if (this._hasHaveStartValue()) {
-      this._renderStartCount();
+      this._renderStartCount()
     } else {
-      input.textContent = placeholder;
+      input.textContent = placeholder
     }
 
-    inputSplitBtn.addEventListener('click', this._handleInputClick);
-    this.countElementsGroup.countElements = this._getModifiedCountElements();
-    const dropDownParentWrap = getHtmlElement('div', wrap);
-    const countList = getHtmlElement('ul', countListClass);
-    const dropDownControl = getHtmlElement('div', control);
-    const clearBtn = getHtmlElement('button', button, 'Очистить');
-    this.domElements.clearBtn = clearBtn;
-    clearBtn.type = 'button';
-    clearBtn.addEventListener('click', this._handleClearBtnClick);
-    const acceptBtn = getHtmlElement(
-      'button',
-      `${button} ${buttonAccent}`,
-      'Применить'
-    );
-    acceptBtn.type = 'button';
-    acceptBtn.addEventListener('click', this._handleAcceptBtnClick);
-    const countListFragment = document.createDocumentFragment();
-    const {countElements} = this.countElementsGroup;
+    inputSplitBtn.addEventListener('click', this._handleInputClick)
+    this.countElementsGroup.countElements = this._getModifiedCountElements()
+    const dropDownParentWrap = getHtmlElement('div', wrap)
+    const countList = getHtmlElement('ul', countListClass)
+    const dropDownControl = getHtmlElement('div', control)
+    const clearBtn = getHtmlElement('button', button, 'Очистить')
+    this.domElements.clearBtn = clearBtn
+    clearBtn.type = 'button'
+    clearBtn.addEventListener('click', this._handleClearBtnClick)
+    const acceptBtn = getHtmlElement('button', `${button} ${buttonAccent}`, 'Применить')
+    acceptBtn.type = 'button'
+    acceptBtn.addEventListener('click', this._handleAcceptBtnClick)
+    const countListFragment = document.createDocumentFragment()
+    const { countElements } = this.countElementsGroup
 
-    countElements.forEach((element) => {
-      const countItem = this._getCountItem(element);
-      countListFragment.appendChild(countItem);
-    });
+    countElements.forEach(element => {
+      const countItem = this._getCountItem(element)
+      countListFragment.appendChild(countItem)
+    })
 
-    countList.appendChild(countListFragment);
+    countList.appendChild(countListFragment)
 
     if (!isHideControl) {
-      dropDownControl.appendChild(clearBtn);
-      dropDownControl.appendChild(acceptBtn);
+      dropDownControl.appendChild(clearBtn)
+      dropDownControl.appendChild(acceptBtn)
     }
 
-    dropDownParentWrap.appendChild(countList);
+    dropDownParentWrap.appendChild(countList)
 
     if (!isHideControl) {
-      dropDownParentWrap.appendChild(dropDownControl);
+      dropDownParentWrap.appendChild(dropDownControl)
     }
 
-    dropDownParent.appendChild(dropDownParentWrap);
-    container.appendChild(dropDownParent);
+    dropDownParent.appendChild(dropDownParentWrap)
+    container.appendChild(dropDownParent)
 
-    const isAllCounterZero = countElements.every((item) => item.counter === 0);
+    const isAllCounterZero = countElements.every(item => item.counter === 0)
 
-    if (isAllCounterZero) this._hideClearBtn();
-  };
+    if (isAllCounterZero) this._hideClearBtn()
+  }
 
   _hasHaveStartValue = () => {
-    const {countElements} = this.countElementsGroup;
-    return countElements.some((item) => {
+    const { countElements } = this.countElementsGroup
+    return countElements.some(item => {
       if (item.startValue) {
-        return item.startValue > 0;
+        return item.startValue > 0
       }
-    });
-  };
+    })
+  }
 
   _getModifiedCountElements = () => {
-    const {countElements} = this.countElementsGroup;
+    const { countElements } = this.countElementsGroup
 
     const modifiedCountElements = countElements.map((item, index) => {
-      const minValue = item.minValue ? item.minValue : 0;
-      const counter = item.startValue ? item.startValue : minValue;
-      item.id = `${index}${getRandomNumber(1, 10000)}`;
-      item.counter = counter;
-      item.minValue = minValue;
-      return item;
-    });
+      const minValue = item.minValue ? item.minValue : 0
+      const counter = item.startValue ? item.startValue : minValue
+      item.id = `${index}${getRandomNumber(1, 10000)}`
+      item.counter = counter
+      item.minValue = minValue
+      return item
+    })
 
-    return modifiedCountElements;
-  };
+    return modifiedCountElements
+  }
 
   _show = () => {
-    const {dropDownParent, input} = this.domElements;
-    const {dropDownCounterOpened, inputActive} = classNameMap;
+    const { dropDownParent, input } = this.domElements
+    const { dropDownCounterOpened, inputActive } = classNameMap
 
-    const isHaveClass = dropDownParent.classList.contains(
-      dropDownCounterOpened
-    );
+    const isHaveClass = dropDownParent.classList.contains(dropDownCounterOpened)
 
     if (!isHaveClass) {
-      dropDownParent.classList.add(dropDownCounterOpened);
-      input.classList.add(inputActive);
-      window.addEventListener('mouseup', this._handleWindowClick);
-      window.addEventListener('keyup', this._handleWindowKeyup);
+      dropDownParent.classList.add(dropDownCounterOpened)
+      input.classList.add(inputActive)
+      window.addEventListener('mouseup', this._handleWindowClick)
+      window.addEventListener('keyup', this._handleWindowKeyup)
     }
-  };
+  }
 
   _hide = () => {
-    const {dropDownParent, input} = this.domElements;
-    const {isPinShow} = this.settings;
-    const {dropDownCounterOpened, inputActive} = classNameMap;
+    const { dropDownParent, input } = this.domElements
+    const { isPinShow } = this.settings
+    const { dropDownCounterOpened, inputActive } = classNameMap
 
     if (isPinShow) {
-      return;
+      return
     }
 
-    const isHaveClass = dropDownParent.classList.contains(
-      dropDownCounterOpened
-    );
+    const isHaveClass = dropDownParent.classList.contains(dropDownCounterOpened)
 
     if (isHaveClass) {
-      dropDownParent.classList.remove(dropDownCounterOpened);
-      input.classList.remove(inputActive);
-      window.removeEventListener('mouseup', this._handleWindowClick);
-      window.removeEventListener('keyup', this._handleWindowKeyup);
+      dropDownParent.classList.remove(dropDownCounterOpened)
+      input.classList.remove(inputActive)
+      window.removeEventListener('mouseup', this._handleWindowClick)
+      window.removeEventListener('keyup', this._handleWindowKeyup)
     }
-  };
+  }
 
   _hideClearBtn = () => {
-    const {clearBtn} = this.domElements;
-    const {counterButtonHidden} = classNameMap;
-    clearBtn.classList.add(counterButtonHidden);
-  };
+    const { clearBtn } = this.domElements
+    const { counterButtonHidden } = classNameMap
+    clearBtn.classList.add(counterButtonHidden)
+  }
 
   _handleInputClick = () => {
-    this._show();
-  };
+    this._show()
+  }
 
-  _handleWindowClick = (evt) => {
-    const {dropDownParent, input} = this.domElements;
-    const isInputClick = evt.target === input;
-    const isCalendarClick = dropDownParent.contains(evt.target);
-    const isOutsideClick = !isInputClick && !isCalendarClick;
+  _handleWindowClick = evt => {
+    const { dropDownParent, input } = this.domElements
+    const isInputClick = evt.target === input
+    const isCalendarClick = dropDownParent.contains(evt.target)
+    const isOutsideClick = !isInputClick && !isCalendarClick
     if (isOutsideClick) {
-      this._hide();
+      this._hide()
     }
-  };
+  }
 
-  _handleWindowKeyup = (evt) => {
-    const {ESC} = keyCodes;
-    const isEscPress = evt.keyCode === ESC;
+  _handleWindowKeyup = evt => {
+    const { ESC } = keyCodes
+    const isEscPress = evt.keyCode === ESC
     if (isEscPress) {
-      this._hide();
+      this._hide()
     }
-  };
+  }
 
-  _handleClearBtnClick = (evt) => {
-    evt.preventDefault();
-    this._discardCounter();
-    this._discardViewCounter();
-    this._hideClearBtn();
-    const {input} = this.domElements;
-    const {placeholder} = this.settings;
-    input.textContent = placeholder;
-  };
+  _handleClearBtnClick = evt => {
+    evt.preventDefault()
+    this._discardCounter()
+    this._discardViewCounter()
+    this._hideClearBtn()
+    const { input } = this.domElements
+    const { placeholder } = this.settings
+    input.textContent = placeholder
+  }
 
-  _handleAcceptBtnClick = (evt) => {
-    evt.preventDefault();
-    this._hide();
-  };
+  _handleAcceptBtnClick = evt => {
+    evt.preventDefault()
+    this._hide()
+  }
 
-  _handleCountItemPlusClick = (elements) => {
-    const {element, countItemView, countItemMinus} = elements;
-    const {counterButtonHidden, counterButtonDisabled} = classNameMap;
-    const {countGroupView} = this.countElementsGroup;
-    const {clearBtn} = this.domElements;
+  _handleCountItemPlusClick = elements => {
+    const { element, countItemView, countItemMinus } = elements
+    const { counterButtonHidden, counterButtonDisabled } = classNameMap
+    const { countGroupView } = this.countElementsGroup
+    const { clearBtn } = this.domElements
 
-    const groupView = countGroupView[element.countGroupName];
-    element.counter++;
-    groupView.counter++;
-    countItemView.textContent = element.counter;
-    this._renderViewCount();
-    const isMinusDisabled = countItemMinus.classList.contains(
-      counterButtonDisabled
-    );
+    const groupView = countGroupView[element.countGroupName]
+    element.counter++
+    groupView.counter++
+    countItemView.textContent = element.counter
+    this._renderViewCount()
+    const isMinusDisabled = countItemMinus.classList.contains(counterButtonDisabled)
 
     if (isMinusDisabled) {
-      countItemMinus.classList.remove(counterButtonDisabled);
-      countItemMinus.removeAttribute('disabled');
+      countItemMinus.classList.remove(counterButtonDisabled)
+      countItemMinus.removeAttribute('disabled')
     }
 
-    const isClearBtnDisabled = clearBtn.classList.contains(counterButtonHidden);
+    const isClearBtnDisabled = clearBtn.classList.contains(counterButtonHidden)
 
     if (isClearBtnDisabled) {
-      clearBtn.classList.remove(counterButtonHidden);
+      clearBtn.classList.remove(counterButtonHidden)
     }
-  };
+  }
 
-  _handleCountItemMinusClick = (elements) => {
-    const {element, countItemView, countItemMinus} = elements;
-    const {counterButtonDisabled} = classNameMap;
-    const {countGroupView} = this.countElementsGroup;
-    const {placeholder} = this.settings;
-    const {input} = this.domElements;
+  _handleCountItemMinusClick = elements => {
+    const { element, countItemView, countItemMinus } = elements
+    const { counterButtonDisabled } = classNameMap
+    const { countGroupView } = this.countElementsGroup
+    const { placeholder } = this.settings
+    const { input } = this.domElements
 
-    const groupView = countGroupView[element.countGroupName];
-    element.counter--;
-    groupView.counter--;
-    countItemView.textContent = element.counter;
-    const nextDecrementCounter = element.counter - 1;
+    const groupView = countGroupView[element.countGroupName]
+    element.counter--
+    groupView.counter--
+    countItemView.textContent = element.counter
+    const nextDecrementCounter = element.counter - 1
 
     if (nextDecrementCounter < element.minValue) {
-      countItemMinus.classList.add(counterButtonDisabled);
-      countItemMinus.setAttribute('disabled', 'true');
+      countItemMinus.classList.add(counterButtonDisabled)
+      countItemMinus.setAttribute('disabled', 'true')
     }
 
-    this._renderViewCount();
-    if (groupView.counter !== 0) return;
+    this._renderViewCount()
+    if (groupView.counter !== 0) return
 
-    const isCounterGroupClear = Object.keys(countGroupView).every((item) => {
-      return countGroupView[item].counter === 0;
-    });
+    const isCounterGroupClear = Object.keys(countGroupView).every(item => {
+      return countGroupView[item].counter === 0
+    })
 
     if (isCounterGroupClear) {
-      input.textContent = placeholder;
-      this._hideClearBtn();
+      input.textContent = placeholder
+      this._hideClearBtn()
     }
-  };
+  }
 
   _discardCounter = () => {
-    const {dropDownParent} = this.domElements;
-    const {countElements} = this.countElementsGroup;
-    const {counterButtonMinus} = classNameMap;
+    const { dropDownParent } = this.domElements
+    const { countElements } = this.countElementsGroup
+    const { counterButtonMinus } = classNameMap
 
-    countElements.forEach((item) => {
-      const viewCounter = dropDownParent.querySelector(`#view-${item.id}`);
-      viewCounter.textContent = item.minValue;
-      item.counter = item.minValue;
-    });
+    countElements.forEach(item => {
+      const viewCounter = dropDownParent.querySelector(`#view-${item.id}`)
+      viewCounter.textContent = item.minValue
+      item.counter = item.minValue
+    })
 
-    const minusButtons = dropDownParent.querySelectorAll(
-      `.${counterButtonMinus}`
-    );
-    const {counterButtonDisabled} = classNameMap;
+    const minusButtons = dropDownParent.querySelectorAll(`.${counterButtonMinus}`)
+    const { counterButtonDisabled } = classNameMap
 
-    minusButtons.forEach((item) => {
-      item.classList.add(counterButtonDisabled);
-      item.setAttribute('disabled', 'true');
-    });
-  };
+    minusButtons.forEach(item => {
+      item.classList.add(counterButtonDisabled)
+      item.setAttribute('disabled', 'true')
+    })
+  }
 
   _discardViewCounter = () => {
-    const {countGroupView} = this.countElementsGroup;
+    const { countGroupView } = this.countElementsGroup
 
-    Object.keys(countGroupView).forEach((item) => {
-      countGroupView[item].counter = 0;
-    });
-  };
+    Object.keys(countGroupView).forEach(item => {
+      countGroupView[item].counter = 0
+    })
+  }
 
   _renderViewCount = () => {
-    const {input} = this.domElements;
-    const {countGroupView} = this.countElementsGroup;
-    const {maxLengthInput} = this.settings;
+    const { input } = this.domElements
+    const { countGroupView } = this.countElementsGroup
+    const { maxLengthInput } = this.settings
 
-    let wordOfNum = '';
+    let wordOfNum = ''
     Object.keys(countGroupView).forEach((item, index) => {
-      if (countGroupView[item].counter < 1) return;
+      if (countGroupView[item].counter < 1) return
 
-      const currentCounterGroup = countGroupView[item];
-      const currentCounter = currentCounterGroup.counter;
-      const currentWord = declensionWordEnding(
-        currentCounter,
-        currentCounterGroup.views
-      );
-      const isWordsMoreThenTwo = index > 0 && wordOfNum.length > 1;
+      const currentCounterGroup = countGroupView[item]
+      const currentCounter = currentCounterGroup.counter
+      const currentWord = declensionWordEnding(currentCounter, currentCounterGroup.views)
+      const isWordsMoreThenTwo = index > 0 && wordOfNum.length > 1
       if (isWordsMoreThenTwo) {
-        wordOfNum += ', ';
+        wordOfNum += ', '
       }
-      wordOfNum += `${currentCounter} ${currentWord}`;
-    });
+      wordOfNum += `${currentCounter} ${currentWord}`
+    })
 
-    const isLengthOutRange =
-      wordOfNum.length >= maxLengthInput &&
-      Object.keys(countGroupView).length > 2;
+    const isLengthOutRange = wordOfNum.length >= maxLengthInput && Object.keys(countGroupView).length > 2
 
     if (isLengthOutRange) {
-      wordOfNum = wordOfNum.slice(0, maxLengthInput) + '...';
+      wordOfNum = wordOfNum.slice(0, maxLengthInput) + '...'
     }
 
-    input.textContent = wordOfNum;
-  };
+    input.textContent = wordOfNum
+  }
 
   _renderStartCount = () => {
-    const {input} = this.domElements;
-    const {countElements, countGroupView} = this.countElementsGroup;
-    const {maxLengthInput} = this.settings;
+    const { input } = this.domElements
+    const { countElements, countGroupView } = this.countElementsGroup
+    const { maxLengthInput } = this.settings
 
-    let wordOfNum = '';
+    let wordOfNum = ''
     countElements.forEach((item, index) => {
-      if (item.startValue < 1) return;
+      if (item.startValue < 1) return
 
-      const currentCounterGroup = countGroupView[item.countGroupName];
-      const currentCounter = currentCounterGroup.counter;
-      const currentWord = declensionWordEnding(
-        currentCounter,
-        currentCounterGroup.views
-      );
-      const isWordsMoreThenTwo = index > 0 && wordOfNum.length > 1;
+      const currentCounterGroup = countGroupView[item.countGroupName]
+      const currentCounter = currentCounterGroup.counter
+      const currentWord = declensionWordEnding(currentCounter, currentCounterGroup.views)
+      const isWordsMoreThenTwo = index > 0 && wordOfNum.length > 1
       if (isWordsMoreThenTwo) {
-        wordOfNum += ', ';
+        wordOfNum += ', '
       }
-      wordOfNum += `${currentCounter} ${currentWord}`;
-    });
-    const isLengthOutRange =
-      wordOfNum.length >= maxLengthInput && countElements.length > 2;
+      wordOfNum += `${currentCounter} ${currentWord}`
+    })
+    const isLengthOutRange = wordOfNum.length >= maxLengthInput && countElements.length > 2
 
     if (isLengthOutRange) {
-      wordOfNum = wordOfNum.slice(0, maxLengthInput) + '...';
+      wordOfNum = wordOfNum.slice(0, maxLengthInput) + '...'
     }
 
-    input.textContent = wordOfNum;
-  };
+    input.textContent = wordOfNum
+  }
 
-  _getCountItem = (element) => {
+  _getCountItem = element => {
     const {
       countItem: countItemClass,
       countItemName: countItemNameClass,
@@ -369,59 +342,52 @@ class DropDownCounter {
       counterButtonPlus,
       counterButtonDisabled,
       selectView,
-    } = classNameMap;
+    } = classNameMap
 
-    const countItem = getHtmlElement('li', countItemClass);
-    const countItemName = getHtmlElement('p', countItemNameClass, element.name);
-    const counterMenu = getHtmlElement('div', counterMenuClass);
-    const countItemMinus = getHtmlElement(
-      'button',
-      `${counterButtonClass} ${counterButtonMinus}`
-    );
+    const countItem = getHtmlElement('li', countItemClass)
+    const countItemName = getHtmlElement('p', countItemNameClass, element.name)
+    const counterMenu = getHtmlElement('div', counterMenuClass)
+    const countItemMinus = getHtmlElement('button', `${counterButtonClass} ${counterButtonMinus}`)
 
-    const isHaveDisabledStartValue =
-      element.startValue && element.startValue === element.minValue;
+    const isHaveDisabledStartValue = element.startValue && element.startValue === element.minValue
 
     if (isHaveDisabledStartValue) {
-      countItemMinus.classList.add(counterButtonDisabled);
-      countItemMinus.setAttribute('disabled', 'true');
+      countItemMinus.classList.add(counterButtonDisabled)
+      countItemMinus.setAttribute('disabled', 'true')
     } else if (!element.startValue) {
-      countItemMinus.classList.add(counterButtonDisabled);
-      countItemMinus.setAttribute('disabled', 'true');
+      countItemMinus.classList.add(counterButtonDisabled)
+      countItemMinus.setAttribute('disabled', 'true')
     }
-    countItemMinus.type = 'button';
-    const countItemView = getHtmlElement('p', selectView);
-    countItemView.textContent = element.counter;
-    countItemView.id = `view-${element.id}`;
-    const countItemPlus = getHtmlElement(
-      'button',
-      `${counterButtonClass} ${counterButtonPlus}`
-    );
-    countItemPlus.type = 'button';
+    countItemMinus.type = 'button'
+    const countItemView = getHtmlElement('p', selectView)
+    countItemView.textContent = element.counter
+    countItemView.id = `view-${element.id}`
+    const countItemPlus = getHtmlElement('button', `${counterButtonClass} ${counterButtonPlus}`)
+    countItemPlus.type = 'button'
 
     countItemPlus.addEventListener('click', () => {
       this._handleCountItemPlusClick({
         element,
         countItemView,
         countItemMinus,
-      });
-    });
+      })
+    })
 
     countItemMinus.addEventListener('click', () => {
       this._handleCountItemMinusClick({
         element,
         countItemView,
         countItemMinus,
-      });
-    });
+      })
+    })
 
-    counterMenu.appendChild(countItemMinus);
-    counterMenu.appendChild(countItemView);
-    counterMenu.appendChild(countItemPlus);
-    countItem.appendChild(countItemName);
-    countItem.appendChild(counterMenu);
-    return countItem;
-  };
+    counterMenu.appendChild(countItemMinus)
+    counterMenu.appendChild(countItemView)
+    counterMenu.appendChild(countItemPlus)
+    countItem.appendChild(countItemName)
+    countItem.appendChild(counterMenu)
+    return countItem
+  }
 }
 
-export default DropDownCounter;
+export default DropDownCounter

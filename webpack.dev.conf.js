@@ -11,7 +11,6 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     publicPath: '/',
   },
   devServer: {
-    contentBase: baseWebpackConfig.externals.paths.dist,
     hot: true,
   },
   plugins: [
