@@ -1,8 +1,7 @@
-import DropDownCounter from './DropDownCounter';
+import DropDownCounter from './DropDownCounter'
 
-const dropDownCounterInitial = (options) => {
-  const dropDownCounter = new DropDownCounter(options);
-  dropDownCounter.init();
-};
+const dropDownCounterInitial = options => {
+  new DropDownCounter(options)
+}
 
-export default dropDownCounterInitial;
+export default dropDownCounterInitial

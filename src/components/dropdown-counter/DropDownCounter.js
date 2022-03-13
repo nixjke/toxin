@@ -33,9 +33,10 @@ class DropDownCounter {
       isHideControl,
       maxLengthInput,
     }
+    this.init()
   }
 
-  init = () => {
+  init() {
     const { input, inputSplitBtn, dropDownParent, container } = this.domElements
     const { isPinShow, placeholder, isHideControl } = this.settings
     const { wrap, countList: countListClass, control, button, buttonAccent } = classNameMap
