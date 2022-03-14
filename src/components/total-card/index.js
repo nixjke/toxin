@@ -21,14 +21,8 @@ totalCard.init()
 
 import '../../../node_modules/air-datepicker/air-datepicker.css'
 import '../../components/date-picker/date-picker.scss'
-import AirDatepicker from 'air-datepicker'
 
 const input = document.querySelector('.js-arrival-input')
 const inputSecond = document.querySelector('.js-departure-input')
-const inputSplitBtn = document.querySelector('.js-input-drop-down-split-btn')
-
-
-console.log(input, inputSecond)
 
 new AirDatepickerInit(input, inputSecond)
-

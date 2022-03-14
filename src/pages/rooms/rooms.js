@@ -8,13 +8,8 @@ import '../../../node_modules/air-datepicker/air-datepicker.css'
 import '../../components/date-picker/date-picker.scss'
 import './rooms.scss'
 
-const dropdownInput = document.querySelector('.js-drop-down-input')
-const dropdownButton = document.querySelector('.js-drop-down-input-split-btn')
+import AirDatepickerInit from '../../libs/Air-datepicker'
 
-let buttonToday = {
-  content: 'Применить',
-  className: 'js-today-button',
-  onClick: () => {
-    dp.hide()
-  }
-}
+let airDatepicker = document.querySelector('.js-drop-down-input')
+
+new AirDatepickerInit(airDatepicker)

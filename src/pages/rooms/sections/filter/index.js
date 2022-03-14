@@ -1,13 +1,5 @@
 import dropDownCounterInitial from '../../../../components/dropdown-counter'
 
-const datePickerDomElements = {
-  parentNode: document.querySelector('.js-date-picker-container'),
-  datePickerInput: document.querySelector('.js-drop-down-input'),
-  datePickerSplitBtn: document.querySelector('.js-drop-down-input-split-btn'),
-  isCellLower: true,
-}
-
-
 const dropDownGuestContainer = document.querySelector('.js-drop-down-counter-container-guest')
 const inputDropDownGuest = document.querySelector('.js-input-drop-down-guest')
 const inputSplitBtnGuest = document.querySelector('.js-input-drop-down-guest-split-btn')
