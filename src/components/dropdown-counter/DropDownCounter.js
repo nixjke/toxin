@@ -1,6 +1,5 @@
 import { getHtmlElement, getRandomNumber, declensionWordEnding } from './utils'
 import classNameMap from './utils/classNameMap'
-import keyCodes from './utils/constants'
 
 class DropDownCounter {
   constructor({
@@ -171,13 +170,6 @@ class DropDownCounter {
     }
   }
 
-  _handleWindowKeyup = evt => {
-    const { ESC } = keyCodes
-    const isEscPress = evt.keyCode === ESC
-    if (isEscPress) {
-      this._hide()
-    }
-  }
 
   _handleClearBtnClick = evt => {
     evt.preventDefault()
@@ -303,7 +295,7 @@ class DropDownCounter {
       wordOfNum = wordOfNum.slice(0, maxLengthInput) + '...'
     }
 
-    input.textContent = wordOfNum
+    input.placeholder = wordOfNum
   }
 
   _renderStartCount = () => {

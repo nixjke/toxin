@@ -20,7 +20,7 @@ mixin hotelCard({ images, numberHotel, starCount, reviewCount, dayCost, isLux })
       .hotel-card__info
         .hotel-card__info-item
           if (isLux)
-            h2.hotel-card__title 
+            h2.hotel-card__title
               a.hotel-card__title-link(href='room-details.html') № #[span.hotel-card__title-text= numberHotel] #[b.hotel-card__title-extra-text люкс]
           else
             h2.hotel-card__title
