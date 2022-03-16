@@ -11,7 +11,7 @@ npm install
 ### Local dev server
 
 ```bash
-npm run dev
+npm start
 ```
 
 ### Build Setup
