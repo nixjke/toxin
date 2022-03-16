@@ -295,7 +295,7 @@ class DropDownCounter {
       wordOfNum = wordOfNum.slice(0, maxLengthInput) + '...'
     }
 
-    input.placeholder = wordOfNum
+    input.value = wordOfNum
   }
 
   _renderStartCount = () => {

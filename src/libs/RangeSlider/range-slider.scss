@@ -21,7 +21,7 @@
       border: 2px solid white;
       border-radius: 50%;
       box-shadow: none;
-      transition: background .2s ease 0s, border .2s ease 0s;
+      transition: background 0.2s ease 0s, border 0.2s ease 0s;
       cursor: pointer;
 
       &::after,
@@ -65,4 +65,8 @@
       margin-right: 0;
     }
   }
+}
+
+.noUi-horizontal .noUi-handle {
+  top: -5px;
 }

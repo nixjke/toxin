@@ -7,12 +7,10 @@ class AirDatepickerInit {
       dp.hide()
     },
   }
-
   constructor(input, inputSecond) {
     this.input = input
     this.inputSecond = inputSecond
-
-    if (!input || !inputSecond === false) {
+    if (input || inputSecond !== undefined) {
       this.init(input, inputSecond)
     } else {
       this.initForOne(input)
@@ -20,15 +18,17 @@ class AirDatepickerInit {
   }
 
   init(input, inputSecond) {
-    let dp = new AirDatepicker(input, {
+    this.dp = new AirDatepicker(input, {
       multipleDates: true,
       range: true,
       multipleDatesSeparator: '-',
       onSelect(fd) {
         input.value = fd.formattedDate[0]
+        input.textContent = fd.formattedDate[0]
+        
         inputSecond.value = fd.formattedDate[1] ? fd.formattedDate[1] : ''
+        inputSecond.textContent = fd.formattedDate[1] ? fd.formattedDate[1] : ''
       },
-
       buttons: ['clear', this.button],
       navTitles: {
         days: 'MMMM yyyy',
@@ -38,7 +38,7 @@ class AirDatepickerInit {
       startDate: new Date(),
     })
 
-    inputSecond.addEventListener('click', () => dp.show())
+    inputSecond.addEventListener('click', () => this.dp.show())
   }
 
   initForOne(input) {
