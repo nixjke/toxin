@@ -23,11 +23,11 @@ class TotalCard {
     this.discount = discount
   }
 
-  init = () => {
+  init() {
     this._initObservers()
   }
 
-  _initObservers = () => {
+  _initObservers() {
     const MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver
 
     const observerConfig = {
@@ -62,7 +62,7 @@ class TotalCard {
     this.costPerDaysView.textContent = '0₽'
   }
 
-  _renderResult = () => {
+  _renderResult() {
     this.priceView.textContent = `${getNumStringWithSpaces(this._getTotalPrice())}₽`
 
     this.costPerDaysView.textContent = `${getNumStringWithSpaces(this._getCostPerDays())}₽`
@@ -70,7 +70,7 @@ class TotalCard {
     this.amountDayView.textContent = this._getAmountDays()
   }
 
-  _getTotalPrice = () => {
+  _getTotalPrice() {
     if (this._getAmountDays() === 0) {
       return 0
     } else {
@@ -78,9 +78,11 @@ class TotalCard {
     }
   }
 
-  _getCostPerDays = () => this._getAmountDays() * this.priceForDay
+  _getCostPerDays() {
+    return this._getAmountDays() * this.priceForDay
+  }
 
-  _getAmountDays = () => {
+  _getAmountDays() {
     const arrivalDateDirty = this.arrivalDate.split('.')
     const arrivalDay = arrivalDateDirty[0]
     const arrivalMonth = arrivalDateDirty[1]
