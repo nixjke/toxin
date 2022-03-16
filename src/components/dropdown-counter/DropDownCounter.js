@@ -93,7 +93,7 @@ class DropDownCounter {
     if (isAllCounterZero) this._hideClearBtn()
   }
 
-  _hasHaveStartValue = () => {
+  _hasHaveStartValue() {
     const { countElements } = this.countElementsGroup
     return countElements.some(item => {
       if (item.startValue) {
@@ -102,7 +102,7 @@ class DropDownCounter {
     })
   }
 
-  _getModifiedCountElements = () => {
+  _getModifiedCountElements() {
     const { countElements } = this.countElementsGroup
 
     const modifiedCountElements = countElements.map((item, index) => {
@@ -117,7 +117,7 @@ class DropDownCounter {
     return modifiedCountElements
   }
 
-  _show = () => {
+  _show() {
     const { dropDownParent, input } = this.domElements
     const { dropDownCounterOpened, inputActive } = classNameMap
 
@@ -131,7 +131,7 @@ class DropDownCounter {
     }
   }
 
-  _hide = () => {
+  _hide() {
     const { dropDownParent, input } = this.domElements
     const { isPinShow } = this.settings
     const { dropDownCounterOpened, inputActive } = classNameMap
@@ -146,7 +146,6 @@ class DropDownCounter {
       dropDownParent.classList.remove(dropDownCounterOpened)
       input.classList.remove(inputActive)
       window.removeEventListener('mouseup', this._handleWindowClick)
-      window.removeEventListener('keyup', this._handleWindowKeyup)
     }
   }
 
@@ -170,7 +169,6 @@ class DropDownCounter {
     }
   }
 
-
   _handleClearBtnClick = evt => {
     evt.preventDefault()
     this._discardCounter()
@@ -178,7 +176,7 @@ class DropDownCounter {
     this._hideClearBtn()
     const { input } = this.domElements
     const { placeholder } = this.settings
-    input.textContent = placeholder
+    input.value = placeholder
   }
 
   _handleAcceptBtnClick = evt => {
@@ -242,7 +240,7 @@ class DropDownCounter {
     }
   }
 
-  _discardCounter = () => {
+  _discardCounter() {
     const { dropDownParent } = this.domElements
     const { countElements } = this.countElementsGroup
     const { counterButtonMinus } = classNameMap
@@ -262,7 +260,7 @@ class DropDownCounter {
     })
   }
 
-  _discardViewCounter = () => {
+  _discardViewCounter() {
     const { countGroupView } = this.countElementsGroup
 
     Object.keys(countGroupView).forEach(item => {
@@ -270,7 +268,7 @@ class DropDownCounter {
     })
   }
 
-  _renderViewCount = () => {
+  _renderViewCount() {
     const { input } = this.domElements
     const { countGroupView } = this.countElementsGroup
     const { maxLengthInput } = this.settings
@@ -298,7 +296,7 @@ class DropDownCounter {
     input.value = wordOfNum
   }
 
-  _renderStartCount = () => {
+  _renderStartCount() {
     const { input } = this.domElements
     const { countElements, countGroupView } = this.countElementsGroup
     const { maxLengthInput } = this.settings
@@ -322,10 +320,10 @@ class DropDownCounter {
       wordOfNum = wordOfNum.slice(0, maxLengthInput) + '...'
     }
 
-    input.textContent = wordOfNum
+    input.value = wordOfNum
   }
 
-  _getCountItem = element => {
+  _getCountItem(element) {
     const {
       countItem: countItemClass,
       countItemName: countItemNameClass,
