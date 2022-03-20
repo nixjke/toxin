@@ -10,6 +10,8 @@ npm install
 
 ### Local dev server
 
+- use node 14.16.0v
+
 ```bash
 npm start
 ```
