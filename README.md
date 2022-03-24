@@ -1,5 +1,7 @@
 # Toxin
 
+[View Toxin](https://nixjke.github.io/toxin/)
+
 ## Installation
 
 ```bash
@@ -10,7 +12,10 @@ npm install
 
 ### Local dev server
 
-- node 14.16.0v
+| | Version |
+|---|---|
+| node | 14.16.0 |
+| npm | 6.14.11 |
 
 ```bash
 npm start
