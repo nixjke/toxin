@@ -1,5 +1,7 @@
 # Toxin
 
+## Hotel website to search for rooms and rent
+
 [View Toxin](https://nixjke.github.io/toxin/)
 
 ## Installation
